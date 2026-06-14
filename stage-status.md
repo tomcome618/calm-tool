@@ -12,5 +12,5 @@
 | 08 | backend | ⏭️ SKIPPED | — | — | 依赖 T06，可与 T07 并行 |
 | 09 | QA | ✅ DONE | 2026-06-13 | 2026-06-13 | QA GO：零P0，全合规 |
 | 10 | SEO | ✅ DONE | 2026-06-13 | 2026-06-13 | sitemap/robots/schema ready |
-| 11 | launch | 🔜 READY | — | — | 等待部署 |
+| 11 | launch | ✅ LIVE 🚀 | 2026-06-13 | 2026-06-13 | pages.dev / 9页全通 |
 | 12 | review | ⏳ WAITING | — | — | 依赖 T11 + 1 周数据 |

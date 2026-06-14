@@ -2,7 +2,7 @@
 
 ## Project State
 
-- Status: RUNNING (Stage 10/13 complete, 11 READY)
+- Status: LIVE 🚀 (11/13 stages complete)
 - Slug: calm-tool (待域名注册后改目录名)
 - Domain: calmtool.io ✅
 - Target: US / English
@@ -35,8 +35,8 @@ When the user says "继续" or "推进流水线" or "next":
 | 08 | backend | backend-auto-site-cloudflare-workers | — | SKIPPED (static) |
 | 09 | qa | student-site-qa-acceptance | 09-qa-output.md | DONE |
 | 10 | seo | seo-launch-workflow | 10-seo-output.md | DONE |
-| 11 | launch | site-ops-growth-launch | — | READY |
-| 12 | review | site-data-review-iteration | — | WAITING |
+| 11 | launch | site-ops-growth-launch | 11-launch-output.md | LIVE |
+| 12 | review | site-data-review-iteration | — | WAITING (1wk) |
 
 ## User Open Items
 
@@ -82,5 +82,6 @@ Decision trigger after Month 4:
 - Design Source Gate: ✅ PASSED
 - Frontend Gate: ✅ PASSED
 - QA GO: ✅ PASSED
+- Launch Gate: ✅ PASSED
 - SEO GO: ✅ PASSED
 - All other gates: WAITING

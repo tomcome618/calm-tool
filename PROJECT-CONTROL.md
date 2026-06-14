@@ -4,7 +4,7 @@
 域名：calmtool.io ✅
 目标市场：US / English
 当前模式：automation_factory
-当前状态：RUNNING
+当前状态：LIVE 🚀
 事实源：Kanban + PROJECT-CONTROL.md
 
 ## 学员只需要处理
@@ -28,12 +28,12 @@
 | 08 | backend/data | backend-auto-site-cloudflare-workers | — | SKIPPED (static) |
 | 09 | QA | student-site-qa-acceptance | 09-qa-output.md | ✅ DONE |
 | 10 | SEO | seo-launch-workflow | 10-seo-output.md | ✅ DONE |
-| 11 | launch/ops | site-ops-growth-launch | — | READY |
-| 12 | review | site-data-review-iteration | — | WAITING |
+| 11 | launch/ops | site-ops-growth-launch | 11-launch-output.md | ✅ LIVE |
+| 12 | review | site-data-review-iteration | — | WAITING (1wk data) |
 
 ## 当前状态
-- done：01-07, 09-10（08 skipped）
+- done：01-07, 09-11（08 skipped）
 - running：无
-- running：none
-- waiting：11-12
-- blocked：无
+- running：none（等待 1 周数据后 Stage 12）
+- waiting：12
+- blocked：calmtool.io DNS 待绑定

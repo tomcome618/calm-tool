@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Free Online Breathing Exercise Tool — 4 Guided Patterns</title>
+<meta name="description" content="Free guided breathing exercises in your browser. 4-7-8, Box Breathing, and custom patterns. Animated circle guides each breath. No app, no sign-up, mobile-friendly.">
+<link rel="stylesheet" href="/css/design-system.css">
+<link rel="canonical" href="https://calmtool.io/breathe/">
+<script type="application/ld+json">{"@type":"WebApplication","name":"CalmTool Breathing Exercise","description":"Free online guided breathing exercise tool with 4 patterns.","applicationCategory":"HealthApplication","operatingSystem":"Any"}</script>
+</head>
+<body>
+<header class="site-header"><div class="container">
+<a href="/" class="site-logo">CalmTool</a>
+<nav class="site-nav"><a href="/breathe/">Breathe</a><a href="/burnout-test/">Burnout Test</a><a href="/digital-detox/">Digital Detox</a></nav>
+</div></header>
+<main class="container">
+<section class="hero" style="padding-bottom:0"><h1>Free Online Breathing Exercise Tool</h1><p>Follow the circle. Breathe in. Hold. Breathe out. Choose a pattern below — the animation guides you through every step.</p></section>
+<section style="margin:var(--space-lg) 0"><h2 style="font-family:var(--font-serif);font-weight:var(--fw-normal);margin-bottom:16px">Choose your breathing pattern</h2>
+<div class="pattern-grid">
+<button class="pattern-btn active" data-pattern="4-7-8"><strong>4-7-8 Relaxation</strong><span>Inhale 4s · Hold 7s · Exhale 8s</span><span>Best for: falling asleep, acute anxiety</span></button>
+<button class="pattern-btn" data-pattern="box"><strong>Box Breathing</strong><span>Inhale 4s · Hold 4s · Exhale 4s · Hold 4s</span><span>Best for: focus reset, pre-meeting calm</span></button>
+<button class="pattern-btn" data-pattern="simple"><strong>Simple Calm</strong><span>Inhale 4s · Hold 2s · Exhale 6s</span><span>Best for: quick stress relief</span></button>
+<button class="pattern-btn" data-pattern="custom"><strong>Custom</strong><span>Set your own inhale, hold, and exhale times</span><span>Best for: experienced practitioners</span></button>
+</div>
+<div id="custom-controls" style="display:none;margin-top:16px;padding:16px;background:var(--paper);border-radius:var(--radius-md);border:1px solid var(--border)"><div style="display:flex;gap:16px;flex-wrap:wrap"><div class="form-group" style="flex:1;min-width:100px"><label class="form-label">Inhale (s)</label><input type="number" class="form-input" id="custom-inhale" value="4" min="1" max="10"></div><div class="form-group" style="flex:1;min-width:100px"><label class="form-label">Hold (s)</label><input type="number" class="form-input" id="custom-hold" value="0" min="0" max="10"></div><div class="form-group" style="flex:1;min-width:100px"><label class="form-label">Exhale (s)</label><input type="number" class="form-input" id="custom-exhale" value="4" min="1" max="10"></div></div></div></section>
+<section style="text-align:center;padding:var(--space-2xl) 0"><div id="breathe-circle" class="breathe-circle"><span>Breathe</span></div><p class="breathe-instruction" id="breathe-instruction">Press Start to begin</p><div class="breathe-stats"><span>Rounds: <strong id="breathe-rounds">0</strong></span></div><div class="breathe-controls"><button class="btn btn-primary" id="breathe-start">Start</button><button class="btn btn-soft" id="breathe-pause">Pause</button><button class="btn btn-ghost" id="breathe-reset">Reset</button></div></section>
+<section style="margin:var(--space-2xl) 0"><h2 style="font-family:var(--font-serif);font-weight:var(--fw-normal);font-size:var(--fs-xl);margin-bottom:24px">Frequently asked questions</h2>
+<div class="faq-item"><button class="faq-question">What is 4-7-8 breathing? <span>+</span></button><div class="faq-answer">4-7-8 breathing is a relaxation technique developed by Dr. Andrew Weil. It works by extending your exhale, which activates your parasympathetic nervous system. Inhale 4s, hold 7s, exhale 8s. Especially effective for falling asleep and managing acute stress.</div></div>
+<div class="faq-item"><button class="faq-question">How does box breathing work? <span>+</span></button><div class="faq-answer">Box breathing (also called square breathing) is used by Navy SEALs, athletes, and first responders. Equal counts for all phases create a steady rhythm that lowers heart rate and sharpens focus.</div></div>
+<div class="faq-item"><button class="faq-question">Which technique should I use? <span>+</span></button><div class="faq-answer"><ul style="margin-left:20px"><li><strong>Trouble sleeping?</strong> → 4-7-8 Relaxation</li><li><strong>Pre-meeting nerves?</strong> → Box Breathing</li><li><strong>General stress?</strong> → Simple Calm</li><li><strong>Full control?</strong> → Custom</li></ul></div></div>
+<div class="faq-item"><button class="faq-question">Is there any risk? <span>+</span></button><div class="faq-answer">Generally safe. Stop if you feel lightheaded. Consult your doctor if you have respiratory or heart conditions, or are pregnant.</div></div>
+<div class="faq-item"><button class="faq-question">Can I use this on my phone? <span>+</span></button><div class="faq-answer">Yes. CalmTool works on any device with a browser. No app download needed.</div></div></section>
+<p style="text-align:center;margin:var(--space-2xl) 0;font-family:var(--font-serif);color:var(--ink-light)">Feeling overwhelmed?<br><a href="/burnout-test/" style="color:var(--matcha-dark)">Take our free burnout self-assessment →</a></p>
+</main>
+<footer class="site-footer"><div class="container"><p style="font-family:var(--font-serif);color:var(--ink-light);">CalmTool — Free wellness tools for everyday calm.</p><nav><a href="/privacy/">Privacy</a><a href="/terms/">Terms</a><a href="/about/">About</a></nav><p class="crisis-line">If you're in crisis (US): call or text <strong>988</strong></p></div></footer>
+<script src="/js/app.js"></script>
+<script>document.querySelectorAll('.pattern-btn').forEach(b=>{b.addEventListener('click',()=>{document.getElementById('custom-controls').style.display=b.dataset.pattern==='custom'?'block':'none'})})</script>
+</body></html>

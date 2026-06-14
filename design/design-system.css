@@ -1,0 +1,495 @@
+/* ============================================
+   CalmTool Design System — Tea-house Tranquility
+   茶室の静けさ — warmth, paper, wood, moss, clay
+   ============================================ */
+
+:root {
+  /* === Color Palette — 茶室色 === */
+  --matcha:       #6B8B6C;   /* 抹茶绿 — primary */
+  --matcha-light: #8AAB8B;   /* 淡抹茶 */
+  --matcha-dark:  #4A6B4B;   /* 深抹茶 */
+  --matcha-bg:       rgba(107,139,108,0.12);
+  --matcha-bg-hover:  rgba(107,139,108,0.20);
+
+  --clay:         #C4956A;   /* 陶土色 — warm accent */
+  --clay-light:   #D8B48F;
+  --clay-dark:    #A0754A;
+  --clay-bg:      rgba(196,149,106,0.08);
+
+  --wood:         #8B7355;   /* 木色 — secondary accent */
+  --wood-light:   #A89475;
+
+  --washi:        #F9F6F0;   /* 和紙白 — page background */
+  --paper:        #FDFCF8;   /* 紙白 — card surface */
+  --cream:        #F5F0E6;   /* 淡奶油 — subtle surface */
+
+  --ink:          #2C2416;   /* 墨色 — primary text */
+  --ink-light:    #6B6053;   /* 淡墨 — secondary text */
+  --ink-muted:    #9B9085;   /* 薄墨 — muted text */
+  --ink-on-matcha:#FFFFFF;
+
+  --border:       rgba(139,115,85,0.12);   /* 木色边框 */
+  --border-light: rgba(107,139,108,0.08);
+
+  /* 和紙の影 — layered paper shadows */
+  --shadow-sm:    0 1px 2px rgba(139,115,85,0.06);
+  --shadow-md:    0 2px 8px rgba(139,115,85,0.07), 0 1px 3px rgba(0,0,0,0.03);
+  --shadow-lg:    0 4px 16px rgba(139,115,85,0.08), 0 2px 6px rgba(0,0,0,0.04);
+  --shadow-card:  0 1px 4px rgba(139,115,85,0.06);
+  --shadow-glow:  0 0 0 4px rgba(107,139,108,0.08);
+
+  /* === Spacing — 余白 (generous white space) === */
+  --space-xs:  6px;
+  --space-sm:  12px;
+  --space-md:  20px;
+  --space-lg:  32px;
+  --space-xl:  48px;
+  --space-2xl: 72px;
+  --space-3xl: 96px;
+
+  /* === Typography — 書体 === */
+  --font-sans: system-ui, -apple-system, 'Inter', 'Segoe UI', sans-serif;
+  --font-serif: Georgia, 'Times New Roman', 'Noto Serif', serif;
+  --fs-xs:   0.75rem;
+  --fs-sm:   0.875rem;
+  --fs-base: 1rem;
+  --fs-md:   1.125rem;
+  --fs-lg:   1.25rem;
+  --fs-xl:   1.625rem;
+  --fs-2xl:  2.125rem;
+  --fs-3xl:  2.75rem;
+
+  --lh-tight:  1.25;
+  --lh-base:   1.6;
+  --lh-relaxed:1.8;
+
+  --fw-normal: 400;
+  --fw-medium: 500;
+  --fw-semibold:600;
+  --fw-bold:   700;
+  
+  /* === Border Radius — 角丸 === */
+  --radius-sm:  4px;
+  --radius-md:  8px;
+  --radius-lg:  12px;
+  --radius-xl:  20px;
+  --radius-full:9999px;
+
+  /* === Transitions === */
+  --transition-fast: 200ms ease;
+  --transition-base: 300ms ease;
+  --transition-slow: 500ms ease;
+
+  /* === Layout === */
+  --max-width: 1200px;
+  --content-padding: var(--space-xl);
+}
+
+/* === Reset === */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-size: 16px; -webkit-font-smoothing: antialiased; }
+body {
+  font-family: var(--font-sans);
+  font-size: var(--fs-base);
+  line-height: var(--lh-base);
+  color: var(--ink);
+  background: var(--washi);
+}
+
+/* === Layout === */
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--content-padding);
+}
+
+/* === Header === */
+.site-header {
+  background: rgba(253,252,248,0.92);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+.site-header .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 64px;
+}
+.site-logo {
+  font-family: var(--font-serif);
+  font-size: 1.375rem;
+  font-weight: var(--fw-normal);
+  color: var(--matcha-dark);
+  text-decoration: none;
+  letter-spacing: 0;
+}
+.site-logo:hover { color: var(--matcha); }
+.site-nav { display: flex; gap: var(--space-lg); }
+.site-nav a {
+  color: var(--ink-light);
+  text-decoration: none;
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-normal);
+  transition: color var(--transition-fast);
+  padding-bottom: 2px;
+  border-bottom: 1px solid transparent;
+}
+.site-nav a:hover { color: var(--matcha-dark); border-bottom-color: var(--matcha); }
+
+/* === Footer === */
+.site-footer {
+  background: var(--paper);
+  border-top: 1px solid var(--border);
+  padding: var(--space-2xl) 0;
+  margin-top: var(--space-3xl);
+}
+.site-footer .container { text-align: center; }
+.site-footer nav {
+  display: flex; justify-content: center; gap: var(--space-xl);
+  margin: var(--space-md) 0;
+}
+.site-footer nav a {
+  color: var(--ink-muted); text-decoration: none; font-size: var(--fs-sm);
+  transition: color var(--transition-fast);
+}
+.site-footer nav a:hover { color: var(--matcha); }
+.crisis-line {
+  color: var(--clay-dark);
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-medium);
+  margin-top: var(--space-md);
+}
+
+/* === Hero === */
+.hero {
+  text-align: center;
+  padding: var(--space-3xl) 0 var(--space-2xl);
+}
+.hero h1 {
+  font-family: var(--font-serif);
+  font-size: var(--fs-3xl);
+  font-weight: var(--fw-normal);
+  color: var(--ink);
+  line-height: var(--lh-tight);
+  letter-spacing: -0.5px;
+}
+.hero p {
+  font-size: var(--fs-md);
+  color: var(--ink-light);
+  max-width: 600px;
+  margin: var(--space-lg) auto var(--space-xl);
+  line-height: var(--lh-relaxed);
+}
+
+/* === Buttons === */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 13px 32px;
+  border-radius: var(--radius-full);
+  font-family: var(--font-sans);
+  font-size: var(--fs-base);
+  font-weight: var(--fw-medium);
+  text-decoration: none;
+  cursor: pointer;
+  transition: all var(--transition-base);
+  border: none;
+  line-height: 1;
+  letter-spacing: 0.01em;
+}
+.btn-primary {
+  background: var(--clay);
+  color: #FFF;
+  box-shadow: 0 2px 8px rgba(196,149,106,0.25);
+}
+.btn-primary:hover {
+  background: var(--clay-dark);
+  box-shadow: 0 4px 16px rgba(196,149,106,0.35);
+  transform: translateY(-1px);
+}
+.btn-outline {
+  background: transparent;
+  color: var(--matcha-dark);
+  border: 1.5px solid var(--matcha);
+}
+.btn-outline:hover {
+  background: var(--matcha-bg);
+  border-color: var(--matcha);
+}
+.btn-soft {
+  background: var(--matcha-bg);
+  color: var(--matcha-dark);
+  border: 1.5px solid var(--matcha);
+}
+.btn-soft:hover {
+  background: var(--matcha-bg-hover);
+  border-color: var(--matcha-dark);
+}
+.btn-ghost {
+  background: transparent;
+  color: var(--matcha-dark);
+}
+.btn-ghost:hover { background: var(--matcha-bg); }
+.btn-sm { padding: 8px 20px; font-size: var(--fs-sm); }
+.btn-lg { padding: 18px 40px; font-size: var(--fs-md); }
+
+/* === Cards — 短冊風 === */
+.card {
+  background: var(--paper);
+  border-radius: var(--radius-lg);
+  padding: var(--space-xl);
+  box-shadow: var(--shadow-card);
+  border: 1px solid var(--border);
+  transition: box-shadow var(--transition-base), transform var(--transition-base);
+}
+.card:hover {
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-2px);
+}
+.card h3 {
+  font-family: var(--font-serif);
+  font-weight: var(--fw-normal);
+  font-size: var(--fs-lg);
+  color: var(--ink);
+}
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--space-lg);
+}
+
+/* === Trust Bar === */
+.trust-bar {
+  display: flex;
+  justify-content: center;
+  gap: var(--space-xl);
+  padding: var(--space-lg) 0;
+  color: var(--ink-muted);
+  font-size: var(--fs-sm);
+  flex-wrap: wrap;
+}
+
+/* === Form Elements === */
+.form-group { margin-bottom: var(--space-lg); }
+.form-label {
+  display: block;
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-medium);
+  color: var(--ink-light);
+  margin-bottom: var(--space-xs);
+}
+.form-input, select.form-input {
+  width: 100%;
+  padding: 14px 16px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  font-family: var(--font-sans);
+  font-size: var(--fs-base);
+  background: var(--paper);
+  color: var(--ink);
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+.form-input:focus {
+  outline: none;
+  border-color: var(--matcha);
+  box-shadow: var(--shadow-glow);
+}
+
+/* === Assessment Scale === */
+.scale-options {
+  display: flex;
+  gap: var(--space-sm);
+  flex-wrap: wrap;
+}
+.scale-btn {
+  flex: 1;
+  min-width: 60px;
+  padding: 10px 14px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  background: var(--paper);
+  font-family: var(--font-sans);
+  font-size: var(--fs-xs);
+  color: var(--ink-light);
+  text-align: center;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+.scale-btn:hover { border-color: var(--matcha); background: var(--matcha-bg); color: var(--ink); }
+.scale-btn.selected { background: var(--matcha); color: #FFF; border-color: var(--matcha); }
+
+/* === Progress Bar === */
+.progress-bar {
+  height: 6px;
+  background: var(--border);
+  border-radius: var(--radius-full);
+  overflow: hidden;
+}
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--matcha), var(--clay));
+  border-radius: var(--radius-full);
+  transition: width var(--transition-slow);
+}
+
+/* === Score Bar === */
+.score-row { margin-bottom: var(--space-md); }
+.score-label {
+  display: flex;
+  justify-content: space-between;
+  font-size: var(--fs-sm);
+  color: var(--ink-light);
+  margin-bottom: 4px;
+}
+.score-bar {
+  height: 10px;
+  background: var(--matcha-bg);
+  border-radius: var(--radius-full);
+  overflow: hidden;
+}
+.score-fill {
+  height: 100%;
+  border-radius: var(--radius-full);
+  transition: width var(--transition-slow);
+}
+.score-fill.high      { background: var(--clay); }
+.score-fill.moderate  { background: var(--clay-light); }
+.score-fill.low       { background: var(--matcha); }
+
+/* === Breathing Circle — 呼吸の円 === */
+.breathe-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: var(--space-2xl) 0;
+}
+.breathe-circle {
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  background: var(--matcha-bg);
+  border: 2px solid var(--matcha);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 1.2s cubic-bezier(0.4, 0, 0.2, 1),
+              background 1.2s ease;
+}
+.breathe-circle.inhale  { transform: scale(1.25); background: rgba(107,139,108,0.15); }
+.breathe-circle.hold    { transform: scale(1.0); }
+.breathe-circle.exhale  { transform: scale(0.7); background: rgba(107,139,108,0.04); }
+.breathe-instruction {
+  font-family: var(--font-serif);
+  font-size: var(--fs-xl);
+  font-weight: var(--fw-normal);
+  color: var(--matcha-dark);
+  margin: var(--space-lg) 0 var(--space-sm);
+}
+.breathe-stats {
+  font-size: var(--fs-sm);
+  color: var(--ink-muted);
+  display: flex;
+  gap: var(--space-xl);
+}
+.breathe-controls { display: flex; gap: var(--space-sm); margin-top: var(--space-lg); }
+
+/* === Pattern Selector === */
+.pattern-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: var(--space-md);
+  margin: var(--space-lg) 0;
+}
+.pattern-btn {
+  padding: var(--space-lg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  background: var(--paper);
+  cursor: pointer;
+  transition: all var(--transition-base);
+  text-align: left;
+}
+.pattern-btn:hover { border-color: var(--matcha); box-shadow: var(--shadow-md); }
+.pattern-btn.active { border-color: var(--matcha); background: var(--matcha-bg); }
+.pattern-btn strong {
+  display: block;
+  font-family: var(--font-serif);
+  font-weight: var(--fw-normal);
+  font-size: var(--fs-base);
+  color: var(--ink);
+  margin-bottom: 4px;
+}
+.pattern-btn span {
+  font-size: var(--fs-xs);
+  color: var(--ink-muted);
+  display: block;
+  line-height: var(--lh-base);
+}
+
+/* === FAQ Accordion === */
+.faq-item { border-bottom: 1px solid var(--border); }
+.faq-question {
+  width: 100%;
+  text-align: left;
+  padding: var(--space-md) 0;
+  background: none;
+  border: none;
+  font-family: var(--font-serif);
+  font-size: var(--fs-base);
+  font-weight: var(--fw-normal);
+  color: var(--ink);
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: color var(--transition-fast);
+}
+.faq-question:hover { color: var(--matcha-dark); }
+.faq-answer {
+  padding-bottom: var(--space-md);
+  color: var(--ink-light);
+  line-height: var(--lh-relaxed);
+  display: none;
+}
+.faq-answer.open { display: block; }
+
+/* === Disclaimer === */
+.disclaimer-box {
+  background: var(--clay-bg);
+  border: 1px solid rgba(196,149,106,0.25);
+  border-radius: var(--radius-md);
+  padding: var(--space-md);
+  margin-bottom: var(--space-lg);
+  font-size: var(--fs-sm);
+  color: var(--ink-light);
+}
+.disclaimer-box strong { color: var(--clay-dark); }
+
+/* === Plan Output Card === */
+.plan-card {
+  background: var(--paper);
+  border: 1.5px solid var(--matcha-light);
+  border-radius: var(--radius-lg);
+  padding: var(--space-xl);
+  margin-top: var(--space-xl);
+  box-shadow: var(--shadow-md);
+}
+
+/* === Responsive === */
+@media (max-width: 768px) {
+  :root { --content-padding: var(--space-md); }
+  .hero h1 { font-size: var(--fs-2xl); }
+  .card-grid { grid-template-columns: 1fr; }
+  .pattern-grid { grid-template-columns: 1fr 1fr; }
+  .site-nav { gap: var(--space-md); }
+  .breathe-circle { width: 160px; height: 160px; }
+}
+@media (max-width: 480px) {
+  .pattern-grid { grid-template-columns: 1fr; }
+  .scale-options { flex-direction: column; }
+  .trust-bar { flex-direction: column; align-items: center; gap: var(--space-sm); }
+}

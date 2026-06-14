@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CalmTool — 茶室 Design Preview</title>
+<link rel="stylesheet" href="design-system.css">
+<style>
+  .preview-section {
+    margin: var(--space-2xl) 0;
+    padding: var(--space-xl);
+    background: var(--paper);
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--border);
+  }
+  .preview-section h2 {
+    font-family: var(--font-serif);
+    font-size: var(--fs-lg);
+    font-weight: var(--fw-normal);
+    color: var(--ink-light);
+    margin-bottom: var(--space-lg);
+    padding-bottom: var(--space-sm);
+    border-bottom: 1px solid var(--border);
+  }
+  .color-swatch {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-sm);
+    margin: 0 var(--space-md) var(--space-sm) 0;
+  }
+  .color-chip {
+    width: 56px; height: 56px;
+    border-radius: var(--radius-sm);
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow-sm);
+  }
+  .demo-row {
+    display: flex; gap: var(--space-md); flex-wrap: wrap; margin-bottom: var(--space-md);
+  }
+  .label-sm {
+    font-family: var(--font-sans);
+    font-size: var(--fs-xs);
+    color: var(--ink-muted);
+    margin-top: 4px;
+    text-align: center;
+  }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container">
+    <a href="/" class="site-logo">CalmTool</a>
+    <nav class="site-nav">
+      <a href="/breathe/">Breathe</a>
+      <a href="/burnout-test/">Burnout Test</a>
+      <a href="/digital-detox/">Digital Detox</a>
+    </nav>
+  </div>
+</header>
+
+<main class="container">
+
+  <!-- Hero -->
+  <section class="hero">
+    <h1>Feel better in minutes.<br>No app. No sign-up. No cost.</h1>
+    <p>Three simple, science-backed tools to help you breathe easier, check your stress, and reset your screen habits — right in your browser.</p>
+    <a href="/breathe/" class="btn btn-primary btn-lg">Start Breathing Exercise →</a>
+    <div class="trust-bar" style="margin-top: var(--space-lg);">
+      <span>Free</span><span>·</span><span>No sign-up</span><span>·</span><span>Works on mobile</span>
+    </div>
+  </section>
+
+  <!-- Colors -->
+  <section class="preview-section">
+    <h2>🎨 Tea-house Palette 茶室色</h2>
+    <div>
+      <span class="color-swatch">
+        <span class="color-chip" style="background:var(--matcha)"></span>
+        <span class="label-sm">Matcha 抹茶<br>#6B8B6C</span>
+      </span>
+      <span class="color-swatch">
+        <span class="color-chip" style="background:var(--matcha-dark)"></span>
+        <span class="label-sm">Dark Matcha<br>#4A6B4B</span>
+      </span>
+      <span class="color-swatch">
+        <span class="color-chip" style="background:var(--clay)"></span>
+        <span class="label-sm">Clay 陶土<br>#C4956A</span>
+      </span>
+      <span class="color-swatch">
+        <span class="color-chip" style="background:var(--clay-dark)"></span>
+        <span class="label-sm">Dark Clay<br>#A0754A</span>
+      </span>
+      <span class="color-swatch">
+        <span class="color-chip" style="background:var(--wood)"></span>
+        <span class="label-sm">Wood 木<br>#8B7355</span>
+      </span>
+      <span class="color-swatch">
+        <span class="color-chip" style="background:var(--washi);border:1px solid #ddd"></span>
+        <span class="label-sm">Washi 和紙<br>#F9F6F0</span>
+      </span>
+      <span class="color-swatch">
+        <span class="color-chip" style="background:var(--paper);border:1px solid #ddd"></span>
+        <span class="label-sm">Paper 紙<br>#FDFCF8</span>
+      </span>
+      <span class="color-swatch">
+        <span class="color-chip" style="background:var(--ink)"></span>
+        <span class="label-sm">Ink 墨<br>#2C2416</span>
+      </span>
+    </div>
+  </section>
+
+  <!-- Tool Cards -->
+  <section class="preview-section">
+    <h2>🃏 Tool Cards 短冊</h2>
+    <div class="card-grid">
+      <div class="card">
+        <h3>🫁 Breathing Exercises</h3>
+        <p style="color:var(--ink-light);margin:12px 0 20px">4 guided techniques — 4-7-8, Box Breathing, and more. Animated guide follows along.</p>
+        <a href="/breathe/" class="btn btn-soft btn-sm">Try Breathing Tool →</a>
+      </div>
+      <div class="card">
+        <h3>📋 Burnout Self-Check</h3>
+        <p style="color:var(--ink-light);margin:12px 0 20px">15 questions · 3 minutes · Instant results. Science-based assessment.</p>
+        <a href="/burnout-test/" class="btn btn-soft btn-sm">Take the Assessment →</a>
+      </div>
+      <div class="card">
+        <h3>📵 Digital Detox Planner</h3>
+        <p style="color:var(--ink-light);margin:12px 0 20px">Build a personalized screen-time reset plan in 2 minutes.</p>
+        <a href="/digital-detox/" class="btn btn-soft btn-sm">Create Your Plan →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Buttons -->
+  <section class="preview-section">
+    <h2>🔘 Buttons</h2>
+    <div class="demo-row">
+      <button class="btn btn-primary">Primary CTA — Clay 陶土</button>
+      <button class="btn btn-soft">Soft — Card CTA</button>
+      <button class="btn btn-outline">Outline — Matcha 抹茶</button>
+      <button class="btn btn-ghost">Ghost</button>
+    </div>
+    <div class="demo-row" style="margin-top:16px">
+      <button class="btn btn-primary btn-lg">Large CTA</button>
+      <button class="btn btn-primary btn-sm">Small CTA</button>
+    </div>
+  </section>
+
+  <!-- Typography -->
+  <section class="preview-section">
+    <h2>🔤 Typography 書体</h2>
+    <p style="font-family:var(--font-serif);font-size:var(--fs-3xl);margin-bottom:8px">Serif Heading · Georgia</p>
+    <p style="font-family:var(--font-sans);font-size:var(--fs-base);margin-bottom:8px">Sans Body · System UI</p>
+    <p style="font-family:var(--font-serif);font-size:var(--fs-xl);margin-bottom:4px">あいうえお · 茶の湯</p>
+    <p style="font-size:var(--fs-sm);color:var(--ink-muted)">Subtle muted text · 薄墨</p>
+  </section>
+
+  <!-- Breathing Circle -->
+  <section class="preview-section">
+    <h2>🫁 Breathing Circle 呼吸の円</h2>
+    <div class="breathe-container">
+      <div class="breathe-circle inhale">
+        <span style="font-size:var(--fs-sm);color:var(--matcha-dark)">Inhale</span>
+      </div>
+      <p class="breathe-instruction">Inhale slowly...</p>
+      <div class="breathe-stats"><span>Rounds: 3</span><span>Duration: 1:45</span></div>
+      <div class="breathe-controls">
+        <button class="btn btn-primary">Start</button>
+        <button class="btn btn-soft">Pause</button>
+        <button class="btn btn-ghost">Reset</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pattern Selector -->
+  <section class="preview-section">
+    <h2>📐 Pattern Selector</h2>
+    <div class="pattern-grid">
+      <div class="pattern-btn active">
+        <strong>4-7-8 Relaxation</strong>
+        <span>Inhale 4s · Hold 7s · Exhale 8s</span>
+        <span>Best for: falling asleep, acute anxiety</span>
+      </div>
+      <div class="pattern-btn">
+        <strong>Box Breathing</strong>
+        <span>Inhale 4s · Hold 4s · Exhale 4s · Hold 4s</span>
+        <span>Best for: focus reset, pre-meeting calm</span>
+      </div>
+      <div class="pattern-btn">
+        <strong>Simple Calm</strong>
+        <span>Inhale 4s · Hold 2s · Exhale 6s</span>
+        <span>Best for: quick stress relief</span>
+      </div>
+      <div class="pattern-btn">
+        <strong>Custom</strong>
+        <span>Set your own inhale, hold, and exhale times</span>
+        <span>Best for: experienced practitioners</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Assessment Elements -->
+  <section class="preview-section">
+    <h2>📊 Assessment Elements</h2>
+    <div style="margin-bottom:24px">
+      <p style="font-size:var(--fs-sm);color:var(--ink-light);margin-bottom:8px">Assessment Progress: 9 / 15</p>
+      <div class="progress-bar"><div class="progress-fill" style="width:60%"></div></div>
+    </div>
+    <div style="max-width:500px;margin-bottom:16px">
+      <p style="font-size:var(--fs-sm);color:var(--ink-light);margin-bottom:8px">How often do you feel emotionally drained?</p>
+      <div class="scale-options">
+        <button class="scale-btn">Never</button>
+        <button class="scale-btn">Rarely</button>
+        <button class="scale-btn selected">Sometimes</button>
+        <button class="scale-btn">Often</button>
+        <button class="scale-btn">Every day</button>
+      </div>
+    </div>
+    <div class="score-row">
+      <div class="score-label"><span>Emotional Exhaustion</span><span>18 / 25 — High</span></div>
+      <div class="score-bar"><div class="score-fill high" style="width:72%"></div></div>
+    </div>
+    <div class="score-row">
+      <div class="score-label"><span>Disconnection</span><span>14 / 25 — Moderate</span></div>
+      <div class="score-bar"><div class="score-fill moderate" style="width:56%"></div></div>
+    </div>
+    <div class="score-row">
+      <div class="score-label"><span>Accomplishment</span><span>12 / 25 — Low</span></div>
+      <div class="score-bar"><div class="score-fill low" style="width:48%"></div></div>
+    </div>
+  </section>
+
+  <!-- Disclaimer + FAQ -->
+  <section class="preview-section">
+    <h2>⚠️ Disclaimer & ❓ FAQ</h2>
+    <div class="disclaimer-box">
+      <strong>Important:</strong> This assessment is for informational purposes only. It is <em>not</em> a clinical diagnosis. If you are in crisis (US), call or text <strong>988</strong>.
+    </div>
+    <div class="faq-item">
+      <button class="faq-question">What is 4-7-8 breathing? <span>+</span></button>
+      <div class="faq-answer open">4-7-8 breathing, developed by Dr. Andrew Weil, extends your exhale to activate the parasympathetic nervous system — the body's natural relaxation response.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-question">How does box breathing work? <span>+</span></button>
+      <div class="faq-answer">Box breathing uses equal counts for each phase (inhale, hold, exhale, hold), creating a steady rhythm used by Navy SEALs and first responders to stay calm under pressure.</div>
+    </div>
+  </section>
+
+  <!-- Plan Card -->
+  <section class="preview-section">
+    <h2>📋 Plan Output Card</h2>
+    <div class="plan-card">
+      <h3 style="font-family:var(--font-serif);font-weight:var(--fw-normal);margin-bottom:16px">Your Digital Detox Plan</h3>
+      <p style="color:var(--ink-light);margin-bottom:8px"><strong>Style:</strong> Evening Wind-Down</p>
+      <p style="color:var(--ink-light);margin-bottom:20px"><strong>Window:</strong> 9:00 PM – 10:30 PM</p>
+      <h4 style="font-family:var(--font-serif);font-weight:var(--fw-normal);color:var(--ink);margin-bottom:8px">Daily routine:</h4>
+      <ul style="color:var(--ink-light);margin-left:20px;margin-bottom:20px;line-height:var(--lh-relaxed)">
+        <li>9:00 PM — Phone on Do Not Disturb</li>
+        <li>9:05 PM — 10 minutes of stretching</li>
+        <li>9:15 PM — Read one chapter</li>
+        <li>10:00 PM — Lights low, prepare for sleep</li>
+      </ul>
+      <button class="btn btn-primary">📸 Save or screenshot this plan</button>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <p style="font-family:var(--font-serif);color:var(--ink-light);">CalmTool — Free wellness tools for everyday calm.</p>
+    <nav>
+      <a href="/privacy/">Privacy</a>
+      <a href="/terms/">Terms</a>
+      <a href="/about/">About</a>
+    </nav>
+    <p class="crisis-line">If you're in crisis (US): call or text <strong>988</strong></p>
+  </div>
+</footer>
+
+</body>
+</html>

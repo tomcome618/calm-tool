@@ -355,10 +355,8 @@
             <li>If you slip up, just start again tomorrow</li>
           </ul>
         </div>
-        <div style="display:flex;flex-direction:column;gap:10px;align-items:flex-start">
-          <button class="btn btn-primary" onclick="window.print()">📸 Save or screenshot this plan</button>
-          <button class="btn btn-soft btn-sm" onclick="location.reload()">🔄 Start over</button>
-        </div>
+        <button class="btn btn-primary" onclick="window.print()" style="margin-bottom:14px;display:block">📸 Save or screenshot this plan</button>
+        <button class="btn btn-soft btn-sm" onclick="location.reload()">🔄 Start over</button>
       </div>`;
   }
 

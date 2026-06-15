@@ -16,7 +16,7 @@
 <p style="color:var(--ink-light);line-height:var(--lh-relaxed);margin-bottom:16px"><strong>We don't collect anything.</strong> CalmTool is a client-side tool that runs entirely in your browser.</p>
 <ul style="color:var(--ink-light);margin-left:20px;line-height:var(--lh-relaxed);margin-bottom:24px"><li>No accounts. No sign-up. No email collection.</li><li>No cookies. No tracking. No analytics (in MVP).</li><li>Your breathing settings, assessment answers, and detox plans are stored only in your browser's local storage. We never see them, never receive them, never store them.</li></ul>
 <h2 style="font-family:var(--font-serif);font-weight:var(--fw-normal);margin-bottom:12px">Third-Party Services</h2>
-<p style="color:var(--ink-light);line-height:var(--lh-relaxed);margin-bottom:24px">We do not use any third-party services that collect your data.</p>
+<p style="color:var(--ink-light);line-height:var(--lh-relaxed);margin-bottom:24px">We use privacy-respecting analytics (Plausible) to understand site usage without tracking individuals. We also use Google Analytics, Microsoft Clarity, and Ahrefs for site performance and SEO insights. These services may set cookies and collect anonymized usage data. You can opt out via your browser settings.</p>
 <h2 style="font-family:var(--font-serif);font-weight:var(--fw-normal);margin-bottom:12px">Children</h2>
 <p style="color:var(--ink-light);line-height:var(--lh-relaxed);margin-bottom:24px">CalmTool is not directed at children under 13. We do not knowingly collect information from children.</p>
 <h2 style="font-family:var(--font-serif);font-weight:var(--fw-normal);margin-bottom:12px">Changes</h2>
@@ -25,4 +25,30 @@
 <p style="color:var(--ink-light);line-height:var(--lh-relaxed)">Questions? Reach out at <a href="mailto:privacy@calmtool.io" style="color:var(--matcha-dark)">privacy@calmtool.io</a>.</p>
 </main>
 <footer class="site-footer"><div class="container"><p style="font-family:var(--font-serif);color:var(--ink-light);">CalmTool — Free wellness tools for everyday calm.</p><nav><a href="/privacy/">Privacy</a><a href="/terms/">Terms</a><a href="/about/">About</a></nav><p class="crisis-line">If you're in crisis (US): call or text <strong>988</strong></p></div></footer>
+
+<!-- Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-FZ1YQ9W9S3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag("js", new Date());
+  gtag("config", "G-FZ1YQ9W9S3");
+</script>
+
+<script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "x7fp5a4niz");
+</script>
+
+<script src="https://analytics.ahrefs.com/analytics.js" data-key="3DozwKgee5zQMCsEl99K4w" async></script>
+
+<script async src="https://plausible.shipsolo.io/js/pa-fKgXCF0plWSQJP3jm_Mc6.js"></script>
+<script>
+  window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+  plausible.init()
+</script>
+
 </body></html>

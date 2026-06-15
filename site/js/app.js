@@ -356,8 +356,10 @@
           </ul>
         </div>
         <div style="height:16px"></div>
-        <button class="btn btn-primary" onclick="window.print()">📸 Save / Screenshot</button>
-        <button class="btn btn-soft btn-sm" onclick="location.reload()" style="display:block;margin-top:14px">🔄 Start over</button>
+        <div style="display:flex;flex-direction:column;align-items:center;gap:14px">
+          <button class="btn btn-primary" onclick="window.print()">📸 Save / Screenshot</button>
+          <button class="btn btn-soft btn-sm" onclick="location.reload()">🔄 Start over</button>
+        </div>
       </div>`;
   }
 

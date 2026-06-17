@@ -1,103 +1,318 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Free Wellness Tools — Breathing Exercises, Burnout Test &amp; Digital Detox</title>
-<meta name="description" content="Free online wellness tools: guided breathing exercises, burnout self-assessment, and digital detox planner. No app, no sign-up, no cost. Start in seconds.">
-<link rel="stylesheet" href="/css/design-system.css">
-<link rel="canonical" href="https://calmtool.io/">
-<script type="application/ld+json">{"@type":"WebApplication","name":"CalmTool","description":"Free online wellness tools — breathing exercises, burnout assessment, and digital detox planner.","applicationCategory":"HealthApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0"}}</script>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>CalmTool | Digital Wellness Sanctuary</title>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;0,8..60,600;1,8..60,400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+                  "tertiary-fixed": "#e5e2dc",
+                  "surface-dim": "#dbd9d9",
+                  "surface-container": "#efeded",
+                  "on-primary": "#ffffff",
+                  "surface-variant": "#e4e2e2",
+                  "primary-fixed": "#c9ecc7",
+                  "inverse-surface": "#303030",
+                  "on-tertiary": "#ffffff",
+                  "on-tertiary-container": "#fcffe0",
+                  "tertiary": "#5d5c58",
+                  "background": "#fbf9f8",
+                  "on-surface-variant": "#424841",
+                  "on-secondary": "#ffffff",
+                  "on-primary-fixed-variant": "#304d33",
+                  "primary": "#456347",
+                  "surface-container-highest": "#e4e2e2",
+                  "secondary-fixed": "#ffdcbf",
+                  "error-container": "#ffdad6",
+                  "surface": "#fbf9f8",
+                  "on-secondary-fixed-variant": "#623f1b",
+                  "error": "#ba1a1a",
+                  "on-tertiary-fixed": "#1c1c18",
+                  "surface-bright": "#fbf9f8",
+                  "on-primary-container": "#f7fff2",
+                  "on-primary-fixed": "#04210b",
+                  "surface-container-lowest": "#ffffff",
+                  "secondary-fixed-dim": "#f0bd8f",
+                  "primary-fixed-dim": "#adcfad",
+                  "surface-tint": "#476649",
+                  "tertiary-container": "#767470",
+                  "secondary-container": "#ffca9b",
+                  "secondary": "#7d5630",
+                  "surface-container-high": "#eae8e7",
+                  "inverse-primary": "#adcfad",
+                  "primary-container": "#5d7c5e",
+                  "inverse-on-surface": "#f2f0f0",
+                  "on-tertiary-fixed-variant": "#474743",
+                  "outline": "#737971",
+                  "surface-container-low": "#f5f3f3",
+                  "on-surface": "#1b1c1c",
+                  "on-error-container": "#93000a",
+                  "outline-variant": "#c2c8bf",
+                  "on-secondary-fixed": "#2d1600",
+                  "on-secondary-container": "#7a532e",
+                  "tertiary-fixed-dim": "#c9c6c1",
+                  "on-background": "#1b1c1c",
+                  "on-error": "#ffffff"
+          },
+          "borderRadius": {
+                  "DEFAULT": "1rem",
+                  "lg": "2rem",
+                  "xl": "3rem",
+                  "full": "9999px"
+          },
+          "spacing": {
+                  "margin-desktop": "120px",
+                  "sm": "12px",
+                  "lg": "48px",
+                  "gutter": "24px",
+                  "margin-mobile": "20px",
+                  "xs": "4px",
+                  "xl": "80px",
+                  "base": "8px",
+                  "md": "24px"
+          },
+          "fontFamily": {
+                  "display-lg-mobile": ["\"Source Serif 4\""],
+                  "label-md": ["Inter"],
+                  "display-lg": ["\"Source Serif 4\""],
+                  "caption": ["Inter"],
+                  "body-lg": ["Inter"],
+                  "body-md": ["Inter"],
+                  "headline-md": ["\"Source Serif 4\""],
+                  "headline-sm": ["\"Source Serif 4\""]
+          },
+          "fontSize": {
+                  "display-lg-mobile": ["36px", {"lineHeight": "44px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                  "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                  "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                  "caption": ["12px", {"lineHeight": "16px", "fontWeight": "400"}],
+                  "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                  "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                  "headline-md": ["32px", {"lineHeight": "40px", "fontWeight": "500"}],
+                  "headline-sm": ["24px", {"lineHeight": "32px", "fontWeight": "500"}]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      vertical-align: middle;
+    }
+    
+    .zen-shadow {
+      box-shadow: 0 20px 40px -10px rgba(69, 99, 71, 0.08);
+    }
+
+    .breath-animation {
+      animation: breath 8s ease-in-out infinite;
+    }
+
+    @keyframes breath {
+      0%, 100% { transform: scale(1); opacity: 0.3; filter: blur(40px); }
+      50% { transform: scale(1.15); opacity: 0.5; filter: blur(60px); }
+    }
+
+    .clay-amber-btn {
+      background-color: #C4956A;
+      color: white;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .clay-amber-btn:hover {
+      background-color: #A67C55;
+      transform: translateY(-2px);
+      box-shadow: 0 10px 20px -5px rgba(196, 149, 106, 0.3);
+    }
+
+    body {
+      background-color: #fbf9f8; /* Washi White equivalent */
+    }
+  </style>
 </head>
-<body>
-
-<header class="site-header">
-  <div class="container">
-    <a href="/" class="site-logo">CalmTool</a>
-    <nav class="site-nav">
-      <a href="/breathe/">Breathe</a>
-      <a href="/burnout-test/">Burnout Test</a>
-      <a href="/digital-detox/">Digital Detox</a>
-    </nav>
-  </div>
+<body class="font-body-md text-on-background selection:bg-primary-fixed-dim">
+<!-- TopNavBar Implementation from JSON -->
+<header class="sticky top-0 w-full z-50 bg-background/80 backdrop-blur-md">
+<div class="flex justify-between items-center px-margin-desktop py-md max-w-[1440px] mx-auto">
+<div class="font-headline-sm text-headline-sm text-primary tracking-tight">CalmTool</div>
+<nav class="hidden md:flex items-center gap-lg">
+<a class="font-body-md text-body-md text-primary font-bold border-b-2 border-primary pb-1 transition-all ease-in-out" href="#">Breathe</a>
+<a class="font-body-md text-body-md text-tertiary hover:text-primary transition-colors duration-300" href="#">Burnout Test</a>
+<a class="font-body-md text-body-md text-tertiary hover:text-primary transition-colors duration-300" href="#">Digital Detox</a>
+</nav>
+<button class="bg-primary text-on-primary px-md py-xs rounded-full font-label-md text-label-md hover:bg-primary-container/10 transition-colors duration-300">
+        Get Started
+      </button>
+</div>
 </header>
-
-<main class="container">
-
-  <section class="hero">
-    <h1>Feel better in minutes.<br>No app. No sign-up. No cost.</h1>
-    <p>Three simple, science-backed tools to help you breathe easier, check your stress, and reset your screen habits — right in your browser.</p>
-    <a href="/breathe/" class="btn btn-primary btn-lg">Start Breathing Exercise →</a>
-    <div class="trust-bar" style="margin-top: var(--space-lg);">
-      <span>Free</span><span>·</span><span>No sign-up</span><span>·</span><span>Works on mobile</span>
-    </div>
-  </section>
-
-  <section style="margin: var(--space-3xl) 0;">
-<h2 style="font-family:var(--font-serif);font-weight:var(--fw-normal);font-size:var(--fs-xl);text-align:center;margin-bottom:var(--space-lg)">Our Tools</h2>
-    <div class="card-grid">
-      <div class="card">
-        <h3>🫁 Breathing Exercises</h3>
-        <p style="color:var(--ink-light);margin:12px 0 20px">4 guided techniques — 4-7-8, Box Breathing, and more. Animated guide follows along. No timer to set, just follow the circle.</p>
-        <a href="/breathe/" class="btn btn-soft btn-sm">Try Breathing Tool →</a>
-      </div>
-      <div class="card">
-        <h3>📋 Burnout Self-Check</h3>
-        <p style="color:var(--ink-light);margin:12px 0 20px">15 questions · 3 minutes · Instant results. Science-based assessment to understand where your stress level really is.</p>
-        <a href="/burnout-test/" class="btn btn-soft btn-sm">Take the Assessment →</a>
-      </div>
-      <div class="card">
-        <h3>📵 Digital Detox Planner</h3>
-        <p style="color:var(--ink-light);margin:12px 0 20px">Build a personalized screen-time reset plan in 2 minutes. Pick your detox style, choose offline activities, get your plan.</p>
-        <a href="/digital-detox/" class="btn btn-soft btn-sm">Create Your Plan →</a>
-      </div>
-    </div>
-  </section>
-
-  <div class="trust-bar">
-    <span>100% free</span><span>·</span><span>No account needed</span><span>·</span><span>Works on mobile</span><span>·</span><span>Private by design</span>
-  </div>
-
+<main>
+<!-- Hero Section -->
+<section class="relative overflow-hidden pt-xl pb-xl">
+<!-- Background Ambient Pulse -->
+<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-primary-fixed-dim breath-animation -z-10"></div>
+<div class="max-w-[1200px] mx-auto px-margin-mobile md:px-margin-desktop text-center flex flex-col items-center">
+<h1 class="font-display-lg text-display-lg text-on-background mb-md max-w-3xl leading-tight">
+          Feel better in minutes. <br/>
+<span class="text-primary italic font-light italic">No app. No sign-up. No cost.</span>
+</h1>
+<p class="font-body-lg text-body-lg text-tertiary max-w-2xl mb-lg">
+          Three evidence-based wellness tools available right in your browser—private, free, and immediate. Designed for your mental clarity.
+        </p>
+<button class="clay-amber-btn px-xl py-md rounded-full font-label-md text-label-md uppercase tracking-widest">
+          Start Breathing Exercise
+        </button>
+<!-- Trust Bar -->
+<div class="mt-xl flex flex-wrap justify-center gap-xl opacity-60">
+<div class="flex items-center gap-xs">
+<span class="material-symbols-outlined text-primary" data-icon="lock_open">lock_open</span>
+<span class="font-label-md text-label-md">Free</span>
+</div>
+<div class="flex items-center gap-xs">
+<span class="material-symbols-outlined text-primary" data-icon="person_off">person_off</span>
+<span class="font-label-md text-label-md">No-account</span>
+</div>
+<div class="flex items-center gap-xs">
+<span class="material-symbols-outlined text-primary" data-icon="smartphone">smartphone</span>
+<span class="font-label-md text-label-md">Mobile-friendly</span>
+</div>
+<div class="flex items-center gap-xs">
+<span class="material-symbols-outlined text-primary" data-icon="visibility_off">visibility_off</span>
+<span class="font-label-md text-label-md">Private</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Tool Cards Section -->
+<section class="py-xl bg-surface-container-lowest">
+<div class="max-w-[1200px] mx-auto px-margin-mobile md:px-margin-desktop">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-md">
+<!-- Card 1: Breathing -->
+<div class="group bg-white rounded-lg p-lg zen-shadow flex flex-col justify-between items-start transition-all hover:-translate-y-2">
+<div>
+<div class="w-12 h-12 rounded-full bg-primary-fixed-dim flex items-center justify-center mb-md">
+<span class="material-symbols-outlined text-primary" data-icon="air">air</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-background mb-sm">Breathing Exercises</h3>
+<p class="font-body-md text-body-md text-tertiary mb-lg">
+                Find your rhythm with 4 guided patterns designed to lower cortisol and center your mind.
+              </p>
+</div>
+<button class="w-full py-sm rounded-full bg-primary text-on-primary font-label-md text-label-md hover:opacity-90 transition-all flex items-center justify-center gap-xs">
+              Exhale <span class="material-symbols-outlined text-[18px]" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+<!-- Card 2: Burnout -->
+<div class="group bg-white rounded-lg p-lg zen-shadow flex flex-col justify-between items-start transition-all hover:-translate-y-2">
+<div>
+<div class="w-12 h-12 rounded-full bg-secondary-fixed-dim flex items-center justify-center mb-md">
+<span class="material-symbols-outlined text-secondary" data-icon="query_stats">query_stats</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-background mb-sm">Burnout Self-Check</h3>
+<p class="font-body-md text-body-md text-tertiary mb-lg">
+                15 questions. 3 minutes. Total clarity on your mental state with actionable insights.
+              </p>
+</div>
+<button class="w-full py-sm rounded-full bg-primary text-on-primary font-label-md text-label-md hover:opacity-90 transition-all flex items-center justify-center gap-xs">
+              Check in <span class="material-symbols-outlined text-[18px]" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+<!-- Card 3: Digital Detox -->
+<div class="group bg-white rounded-lg p-lg zen-shadow flex flex-col justify-between items-start transition-all hover:-translate-y-2">
+<div>
+<div class="w-12 h-12 rounded-full bg-tertiary-fixed-dim flex items-center justify-center mb-md">
+<span class="material-symbols-outlined text-tertiary" data-icon="phonelink_erase">phonelink_erase</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-background mb-sm">Digital Detox Planner</h3>
+<p class="font-body-md text-body-md text-tertiary mb-lg">
+                Create your 2-minute plan to disconnect and reclaim your attention from the noise.
+              </p>
+</div>
+<button class="w-full py-sm rounded-full bg-primary text-on-primary font-label-md text-label-md hover:opacity-90 transition-all flex items-center justify-center gap-xs">
+              Plan now <span class="material-symbols-outlined text-[18px]" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Contextual Aesthetic Divider -->
+<section class="max-w-[1200px] mx-auto px-margin-mobile md:px-margin-desktop py-xl">
+<div class="h-[400px] w-full rounded-lg relative overflow-hidden group">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" data-alt="A serene, minimalist tea-house interior featuring a low wooden table with a single ceramic cup of matcha tea. Soft, diffused morning light filters through paper shoji screens, casting gentle shadows across the tatami mat floor. The atmosphere is quiet, grounding, and emphasizes Wabi-Sabi aesthetic with organic textures and a muted green and warm wood color palette." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBDfggSp3fnA_zqatjSv4EbSojb8OZbC4XrXzRzr-OhRPRKcPryBEd4fFOFrUwGNkh1ve164anMGO0twj6BnZOYZMr-n6ysL64Cfe7eS5QMMHc3hssD5WKohMwX42tJtEP8kOFhTq0Of4PD2p5uJCKkWnICEdgIHX-xgjV46ISDIF36aHLgbi-3Bf34TCren1Lkp2StpQuUNxYwk52nOXXue1oHdvnKuEuzrqaAyjaaxb1tDJXNrfcqddaC_1TiB0_OU3KAXk3wMbzv')">
+</div>
+<div class="absolute inset-0 bg-primary/20 backdrop-blur-[2px]"></div>
+<div class="absolute inset-0 flex items-center justify-center text-center px-lg">
+<div class="bg-background/90 p-lg rounded-lg max-w-xl zen-shadow">
+<h2 class="font-headline-md text-headline-md text-primary mb-sm">Slow living, simplified.</h2>
+<p class="font-body-md text-body-md text-tertiary">Our philosophy is simple: technology should serve your serenity, not deplete it. No notifications, no tracking, just tools.</p>
+</div>
+</div>
+</div>
+</section>
 </main>
-
-<footer class="site-footer">
-  <div class="container">
-    <p style="font-family:var(--font-serif);color:var(--ink-light);">CalmTool — Free wellness tools for everyday calm.</p>
-    <nav>
-      <a href="/privacy/">Privacy</a>
-      <a href="/terms/">Terms</a>
-      <a href="/about/">About</a>
-    </nav>
-    <p style="color:var(--ink-muted);font-size:var(--fs-sm)"><a href="mailto:support@calmtool.io" style="color:var(--ink-muted);text-decoration:underline">support@calmtool.io</a></p>
-<p class="crisis-line">If you're in crisis (US): call or text <strong>988</strong></p>
-  </div>
+<!-- Footer Implementation from JSON -->
+<footer class="bg-surface-container dark:bg-surface-dim mt-xl">
+<div class="flex flex-col md:flex-row justify-between items-center px-margin-desktop py-lg gap-md max-w-[1440px] mx-auto">
+<div class="flex flex-col items-center md:items-start">
+<div class="font-headline-sm text-headline-sm text-primary dark:text-primary-fixed-dim">CalmTool</div>
+<p class="font-caption text-caption text-tertiary mt-xs">© 2024 CalmTool. In crisis? Call or text 988.</p>
+</div>
+<div class="flex gap-lg">
+<a class="font-caption text-caption text-tertiary hover:text-primary transition-opacity cursor-pointer" href="#">Privacy</a>
+<a class="font-caption text-caption text-tertiary hover:text-primary transition-opacity cursor-pointer" href="#">Terms</a>
+<a class="font-caption text-caption text-tertiary hover:text-primary transition-opacity cursor-pointer" href="#">About</a>
+</div>
+</div>
 </footer>
+<script>
+    // Micro-interactions for buttons
+    document.querySelectorAll('button').forEach(button => {
+      button.addEventListener('mousedown', () => {
+        button.style.transform = 'scale(0.98)';
+      });
+      button.addEventListener('mouseup', () => {
+        button.style.transform = 'scale(1)';
+      });
+    });
 
+    // Subtle scroll reveal for cards
+    const observerOptions = {
+      threshold: 0.1
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = '1';
+          entry.target.style.transform = 'translateY(0)';
+        }
+      });
+    }, observerOptions);
+
+    document.querySelectorAll('.group.bg-white').forEach(card => {
+      card.style.opacity = '0';
+      card.style.transform = 'translateY(20px)';
+      card.style.transition = 'all 0.6s cubic-bezier(0.4, 0, 0.2, 1)';
+      observer.observe(card);
+    });
+  </script>
 
 <!-- Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-FZ1YQ9W9S3"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag("js", new Date());
-  gtag("config", "G-FZ1YQ9W9S3");
-</script>
-
-<script type="text/javascript">
-    (function(c,l,a,r,i,t,y){
-        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-    })(window, document, "clarity", "script", "x7fp5a4niz");
-</script>
-
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date());gtag("config","G-FZ1YQ9W9S3")</script>
+<script>(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y)})(window,document,"clarity","script","x7fp5a4niz")</script>
 <script src="https://analytics.ahrefs.com/analytics.js" data-key="3DozwKgee5zQMCsEl99K4w" async></script>
-
 <script async src="https://plausible.shipsolo.io/js/pa-fKgXCF0plWSQJP3jm_Mc6.js"></script>
-<script>
-  window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
-  plausible.init()
-</script>
-
-</body>
-</html>
+<script>window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};plausible.init()</script>
+</body></html>

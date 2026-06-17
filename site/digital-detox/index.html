@@ -1,55 +1,428 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Free Digital Detox Planner — Create Your Screen Time Reset Plan</title>
-<meta name="description" content="Build a personalized digital detox plan in 2 minutes. Set screen-free hours, choose offline activities, and start resetting your relationship with screens. Free, no sign-up.">
-<link rel="stylesheet" href="/css/design-system.css">
-<link rel="canonical" href="https://calmtool.io/digital-detox/">
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Digital Detox Planner | CalmTool</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&amp;family=Inter:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "secondary": "#7d5630",
+                    "surface-container-low": "#f5f3f3",
+                    "on-tertiary": "#ffffff",
+                    "on-secondary": "#ffffff",
+                    "surface-container-highest": "#e4e2e2",
+                    "surface-bright": "#fbf9f8",
+                    "on-primary-fixed-variant": "#304d33",
+                    "surface-dim": "#dbd9d9",
+                    "surface-container-lowest": "#ffffff",
+                    "outline": "#737971",
+                    "on-secondary-fixed-variant": "#623f1b",
+                    "primary-fixed-dim": "#adcfad",
+                    "inverse-primary": "#adcfad",
+                    "on-surface": "#1b1c1c",
+                    "secondary-fixed-dim": "#f0bd8f",
+                    "outline-variant": "#c2c8bf",
+                    "surface-variant": "#e4e2e2",
+                    "tertiary-container": "#767470",
+                    "error": "#ba1a1a",
+                    "surface": "#fbf9f8",
+                    "on-error-container": "#93000a",
+                    "primary": "#456347",
+                    "inverse-on-surface": "#f2f0f0",
+                    "on-primary-container": "#f7fff2",
+                    "on-tertiary-container": "#fcffe0",
+                    "secondary-fixed": "#ffdcbf",
+                    "inverse-surface": "#303030",
+                    "tertiary-fixed-dim": "#c9c6c1",
+                    "tertiary-fixed": "#e5e2dc",
+                    "tertiary": "#5d5c58",
+                    "background": "#fbf9f8",
+                    "on-primary": "#ffffff",
+                    "secondary-container": "#ffca9b",
+                    "on-error": "#ffffff",
+                    "error-container": "#ffdad6",
+                    "primary-container": "#5d7c5e",
+                    "on-tertiary-fixed": "#1c1c18",
+                    "surface-tint": "#476649",
+                    "surface-container-high": "#eae8e7",
+                    "on-secondary-container": "#7a532e",
+                    "on-background": "#1b1c1c",
+                    "surface-container": "#efeded",
+                    "primary-fixed": "#c9ecc7",
+                    "on-tertiary-fixed-variant": "#474743",
+                    "on-surface-variant": "#424841",
+                    "on-secondary-fixed": "#2d1600",
+                    "on-primary-fixed": "#04210b"
+            },
+            "borderRadius": {
+                    "DEFAULT": "1rem",
+                    "lg": "2rem",
+                    "xl": "3rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "sm": "12px",
+                    "margin-desktop": "120px",
+                    "xl": "80px",
+                    "base": "8px",
+                    "xs": "4px",
+                    "md": "24px",
+                    "gutter": "24px",
+                    "lg": "48px",
+                    "margin-mobile": "20px"
+            },
+            "fontFamily": {
+                    "body-lg": ["Inter"],
+                    "display-lg-mobile": ["\"Source Serif 4\""],
+                    "body-md": ["Inter"],
+                    "headline-sm": ["\"Source Serif 4\""],
+                    "display-lg": ["\"Source Serif 4\""],
+                    "label-md": ["Inter"],
+                    "headline-md": ["\"Source Serif 4\""],
+                    "caption": ["Inter"]
+            },
+            "fontSize": {
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "display-lg-mobile": ["36px", {"lineHeight": "44px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "headline-sm": ["24px", {"lineHeight": "32px", "fontWeight": "500"}],
+                    "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                    "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "headline-md": ["32px", {"lineHeight": "40px", "fontWeight": "500"}],
+                    "caption": ["12px", {"lineHeight": "16px", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+      body {
+        background-color: #fbf9f8;
+        background-image: 
+            radial-gradient(#e4e2e2 0.5px, transparent 0.5px),
+            radial-gradient(#e4e2e2 0.5px, #fbf9f8 0.5px);
+        background-size: 20px 20px;
+        background-position: 0 0, 10px 10px;
+        scroll-behavior: smooth;
+      }
+      .washi-card {
+        background: rgba(255, 255, 255, 0.7);
+        backdrop-filter: blur(8px);
+        border: 1px solid rgba(115, 121, 113, 0.1);
+        box-shadow: 0 20px 40px -10px rgba(69, 99, 71, 0.05);
+      }
+      .form-step { display: none; }
+      .form-step.active { display: block; animation: fadeIn 0.5s ease-out; }
+      @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+      
+      .breath-indicator {
+        animation: pulse-soft 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+      }
+      @keyframes pulse-soft {
+        0%, 100% { transform: scale(1); opacity: 0.1; }
+        50% { transform: scale(1.1); opacity: 0.2; }
+      }
+      .custom-range::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        appearance: none;
+        width: 24px;
+        height: 24px;
+        background: #456347;
+        cursor: pointer;
+        border-radius: 50%;
+        border: 4px solid #ffffff;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      }
+    </style>
 </head>
-<body>
-<header class="site-header"><div class="container"><a href="/" class="site-logo">CalmTool</a><nav class="site-nav"><a href="/breathe/">Breathe</a><a href="/burnout-test/">Burnout Test</a><a href="/digital-detox/">Digital Detox</a></nav></div></header>
-
-<main class="container">
-<section class="hero" style="padding-bottom:var(--space-xl)">
-  <h1>Free Digital Detox Planner</h1>
-  <p>Answer a few quick questions and get a personalized plan to reset your screen habits — in about 2 minutes.</p>
-</section>
-
-<div id="detox-form" style="max-width:640px;margin:0 auto;padding:var(--space-xl);background:var(--paper);border-radius:var(--radius-lg);border:1px solid var(--border)"></div>
-
-<p style="text-align:center;margin:var(--space-2xl) 0;font-family:var(--font-serif);color:var(--ink-light)">Feeling stressed even when you're offline?<br><a href="/burnout-test/" style="color:var(--matcha-dark)">Check your burnout level →</a></p>
+<body class="font-body-md text-on-surface">
+<!-- Top Navigation Bar -->
+<nav class="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-md dark:bg-surface-dim/80 shadow-sm shadow-primary/5">
+<div class="flex justify-between items-center px-margin-mobile md:px-margin-desktop py-sm max-w-screen-2xl mx-auto">
+<div class="font-display-lg-mobile text-display-lg-mobile text-primary dark:text-primary-fixed-dim">CalmTool</div>
+<div class="hidden md:flex gap-lg items-center">
+<a class="text-on-surface-variant dark:text-surface-variant pb-1 hover:text-primary transition-colors duration-300 font-body-md text-body-md" href="#">Breathe</a>
+<a class="text-on-surface-variant dark:text-surface-variant pb-1 hover:text-primary transition-colors duration-300 font-body-md text-body-md" href="#">Burnout Test</a>
+<a class="text-primary dark:text-primary-fixed-dim font-bold border-b-2 border-primary pb-1 font-body-md text-body-md" href="#">Digital Detox</a>
+</div>
+<button class="material-symbols-outlined md:hidden text-primary">menu</button>
+</div>
+</nav>
+<main class="pt-[100px] pb-xl px-margin-mobile md:px-margin-desktop max-w-[1200px] mx-auto min-h-screen">
+<!-- Hero Section -->
+<header class="text-center mb-xl">
+<h1 class="font-display-lg text-display-lg-mobile md:text-display-lg text-primary mb-sm">Free Digital Detox Planner</h1>
+<p class="font-headline-sm text-headline-sm text-secondary opacity-80">Create your personalized plan in just 2 minutes.</p>
+</header>
+<!-- Planner Canvas -->
+<div class="relative w-full max-w-2xl mx-auto">
+<!-- Decorative "Breath" Background Elements -->
+<div class="absolute -top-12 -left-12 w-64 h-64 bg-primary-fixed-dim/20 rounded-full blur-3xl breath-indicator"></div>
+<div class="absolute -bottom-12 -right-12 w-48 h-48 bg-secondary-fixed/20 rounded-full blur-3xl breath-indicator" style="animation-delay: 2s;"></div>
+<!-- Form Card -->
+<div class="washi-card p-lg md:p-xl rounded-lg relative z-10" id="planner-card">
+<form id="detox-form">
+<!-- Step 1: Hours -->
+<div class="form-step active" data-step="1">
+<div class="flex items-center gap-sm mb-md">
+<span class="w-8 h-8 rounded-full bg-primary/10 text-primary flex items-center justify-center font-bold">1</span>
+<h2 class="font-headline-md text-headline-sm md:text-headline-md text-on-surface">Screen Time Assessment</h2>
+</div>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-lg">How many hours do you spend on screens daily?</p>
+<div class="space-y-md">
+<input class="w-full h-2 bg-surface-container-highest rounded-full appearance-none custom-range" id="hours-slider" max="16" min="1" type="range" value="6"/>
+<div class="flex justify-between text-secondary font-bold text-headline-sm">
+<span>1hr</span>
+<span class="text-primary" id="hours-display">6 hours</span>
+<span>16hr+</span>
+</div>
+</div>
+<div class="mt-xl flex justify-end">
+<button class="bg-primary text-on-primary px-lg py-sm rounded-full font-label-md text-label-md transition-transform hover:scale-105 active:scale-95 shadow-lg shadow-primary/20" onclick="nextStep(1)" type="button">Next</button>
+</div>
+</div>
+<!-- Step 2: Difficult Moments -->
+<div class="form-step" data-step="2">
+<div class="flex items-center gap-sm mb-md">
+<span class="w-8 h-8 rounded-full bg-primary/10 text-primary flex items-center justify-center font-bold">2</span>
+<h2 class="font-headline-md text-headline-sm md:text-headline-md text-on-surface">Identify Triggers</h2>
+</div>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-lg">When is it hardest to stay off your phone?</p>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-md">
+<label class="flex items-center p-md bg-surface-bright rounded-lg border border-outline-variant/30 cursor-pointer hover:bg-primary-fixed/30 transition-colors group">
+<input class="w-6 h-6 rounded-full text-primary focus:ring-primary border-outline-variant" name="trigger" type="checkbox" value="Morning"/>
+<span class="ml-sm font-body-md text-on-surface-variant group-hover:text-primary">First thing in the Morning</span>
+</label>
+<label class="flex items-center p-md bg-surface-bright rounded-lg border border-outline-variant/30 cursor-pointer hover:bg-primary-fixed/30 transition-colors group">
+<input class="w-6 h-6 rounded-full text-primary focus:ring-primary border-outline-variant" name="trigger" type="checkbox" value="Work"/>
+<span class="ml-sm font-body-md text-on-surface-variant group-hover:text-primary">During Work Hours</span>
+</label>
+<label class="flex items-center p-md bg-surface-bright rounded-lg border border-outline-variant/30 cursor-pointer hover:bg-primary-fixed/30 transition-colors group">
+<input class="w-6 h-6 rounded-full text-primary focus:ring-primary border-outline-variant" name="trigger" type="checkbox" value="Evening"/>
+<span class="ml-sm font-body-md text-on-surface-variant group-hover:text-primary">Evening Relaxation</span>
+</label>
+<label class="flex items-center p-md bg-surface-bright rounded-lg border border-outline-variant/30 cursor-pointer hover:bg-primary-fixed/30 transition-colors group">
+<input class="w-6 h-6 rounded-full text-primary focus:ring-primary border-outline-variant" name="trigger" type="checkbox" value="Before Bed"/>
+<span class="ml-sm font-body-md text-on-surface-variant group-hover:text-primary">Right Before Bed</span>
+</label>
+</div>
+<div class="mt-xl flex justify-between">
+<button class="text-secondary font-label-md text-label-md hover:underline decoration-secondary/30 underline-offset-8" onclick="prevStep(2)" type="button">Back</button>
+<button class="bg-primary text-on-primary px-lg py-sm rounded-full font-label-md text-label-md transition-transform hover:scale-105 shadow-lg shadow-primary/20" onclick="nextStep(2)" type="button">Next</button>
+</div>
+</div>
+<!-- Step 3: Detox Style -->
+<div class="form-step" data-step="3">
+<div class="flex items-center gap-sm mb-md">
+<span class="w-8 h-8 rounded-full bg-primary/10 text-primary flex items-center justify-center font-bold">3</span>
+<h2 class="font-headline-md text-headline-sm md:text-headline-md text-on-surface">Detox Style</h2>
+</div>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-lg">Choose the rhythm that suits your lifestyle.</p>
+<div class="grid grid-cols-1 gap-sm">
+<label class="flex items-start p-md bg-surface-bright rounded-lg border border-outline-variant/30 cursor-pointer hover:bg-primary-fixed/30 transition-colors group">
+<input class="mt-1 w-5 h-5 text-primary border-outline-variant" name="style" type="radio" value="Weekend Reset"/>
+<div class="ml-md">
+<span class="block font-headline-sm text-headline-sm text-on-surface">Weekend Reset</span>
+<span class="text-body-md text-on-surface-variant">Full offline mode from Friday evening to Sunday afternoon.</span>
+</div>
+</label>
+<label class="flex items-start p-md bg-surface-bright rounded-lg border border-outline-variant/30 cursor-pointer hover:bg-primary-fixed/30 transition-colors group">
+<input class="mt-1 w-5 h-5 text-primary border-outline-variant" name="style" type="radio" value="Evening Wind-Down"/>
+<div class="ml-md">
+<span class="block font-headline-sm text-headline-sm text-on-surface">Evening Wind-Down</span>
+<span class="text-body-md text-on-surface-variant">No screens after 8:00 PM to improve sleep quality.</span>
+</div>
+</label>
+<label class="flex items-start p-md bg-surface-bright rounded-lg border border-outline-variant/30 cursor-pointer hover:bg-primary-fixed/30 transition-colors group">
+<input class="mt-1 w-5 h-5 text-primary border-outline-variant" name="style" type="radio" value="Morning First Hour"/>
+<div class="ml-md">
+<span class="block font-headline-sm text-headline-sm text-on-surface">Morning First Hour</span>
+<span class="text-body-md text-on-surface-variant">The first 60 minutes of the day belong entirely to you.</span>
+</div>
+</label>
+<label class="flex items-start p-md bg-surface-bright rounded-lg border border-outline-variant/30 cursor-pointer hover:bg-primary-fixed/30 transition-colors group">
+<input class="mt-1 w-5 h-5 text-primary border-outline-variant" name="style" type="radio" value="Custom"/>
+<div class="ml-md">
+<span class="block font-headline-sm text-headline-sm text-on-surface">Custom Ritual</span>
+<span class="text-body-md text-on-surface-variant">Set your own boundaries based on personal goals.</span>
+</div>
+</label>
+</div>
+<div class="mt-xl flex justify-between">
+<button class="text-secondary font-label-md text-label-md hover:underline underline-offset-8" onclick="prevStep(3)" type="button">Back</button>
+<button class="bg-primary text-on-primary px-lg py-sm rounded-full font-label-md text-label-md transition-transform hover:scale-105 shadow-lg shadow-primary/20" onclick="nextStep(3)" type="button">Next</button>
+</div>
+</div>
+<!-- Step 4: Alternative Activities -->
+<div class="form-step" data-step="4">
+<div class="flex items-center gap-sm mb-md">
+<span class="w-8 h-8 rounded-full bg-primary/10 text-primary flex items-center justify-center font-bold">4</span>
+<h2 class="font-headline-md text-headline-sm md:text-headline-md text-on-surface">Instead of Screens...</h2>
+</div>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-lg">What activities will you fill the space with?</p>
+<div class="grid grid-cols-2 md:grid-cols-3 gap-md">
+<label class="flex flex-col items-center justify-center p-md bg-surface-bright rounded-lg border border-outline-variant/30 cursor-pointer hover:bg-primary-fixed/30 transition-colors text-center">
+<input class="hidden peer" name="activity" type="checkbox" value="Reading"/>
+<div class="w-12 h-12 mb-sm bg-surface-container-high rounded-full flex items-center justify-center peer-checked:bg-primary peer-checked:text-on-primary text-primary transition-all">
+<span class="material-symbols-outlined">auto_stories</span>
+</div>
+<span class="font-label-md text-label-md">Reading</span>
+</label>
+<label class="flex flex-col items-center justify-center p-md bg-surface-bright rounded-lg border border-outline-variant/30 cursor-pointer hover:bg-primary-fixed/30 transition-colors text-center">
+<input class="hidden peer" name="activity" type="checkbox" value="Walking"/>
+<div class="w-12 h-12 mb-sm bg-surface-container-high rounded-full flex items-center justify-center peer-checked:bg-primary peer-checked:text-on-primary text-primary transition-all">
+<span class="material-symbols-outlined">directions_walk</span>
+</div>
+<span class="font-label-md text-label-md">Walking</span>
+</label>
+<label class="flex flex-col items-center justify-center p-md bg-surface-bright rounded-lg border border-outline-variant/30 cursor-pointer hover:bg-primary-fixed/30 transition-colors text-center">
+<input class="hidden peer" name="activity" type="checkbox" value="Meditation"/>
+<div class="w-12 h-12 mb-sm bg-surface-container-high rounded-full flex items-center justify-center peer-checked:bg-primary peer-checked:text-on-primary text-primary transition-all">
+<span class="material-symbols-outlined">self_improvement</span>
+</div>
+<span class="font-label-md text-label-md">Meditation</span>
+</label>
+<label class="flex flex-col items-center justify-center p-md bg-surface-bright rounded-lg border border-outline-variant/30 cursor-pointer hover:bg-primary-fixed/30 transition-colors text-center">
+<input class="hidden peer" name="activity" type="checkbox" value="Cooking"/>
+<div class="w-12 h-12 mb-sm bg-surface-container-high rounded-full flex items-center justify-center peer-checked:bg-primary peer-checked:text-on-primary text-primary transition-all">
+<span class="material-symbols-outlined">restaurant</span>
+</div>
+<span class="font-label-md text-label-md">Cooking</span>
+</label>
+<label class="flex flex-col items-center justify-center p-md bg-surface-bright rounded-lg border border-outline-variant/30 cursor-pointer hover:bg-primary-fixed/30 transition-colors text-center">
+<input class="hidden peer" name="activity" type="checkbox" value="Journaling"/>
+<div class="w-12 h-12 mb-sm bg-surface-container-high rounded-full flex items-center justify-center peer-checked:bg-primary peer-checked:text-on-primary text-primary transition-all">
+<span class="material-symbols-outlined">edit_note</span>
+</div>
+<span class="font-label-md text-label-md">Journaling</span>
+</label>
+</div>
+<div class="mt-xl flex justify-between">
+<button class="text-secondary font-label-md text-label-md hover:underline underline-offset-8" onclick="prevStep(4)" type="button">Back</button>
+<button class="bg-primary text-on-primary px-xl py-sm rounded-full font-label-md text-label-md transition-transform hover:scale-105 shadow-lg shadow-primary/20" id="generate-btn" type="button">Generate My Plan</button>
+</div>
+</div>
+</form>
+</div>
+<!-- Output Section -->
+<div class="hidden space-y-lg animate-fadeIn" id="plan-output">
+<div class="washi-card p-lg md:p-xl rounded-lg border-2 border-primary/20">
+<div class="flex flex-col md:flex-row md:justify-between md:items-center gap-md mb-lg">
+<div>
+<h2 class="font-display-lg-mobile text-display-lg-mobile text-primary">Your Sanctuary Plan</h2>
+<p class="font-body-lg text-body-lg text-secondary">Crafted for a <span class="font-bold" id="out-style">Weekend Reset</span> journey.</p>
+</div>
+<div class="bg-primary-container text-on-primary-container px-md py-xs rounded-full text-label-md font-label-md">
+                            Daily Target: -2 hrs
+                        </div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter mb-xl">
+<div class="bg-surface-bright p-md rounded-lg shadow-sm border border-outline-variant/10">
+<h3 class="font-headline-sm text-headline-sm text-primary mb-xs">Morning</h3>
+<p class="text-body-md text-on-surface-variant" id="tip-morning">Leave phone in another room. Practice 10 mins of mindful movement.</p>
+</div>
+<div class="bg-surface-bright p-md rounded-lg shadow-sm border border-outline-variant/10">
+<h3 class="font-headline-sm text-headline-sm text-primary mb-xs">Evening</h3>
+<p class="text-body-md text-on-surface-variant" id="tip-evening">Switch to airplane mode at 8:30 PM. Blue light filter activated.</p>
+</div>
+<div class="bg-surface-bright p-md rounded-lg shadow-sm border border-outline-variant/10">
+<h3 class="font-headline-sm text-headline-sm text-primary mb-xs">The Substitute</h3>
+<p class="text-body-md text-on-surface-variant" id="tip-activity">Prepare a book by your bedside to replace the scrolling urge.</p>
+</div>
+</div>
+<div class="p-md bg-primary/5 rounded-lg mb-lg border-l-4 border-primary">
+<h4 class="font-label-md text-label-md text-primary uppercase tracking-widest mb-xs">Expert Tip</h4>
+<p class="italic text-on-surface-variant">"Willpower is a finite resource. Design your environment to make screen-free living the path of least resistance."</p>
+</div>
+<div class="flex flex-col md:flex-row gap-md justify-center">
+<button class="flex items-center justify-center gap-xs border border-primary text-primary px-lg py-sm rounded-full font-label-md hover:bg-primary/5 transition-colors" onclick="window.print()">
+<span class="material-symbols-outlined text-md">print</span> Print My Plan
+                        </button>
+<button class="bg-primary text-on-primary px-lg py-sm rounded-full font-label-md shadow-md" onclick="location.reload()">Start New Plan</button>
+</div>
+</div>
+<!-- Featured Image -->
+<div class="rounded-lg overflow-hidden h-64 shadow-xl relative group">
+<img alt="Quiet morning tea" class="w-full h-full object-cover grayscale-[20%] group-hover:scale-105 transition-transform duration-1000" data-alt="A tranquil tea house interior with soft morning light streaming through paper shoji screens. On a low wooden table sits a simple unglazed ceramic teapot and a single steaming cup. Beside the tea set is an open journal with a fountain pen, creating a serene and minimalist atmosphere. The overall color palette is composed of soft whites, pale greens, and natural wood tones, embodying a peaceful digital-free sanctuary." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDZ9m5v9kGoKoD-hvl8kTRkMnGTHu6nxkMh98soo3LQnDzdpIWimQiZ42zuLUg-CpgUrVMy0c7AsyHBYObZkQWFOd4Zz1zAnHht5YdzZCLPvYEA8xcl_iBieeWF2g4DAhh4TSXpa-spogw1tOkYIK9BHcSe4kGQ6n-ksWHmH87rYr5982HeDzEQ3P8s8kNhfQpSLtntrRMyVoG6nMxNKDNfwmZQyLeUlhertPvvHQRb5YYvNJIiSgy0Wr9xmzPjs1TVt8uywfOl7o1q"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
+<div class="absolute bottom-md left-md text-white">
+<span class="font-headline-sm text-headline-sm">Your attention is your most precious gift.</span>
+</div>
+</div>
+</div>
+</div>
 </main>
+<!-- Footer -->
+<footer class="w-full py-xl bg-surface-container-low dark:bg-surface-container-lowest">
+<div class="flex flex-col md:flex-row justify-between items-center px-margin-mobile md:px-margin-desktop gap-md max-w-screen-2xl mx-auto">
+<div class="flex flex-col items-center md:items-start">
+<div class="font-headline-sm text-headline-sm text-secondary mb-xs">CalmTool</div>
+<p class="font-body-md text-body-md text-on-surface-variant">© 2024 CalmTool. If you are in crisis, please call or text 988.</p>
+</div>
+<div class="flex gap-lg">
+<a class="text-on-surface-variant hover:text-primary transition-colors font-body-md underline underline-offset-4" href="#">Privacy</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-body-md underline underline-offset-4" href="#">Terms</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-body-md underline underline-offset-4" href="#">Support</a>
+</div>
+</div>
+</footer>
+<script>
+        const slider = document.getElementById('hours-slider');
+        const display = document.getElementById('hours-display');
+        
+        slider.oninput = function() {
+            display.innerHTML = this.value + (this.value == 1 ? " hour" : " hours");
+        }
 
-<footer class="site-footer"><div class="container"><p style="font-family:var(--font-serif);color:var(--ink-light);">CalmTool — Free wellness tools for everyday calm.</p><nav><a href="/privacy/">Privacy</a><a href="/terms/">Terms</a><a href="/about/">About</a></nav><p style="color:var(--ink-muted);font-size:var(--fs-sm)"><a href="mailto:support@calmtool.io" style="color:var(--ink-muted);text-decoration:underline">support@calmtool.io</a></p>
-<p class="crisis-line">If you're in crisis (US): call or text <strong>988</strong></p></div></footer>
+        function nextStep(current) {
+            document.querySelector(`[data-step="${current}"]`).classList.remove('active');
+            document.querySelector(`[data-step="${current + 1}"]`).classList.add('active');
+            window.scrollTo({ top: 150, behavior: 'smooth' });
+        }
 
-<script src="/js/app.js"></script>
+        function prevStep(current) {
+            document.querySelector(`[data-step="${current}"]`).classList.remove('active');
+            document.querySelector(`[data-step="${current - 1}"]`).classList.add('active');
+            window.scrollTo({ top: 150, behavior: 'smooth' });
+        }
+
+        document.getElementById('generate-btn').onclick = function() {
+            const form = document.getElementById('detox-form');
+            const card = document.getElementById('planner-card');
+            const output = document.getElementById('plan-output');
+            
+            // Collect data for simple customization
+            const style = form.querySelector('input[name="style"]:checked')?.value || "Custom Ritual";
+            const activities = Array.from(form.querySelectorAll('input[name="activity"]:checked')).map(el => el.value);
+            
+            document.getElementById('out-style').innerText = style;
+            if(activities.length > 0) {
+                document.getElementById('tip-activity').innerText = `Instead of reaching for your phone, your chosen focus is ${activities.join(', ')}. Keep your supplies ready.`;
+            }
+
+            // Transition
+            card.classList.add('opacity-0', 'scale-95');
+            setTimeout(() => {
+                card.classList.add('hidden');
+                output.classList.remove('hidden');
+                window.scrollTo({ top: 150, behavior: 'smooth' });
+            }, 300);
+        };
+    </script>
 
 <!-- Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-FZ1YQ9W9S3"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag("js", new Date());
-  gtag("config", "G-FZ1YQ9W9S3");
-</script>
-
-<script type="text/javascript">
-    (function(c,l,a,r,i,t,y){
-        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-    })(window, document, "clarity", "script", "x7fp5a4niz");
-</script>
-
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date());gtag("config","G-FZ1YQ9W9S3")</script>
+<script>(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y)})(window,document,"clarity","script","x7fp5a4niz")</script>
 <script src="https://analytics.ahrefs.com/analytics.js" data-key="3DozwKgee5zQMCsEl99K4w" async></script>
-
 <script async src="https://plausible.shipsolo.io/js/pa-fKgXCF0plWSQJP3jm_Mc6.js"></script>
-<script>
-  window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
-  plausible.init()
-</script>
-
+<script>window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};plausible.init()</script>
 </body></html>

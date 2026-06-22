@@ -1,8 +1,9 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 48" fill="none">
-  <!-- Bold leaf icon -->
-  <circle cx="24" cy="24" r="22" fill="#6B8B6C"/>
-  <path d="M15 24 Q24 7 33 24 Q24 41 15 24Z" fill="#F9F6F0" opacity="0.95"/>
-  <path d="M24 16 L24 32" stroke="#6B8B6C" stroke-width="2" stroke-linecap="round"/>
-  <!-- Bold text -->
-  <text x="56" y="33" font-family="Georgia, 'Source Serif 4', serif" font-size="28" font-weight="700" fill="#4A6B4B" letter-spacing="0.5">CalmTool</text>
+  <!-- Contrast circle: clay amber -->
+  <circle cx="24" cy="24" r="22" fill="#C4956A"/>
+  <!-- White leaf inside -->
+  <path d="M14 24 Q24 6 34 24 Q24 42 14 24Z" fill="#FFFFFF" opacity="0.95"/>
+  <path d="M24 14 L24 34" stroke="#C4956A" stroke-width="2" stroke-linecap="round"/>
+  <!-- Bold dark text -->
+  <text x="56" y="33" font-family="Georgia, 'Source Serif 4', serif" font-size="28" font-weight="700" fill="#2C2416" letter-spacing="0.5">CalmTool</text>
 </svg>

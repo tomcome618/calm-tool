@@ -1,55 +1,29 @@
 # 09 — QA 验收
+> **Skill**: student-site-qa-acceptance v2.3.0 | **日期**: 2026-06-16 | **状态**: GO ✅
 
-> **Skill**: student-site-qa-acceptance v2.3.0  
-> **执行日期**: 2026-06-13  
-> **状态**: GO ✅
+## P0 User Tasks
+| # | Task | Result |
+|---|------|:--:|
+| T1 | Home — 3秒理解功能 | ✅ |
+| T2 | Breathe — 选模式+呼吸动画 | ✅ |
+| T3 | Burnout — 15题+3维评分 | ✅ |
+| T4 | Mobile — 响应式无横向滚动 | ✅ |
+| T5 | Detox — 4步表单+计划卡片 | ✅ |
+| T6 | Cross-link breathe↔burnout | ✅ |
 
----
+## P0 Compliance
+| Item | Result |
+|------|:--:|
+| Medical disclaimer (burnout) | ✅ |
+| 988 footer | ✅ |
+| 988 burnout results | ✅ |
+| Privacy page | ✅ 200 |
+| Terms page | ✅ 200 |
 
-## 一句话结论
+## Forbidden Words: 0 across all pages ✅
 
-全部 P0 用户任务通过，零 P0 bug，合规项完整，QA GO。
+## HTTP: 7/7 pages 200 ✅
 
-## P0 用户任务验证
+## Bugs: P0=0, P1=0, P2=0
 
-| # | 任务 | 结果 | 证据 |
-|---|------|:--:|------|
-| T1 | 首页 3 秒理解站点功能 | ✅ | Hero H1 + 3 工具卡片 + Trust Bar |
-| T2 | 选呼吸模式，完成一轮 | ✅ | 4 模式按钮 + CSS 圆环动画 + 计时器 |
-| T3 | 完成 15 题评估，获结果 | ✅ | 逐题展示 + 进度条 + 3 维评分 + 建议 |
-| T4 | 手机上完成呼吸练习 | ✅ | 768px/480px 媒体查询，flex-wrap |
-| T5 | 生成排毒计划并截图 | ✅ | 4 步表单 → 计划卡片 + print 按钮 |
-| T6 | 交叉内链跳转 | ✅ | 呼吸→倦怠、倦怠→呼吸、排毒→倦怠 |
-
-## P0 合规验收
-
-| 检查项 | 结果 |
-|--------|:--:|
-| 医疗免责声明（倦怠页首） | ✅ |
-| 988 危机热线（footer + 倦怠结果页） | ✅ |
-| 禁词零出现 | ✅ |
-| Privacy/Terms 页面存在 | ✅ |
-
-## HTTP / 加载
-
-| 页面 | HTTP | 大小 |
-|------|:--:|------|
-| / | 200 | 3KB |
-| /breathe/ | 200 | 6KB |
-| /burnout-test/ | 200 | 2KB |
-| /digital-detox/ | 200 | 1KB |
-| /privacy/ | 200 | 2KB |
-| /terms/ | 200 | 2KB |
-| /about/ | 200 | 3KB |
-
-## P0/P1/P2
-
-| 级别 | 数量 | 说明 |
-|------|:--:|------|
-| P0 | 0 | 无阻塞项 |
-| P1 | 0 | — |
-| P2 | 0 | — |
-
-## 结论
-
-**[GO]** — 可进入 Stage 11 上线部署。
+## Conclusion: **GO** → Stage 11 Launch

@@ -1,348 +1,419 @@
 <!DOCTYPE html>
 
-<html class="light" lang="en"><head>
+<html class="scroll-smooth" lang="en"><head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Breathing Exercise Tool | CalmTool</title>
+<title>CalmTool | Free Online Breathing Exercise Tool</title>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Source+Serif+4:opsz,wght@8..60,400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&amp;family=Inter:wght@100..900&amp;family=Public+Sans:wght@100..900&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 <script id="tailwind-config">
         tailwind.config = {
             darkMode: "class",
             theme: {
                 extend: {
-                    "colors": {
-                        "on-surface-variant": "#424841",
-                        "secondary-fixed-dim": "#f0bd8f",
-                        "surface-container": "#eeeeea",
-                        "primary-fixed-dim": "#adcfad",
-                        "tertiary": "#7d4f5a",
-                        "on-tertiary-fixed": "#32101a",
-                        "inverse-on-surface": "#f1f1ec",
-                        "background": "#faf9f5",
-                        "tertiary-container": "#986773",
-                        "surface-variant": "#e3e3de",
-                        "on-surface": "#1a1c1a",
-                        "error-container": "#ffdad6",
-                        "on-error-container": "#93000a",
-                        "primary-container": "#5d7c5e",
-                        "on-tertiary-fixed-variant": "#653a45",
-                        "on-tertiary-container": "#fffbff",
-                        "inverse-surface": "#2f312e",
-                        "surface-container-low": "#f4f4ef",
-                        "surface": "#faf9f5",
-                        "on-secondary-fixed": "#2d1600",
-                        "surface-container-highest": "#e3e3de",
-                        "surface-bright": "#faf9f5",
-                        "on-primary-fixed-variant": "#304d33",
-                        "tertiary-fixed": "#ffd9e0",
-                        "on-tertiary": "#ffffff",
-                        "on-primary": "#ffffff",
-                        "outline": "#737971",
-                        "surface-tint": "#476649",
-                        "on-secondary-container": "#7a532e",
-                        "primary-fixed": "#c9ecc7",
-                        "on-error": "#ffffff",
-                        "surface-container-lowest": "#ffffff",
-                        "primary": "#456347",
-                        "on-primary-container": "#f7fff2",
-                        "on-secondary-fixed-variant": "#623f1b",
-                        "secondary-fixed": "#ffdcbf",
-                        "on-primary-fixed": "#04210b",
-                        "outline-variant": "#c2c8bf",
-                        "secondary": "#7d5630",
-                        "error": "#ba1a1a",
-                        "surface-dim": "#dadad6",
-                        "inverse-primary": "#adcfad",
-                        "on-secondary": "#ffffff"
+                    colors: {
+                        primary: "#6B8B6C",
+                        "on-primary": "#FFFFFF",
+                        "primary-container": "#E7F0E8",
+                        "on-primary-container": "#1D2B1E",
+                        secondary: "#576350",
+                        "on-secondary": "#FFFFFF",
+                        tertiary: "#386567",
+                        "on-tertiary": "#FFFFFF",
+                        surface: "#F9FAF9",
+                        "on-surface": "#1A1C1A",
+                        "surface-container-low": "#F1F4F1",
+                        "surface-container-high": "#E8EBE8",
+                        "outline": "#727971",
+                        "outline-variant": "#C2C9BF"
                     },
-                    "borderRadius": {
-                        "DEFAULT": "0.25rem",
-                        "lg": "0.5rem",
-                        "xl": "0.75rem",
+                    borderRadius: {
+                        "DEFAULT": "0.5rem",
+                        "lg": "1rem",
+                        "xl": "1.5rem",
                         "full": "9999px"
                     },
-                    "spacing": {
-                        "unit": "8px",
-                        "margin-mobile": "20px",
-                        "stack-lg": "64px",
-                        "stack-sm": "16px",
-                        "stack-md": "32px",
-                        "container-max": "1140px",
-                        "gutter": "24px"
+                    fontFamily: {
+                        headline: ["\"Source Serif 4\""],
+                        display: ["\"Source Serif 4\""],
+                        body: ["Inter"],
+                        label: ["Public Sans"]
                     },
-                    "fontFamily": {
-                        "body-md": ["Inter"],
-                        "label-sm": ["Inter"],
-                        "display-lg": ["\"Source Serif 4\""],
-                        "body-lg": ["Inter"],
-                        "display-lg-mobile": ["\"Source Serif 4\""],
-                        "headline-sm": ["\"Source Serif 4\""],
-                        "headline-md": ["\"Source Serif 4\""]
-                    },
-                    "fontSize": {
-                        "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
-                        "label-sm": ["14px", {"lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "500"}],
-                        "display-lg": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "600"}],
-                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
-                        "display-lg-mobile": ["36px", {"lineHeight": "1.2", "fontWeight": "600"}],
-                        "headline-sm": ["24px", {"lineHeight": "1.4", "fontWeight": "500"}],
-                        "headline-md": ["32px", {"lineHeight": "1.3", "fontWeight": "500"}]
+                    spacing: {
+                        "margin-mobile": "1rem",
+                        "gutter": "2rem",
+                        "stack-md": "2rem",
+                        "stack-lg": "4rem"
                     }
                 },
             },
         }
     </script>
 <style>
-        body { background-color: #faf9f5; font-family: 'Inter', system-ui, sans-serif; }
-        .paper-shadow {
-            box-shadow: 0 30px 60px -12px rgba(0, 0, 0, 0.02), 0 18px 36px -18px rgba(0, 0, 0, 0.04);
-        }
-        .washi-blur {
-            backdrop-filter: blur(20px);
-            background-color: rgba(250, 249, 245, 0.7);
-        }
-        .georgia-serif { font-family: 'Source Serif 4', Georgia, serif; }
-        .breath-animation-container {
-            transition: transform 1s ease-in-out;
-        }
-        .pattern-card { transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
-        .pattern-card:hover { transform: translateY(-4px); }
         .material-symbols-outlined {
             font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
         }
+        .breathing-circle {
+            transition: transform 1s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        @keyframes pulse-soft {
+            0%, 100% { transform: scale(1); opacity: 0.8; }
+            50% { transform: scale(1.05); opacity: 1; }
+        }
+        .animate-pulse-slow {
+            animation: pulse-soft 4s ease-in-out infinite;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(107, 139, 108, 0.1);
+        }
     </style>
 </head>
-<body class="text-on-surface">
+<body class="bg-surface text-on-surface font-body selection:bg-primary/30 selection:text-on-surface">
 <!-- TopNavBar -->
-<header class="bg-surface/70 backdrop-blur-md sticky top-0 z-50 border-b border-primary/10">
-<nav class="max-w-container-max mx-auto px-margin-mobile md:px-gutter h-16 flex justify-between items-center">
-<div class="font-headline-sm text-headline-sm font-semibold text-primary">CalmTool</div>
-<div class="hidden md:flex gap-8 items-center">
-<a class="font-label-sm text-label-sm text-primary font-bold border-b-2 border-primary pb-1" href="#">Breathe</a>
-<a class="font-label-sm text-label-sm text-on-surface-variant hover:text-primary transition-colors" href="#">Burnout Test</a>
-<a class="font-label-sm text-label-sm text-on-surface-variant hover:text-primary transition-colors" href="#">Digital Detox</a>
+<nav class="fixed top-0 w-full z-50 bg-surface/70 dark:bg-surface-dim/70 backdrop-blur-md border-b border-primary/10">
+<div class="max-w-[1140px] mx-auto px-margin-mobile md:px-gutter flex items-center justify-between h-16">
+<div class="font-headline-sm text-headline-sm text-primary dark:text-primary-fixed-dim tracking-tight font-bold">
+                CalmTool
+            </div>
+<div class="hidden md:flex items-center gap-8 font-label-sm text-label-sm">
+<a class="text-primary dark:text-primary-fixed-dim font-bold border-b-2 border-primary hover:text-primary transition-colors duration-300 translate-y-[-2px] transition-transform duration-200" href="#">Breathe</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant/80 hover:text-primary transition-colors duration-300 translate-y-[-2px] transition-transform duration-200" href="#">Burnout Test</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant/80 hover:text-primary transition-colors duration-300 translate-y-[-2px] transition-transform duration-200" href="#">Digital Detox</a>
 </div>
-<div class="md:hidden">
-<span class="material-symbols-outlined text-primary">menu</span>
+<button class="bg-primary text-on-primary px-6 py-2 rounded-full font-label text-sm font-medium hover:shadow-lg transition-all active:scale-95">
+                Get Started
+            </button>
 </div>
 </nav>
-</header>
-<main class="max-w-container-max mx-auto px-margin-mobile md:px-gutter py-stack-lg">
+<main class="pt-24 pb-20">
 <!-- Hero Section -->
-<section class="text-center mb-stack-lg">
-<h1 class="font-display-lg text-display-lg-mobile md:text-display-lg text-on-surface mb-stack-sm">Free Online Breathing Exercise Tool</h1>
-<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto">
-                Follow the circle. Breathe in. Hold. Breathe out. Choose a pattern below — the animation guides you through every step.
+<section class="max-w-[1140px] mx-auto px-margin-mobile md:px-gutter text-center mb-16">
+<h1 class="font-display text-4xl md:text-6xl text-on-surface font-bold tracking-tight mb-4">
+                Free Online Breathing Exercise Tool
+            </h1>
+<p class="text-on-surface-variant text-lg max-w-2xl mx-auto">
+                Restore balance to your nervous system with guided rhythmic breathing. Select a pattern below to begin your journey toward restorative clarity.
             </p>
 </section>
-<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
-<!-- Pattern Selector (Left Side on Desktop) -->
-<div class="lg:col-span-4 order-2 lg:order-1">
-<h2 class="font-headline-sm text-headline-sm mb-6">Breathing Patterns</h2>
-<div class="grid grid-cols-1 gap-4">
-<!-- 4-7-8 Relaxation -->
-<button class="pattern-card p-6 rounded-xl text-left bg-primary text-white paper-shadow border border-primary/20">
-<div class="flex justify-between items-start mb-2">
-<span class="font-semibold text-lg">4-7-8 Relaxation</span>
-<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">check_circle</span>
-</div>
-<p class="text-sm opacity-90 mb-4">Inhale 4s · Hold 7s · Exhale 8s</p>
-<div class="bg-white/10 p-3 rounded-lg text-xs">
-<strong>Best for:</strong> falling asleep, acute anxiety
-                        </div>
+<!-- Interactive Breathing Section -->
+<section class="max-w-[1140px] mx-auto px-margin-mobile md:px-gutter grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+<!-- Pattern Selection - Sidebar left -->
+<div class="lg:col-span-3 space-y-4">
+<h3 class="font-label text-xs uppercase tracking-widest text-primary font-bold mb-4">Select Pattern</h3>
+<button class="pattern-btn w-full text-left p-5 rounded-xl glass-card transition-all hover:shadow-md border-l-4 border-primary ring-1 ring-primary/5" id="btn-478" onclick="setPattern('478')">
+<p class="font-bold text-on-surface">4-7-8 Relaxation</p>
+<p class="text-xs text-on-surface-variant mt-1">Inhale 4s, Hold 7s, Exhale 8s</p>
 </button>
-<!-- Box Breathing -->
-<button class="pattern-card p-6 rounded-xl text-left bg-white text-on-surface paper-shadow border border-outline-variant/30 hover:border-primary/40">
-<div class="flex justify-between items-start mb-2">
-<span class="font-semibold text-lg">Box Breathing</span>
-</div>
-<p class="text-sm text-on-surface-variant mb-4">Inhale 4s · Hold 4s · Exhale 4s · Hold 4s</p>
-<div class="bg-primary/5 p-3 rounded-lg text-xs text-primary">
-<strong>Best for:</strong> focus reset, pre-meeting calm
-                        </div>
+<button class="pattern-btn w-full text-left p-5 rounded-xl bg-surface-container-low transition-all hover:bg-white hover:shadow-sm" id="btn-box" onclick="setPattern('box')">
+<p class="font-bold text-on-surface">Box Breathing</p>
+<p class="text-xs text-on-surface-variant mt-1">Inhale 4s, Hold 4s, Exhale 4s, Hold 4s</p>
 </button>
-<!-- Simple Calm -->
-<button class="pattern-card p-6 rounded-xl text-left bg-white text-on-surface paper-shadow border border-outline-variant/30 hover:border-primary/40">
-<div class="flex justify-between items-start mb-2">
-<span class="font-semibold text-lg">Simple Calm</span>
-</div>
-<p class="text-sm text-on-surface-variant mb-4">Inhale 4s · Hold 2s · Exhale 6s</p>
-<div class="bg-primary/5 p-3 rounded-lg text-xs text-primary">
-<strong>Best for:</strong> quick stress relief
-                        </div>
+<button class="pattern-btn w-full text-left p-5 rounded-xl bg-surface-container-low transition-all hover:bg-white hover:shadow-sm" id="btn-simple" onclick="setPattern('simple')">
+<p class="font-bold text-on-surface">Simple Calm</p>
+<p class="text-xs text-on-surface-variant mt-1">Inhale 5s, Exhale 5s</p>
 </button>
-<!-- Custom -->
-<button class="pattern-card p-6 rounded-xl text-left bg-white text-on-surface paper-shadow border border-outline-variant/30 hover:border-primary/40">
-<div class="flex justify-between items-start mb-2">
-<span class="font-semibold text-lg">Custom</span>
+<button class="pattern-btn w-full text-left p-5 rounded-xl bg-surface-container-low transition-all hover:bg-white hover:shadow-sm flex items-center justify-between" id="btn-custom" onclick="setPattern('custom')">
+<div>
+<p class="font-bold text-on-surface">Custom</p>
+<p class="text-xs text-on-surface-variant mt-1">Set your own rhythm</p>
 </div>
-<p class="text-sm text-on-surface-variant mb-4">Set your own inhale, hold, and exhale times</p>
-<div class="bg-primary/5 p-3 rounded-lg text-xs text-primary">
-<strong>Best for:</strong> experienced practitioners
-                        </div>
+<span class="material-symbols-outlined text-outline">settings</span>
 </button>
 </div>
-</div>
-<!-- Breathing Area (Center/Right Side on Desktop) -->
-<div class="lg:col-span-8 order-1 lg:order-2 flex flex-col items-center">
-<div class="relative w-full max-w-[500px] aspect-square flex flex-col items-center justify-center p-8 bg-white rounded-full paper-shadow mb-12 border border-primary/5">
-<!-- Circle Container with Animation -->
-<div class="relative w-[360px] h-[360px] md:w-[400px] md:h-[400px] rounded-full overflow-hidden flex items-center justify-center bg-surface-container-low">
-
-<div class="relative z-10 text-center">
-<p class="georgia-serif text-headline-sm text-primary italic mb-2" id="breath-instruction">Ready to start?</p>
-<div class="font-display-lg text-primary text-4xl opacity-50" id="timer-display">0</div>
-</div>
+<!-- Animation Area - Center -->
+<div class="lg:col-span-6 flex flex-col items-center justify-center min-h-[500px] relative">
+<!-- Background Decorative Glow -->
+<div class="absolute w-64 h-64 bg-primary/10 rounded-full blur-3xl -z-10 animate-pulse-slow"></div>
+<!-- Breathing Circle -->
+<div class="breathing-circle w-64 h-64 md:w-80 md:h-80 rounded-full bg-primary-container border-4 border-primary/20 flex flex-col items-center justify-center text-center shadow-xl relative" id="circle">
+<div class="absolute inset-0 rounded-full bg-primary/5 animate-ping opacity-20 hidden" id="ripple"></div>
+<span class="font-display text-2xl md:text-3xl text-primary font-medium mb-2" id="instruction-text">Ready?</span>
+<span class="font-label text-5xl md:text-6xl text-on-primary-container font-light" id="timer-display">00</span>
+<div class="mt-6 flex flex-col items-center">
+<span class="text-xs font-label uppercase tracking-widest text-primary/60">Rounds</span>
+<span class="text-xl font-bold text-primary" id="round-count">0</span>
 </div>
 </div>
 <!-- Controls -->
-<div class="flex flex-col items-center gap-6 w-full max-w-md">
-<div class="flex items-center gap-2 bg-surface-container px-6 py-2 rounded-full">
-<span class="material-symbols-outlined text-primary text-sm">cycle</span>
-<span class="font-label-sm text-on-surface-variant">Rounds: <span class="font-bold text-primary" id="round-count">3</span></span>
-</div>
-<div class="flex flex-wrap justify-center gap-4">
-<button class="bg-[#C4956A] text-white px-10 py-4 rounded-full font-bold shadow-lg hover:-translate-y-0.5 transition-all flex items-center gap-2 active:scale-95">
-<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
-                            Start Exercise
-                        </button>
-<button class="bg-[#adcfad]/30 text-primary px-8 py-4 rounded-full font-bold hover:bg-[#adcfad]/50 transition-all flex items-center gap-2">
+<div class="mt-12 flex items-center gap-6">
+<button class="p-4 rounded-full bg-surface-container-high text-on-surface-variant hover:bg-outline-variant transition-all" id="reset-btn" onclick="resetExercise()">
+<span class="material-symbols-outlined">restart_alt</span>
+</button>
+<button class="group relative px-10 py-5 bg-primary text-on-primary rounded-[2rem] font-bold text-lg shadow-lg shadow-primary/20 hover:shadow-xl hover:-translate-y-1 transition-all" id="main-action-btn" onclick="toggleExercise()">
+<span id="main-btn-text">Start Exercise</span>
+</button>
+<button class="p-4 rounded-full bg-surface-container-high text-on-surface-variant hover:bg-outline-variant transition-all hidden" id="pause-btn" onclick="pauseExercise()">
 <span class="material-symbols-outlined">pause</span>
-                            Pause
-                        </button>
-<button class="text-on-surface-variant px-6 py-4 rounded-full font-medium hover:text-primary transition-all flex items-center gap-2">
-<span class="material-symbols-outlined">refresh</span>
-                            Reset
-                        </button>
+</button>
 </div>
 </div>
+<!-- Contextual Card - Sidebar right -->
+<div class="lg:col-span-3">
+<div class="p-6 rounded-2xl bg-tertiary/5 border border-tertiary/10 space-y-4">
+<div class="w-12 h-12 bg-tertiary/10 rounded-xl flex items-center justify-center text-tertiary">
+<span class="material-symbols-outlined">psychology</span>
 </div>
-</div>
-<!-- Cross-link Banner -->
-<section class="mt-stack-lg">
-<a class="block p-8 md:p-12 rounded-3xl bg-secondary-container/20 border border-secondary/10 hover:border-secondary/30 transition-all group overflow-hidden relative" href="/burnout-test/">
-<div class="relative z-10 flex flex-col md:flex-row justify-between items-center gap-6">
-<div class="text-center md:text-left">
-<h3 class="font-headline-md text-headline-md text-secondary mb-2">Feeling overwhelmed?</h3>
-<p class="text-on-surface-variant">Take our free burnout self-assessment and get a personalized report.</p>
-</div>
-<div class="flex items-center gap-2 font-bold text-secondary group-hover:translate-x-2 transition-transform">
-                        Take the Test <span class="material-symbols-outlined">arrow_forward</span>
-</div>
-</div>
-<div class="absolute right-0 top-0 w-64 h-64 bg-secondary/5 rounded-full blur-3xl -mr-32 -mt-32"></div>
+<h4 class="font-headline text-xl text-tertiary font-bold leading-tight">Feeling overwhelmed?</h4>
+<p class="text-sm text-on-surface-variant leading-relaxed">
+                        If rhythmic breathing isn't quite enough, you might be experiencing burnout. Take our 5-minute clinically-backed assessment.
+                    </p>
+<a class="inline-flex items-center gap-2 text-sm font-bold text-tertiary hover:gap-4 transition-all" href="#">
+                        Take Burnout Test <span class="material-symbols-outlined text-sm">arrow_forward</span>
 </a>
+</div>
+<div class="mt-8 p-6 rounded-2xl glass-card">
+<div class="flex items-center gap-3 mb-4">
+<div class="w-2 h-2 bg-primary rounded-full"></div>
+<span class="font-label text-xs font-bold text-primary uppercase">Quick Tips</span>
+</div>
+<ul class="text-xs space-y-3 text-on-surface-variant italic">
+<li>• Rest your tongue behind upper teeth.</li>
+<li>• Inhale through your nose quietly.</li>
+<li>• Exhale through your mouth with a "whoosh".</li>
+</ul>
+</div>
+</div>
 </section>
 <!-- FAQ Section -->
-<section class="mt-stack-lg max-w-3xl mx-auto">
-<h2 class="font-headline-md text-headline-md text-center mb-stack-md text-on-surface">Common Questions</h2>
+<section class="max-w-[1140px] mx-auto px-margin-mobile md:px-gutter mt-stack-lg">
+<div class="max-w-3xl">
+<h2 class="font-display text-3xl font-bold mb-8">Breathing Fundamentals</h2>
 <div class="space-y-4">
-<!-- FAQ 1 -->
-<details class="group bg-white rounded-2xl border border-outline-variant/30 paper-shadow overflow-hidden">
-<summary class="flex justify-between items-center p-6 cursor-pointer list-none font-bold text-on-surface hover:text-primary transition-colors">
-                        What is the 4-7-8 breathing technique?
-                        <span class="material-symbols-outlined group-open:rotate-180 transition-transform">expand_more</span>
+<!-- Accordion Item 1 -->
+<details class="group border-b border-outline-variant/30 pb-4">
+<summary class="flex items-center justify-between cursor-pointer list-none py-2">
+<span class="font-headline text-lg font-medium">What is the 4-7-8 breathing technique?</span>
+<span class="material-symbols-outlined transition-transform group-open:rotate-180">expand_more</span>
 </summary>
-<div class="px-6 pb-6 text-on-surface-variant leading-relaxed">
-                        The 4-7-8 technique is a pranayama breathing exercise that involves inhaling for 4 seconds, holding the breath for 7 seconds, and exhaling forcefully for 8 seconds. It acts as a natural tranquilizer for the nervous system.
-                    </div>
+<p class="mt-4 text-on-surface-variant leading-relaxed">
+                            Developed by Dr. Andrew Weil, 4-7-8 is a rhythmic pattern that acts as a natural tranquilizer for the nervous system. By holding the breath and extending the exhale, you signal to your brain that it is safe to down-regulate the "fight or flight" response.
+                        </p>
 </details>
-<!-- FAQ 2 -->
-<details class="group bg-white rounded-2xl border border-outline-variant/30 paper-shadow overflow-hidden">
-<summary class="flex justify-between items-center p-6 cursor-pointer list-none font-bold text-on-surface hover:text-primary transition-colors">
-                        How often should I practice box breathing?
-                        <span class="material-symbols-outlined group-open:rotate-180 transition-transform">expand_more</span>
+<!-- Accordion Item 2 -->
+<details class="group border-b border-outline-variant/30 pb-4">
+<summary class="flex items-center justify-between cursor-pointer list-none py-2">
+<span class="font-headline text-lg font-medium">How often should I practice box breathing?</span>
+<span class="material-symbols-outlined transition-transform group-open:rotate-180">expand_more</span>
 </summary>
-<div class="px-6 pb-6 text-on-surface-variant leading-relaxed">
-                        Box breathing can be practiced anytime you feel stressed or need to regain focus. Many professionals use it for 3-5 minutes before high-stakes meetings or difficult tasks to reset their physiological state.
-                    </div>
+<p class="mt-4 text-on-surface-variant leading-relaxed">
+                            Navy SEALs use box breathing for immediate stress management. For long-term benefits, try practicing for 5 minutes twice a day, or whenever you feel a spike in anxiety or physiological tension.
+                        </p>
 </details>
-<!-- FAQ 3 -->
-<details class="group bg-white rounded-2xl border border-outline-variant/30 paper-shadow overflow-hidden">
-<summary class="flex justify-between items-center p-6 cursor-pointer list-none font-bold text-on-surface hover:text-primary transition-colors">
-                        Can breathing exercises help with anxiety?
-                        <span class="material-symbols-outlined group-open:rotate-180 transition-transform">expand_more</span>
+<!-- Accordion Item 3 -->
+<details class="group border-b border-outline-variant/30 pb-4">
+<summary class="flex items-center justify-between cursor-pointer list-none py-2">
+<span class="font-headline text-lg font-medium">Can breathing exercises help with anxiety?</span>
+<span class="material-symbols-outlined transition-transform group-open:rotate-180">expand_more</span>
 </summary>
-<div class="px-6 pb-6 text-on-surface-variant leading-relaxed">
-                        Yes, deep breathing activates the parasympathetic nervous system, which signals the brain to relax. This can lower your heart rate, reduce cortisol levels, and help manage physical symptoms of anxiety.
-                    </div>
+<p class="mt-4 text-on-surface-variant leading-relaxed">
+                            Yes. Deep, conscious breathing increases oxygen levels in the blood and stimulates the vagus nerve, which tells the body to calm down. It is one of the fastest biological ways to reduce acute anxiety.
+                        </p>
 </details>
-<!-- FAQ 4 -->
-<details class="group bg-white rounded-2xl border border-outline-variant/30 paper-shadow overflow-hidden">
-<summary class="flex justify-between items-center p-6 cursor-pointer list-none font-bold text-on-surface hover:text-primary transition-colors">
-                        Is it normal to feel lightheaded?
-                        <span class="material-symbols-outlined group-open:rotate-180 transition-transform">expand_more</span>
+<!-- Accordion Item 4 -->
+<details class="group border-b border-outline-variant/30 pb-4">
+<summary class="flex items-center justify-between cursor-pointer list-none py-2">
+<span class="font-headline text-lg font-medium">Is it normal to feel lightheaded?</span>
+<span class="material-symbols-outlined transition-transform group-open:rotate-180">expand_more</span>
 </summary>
-<div class="px-6 pb-6 text-on-surface-variant leading-relaxed">
-                        If you're new to deep breathing, mild lightheadedness can occur due to increased oxygen intake. If you feel dizzy, return to normal breathing immediately. Always practice in a safe, seated position.
-                    </div>
+<p class="mt-4 text-on-surface-variant leading-relaxed">
+                            Occasional lightheadedness is common for beginners as the body adjusts to higher oxygen intake. If you feel dizzy, stop the exercise and breathe normally for a few minutes. Always practice in a seated or lying position.
+                        </p>
 </details>
-<!-- FAQ 5 -->
-<details class="group bg-white rounded-2xl border border-outline-variant/30 paper-shadow overflow-hidden">
-<summary class="flex justify-between items-center p-6 cursor-pointer list-none font-bold text-on-surface hover:text-primary transition-colors">
-                        Why are longer exhales emphasized in 'Simple Calm'?
-                        <span class="material-symbols-outlined group-open:rotate-180 transition-transform">expand_more</span>
+<!-- Accordion Item 5 -->
+<details class="group border-b border-outline-variant/30 pb-4">
+<summary class="flex items-center justify-between cursor-pointer list-none py-2">
+<span class="font-headline text-lg font-medium">Why are longer exhales emphasized in Simple Calm?</span>
+<span class="material-symbols-outlined transition-transform group-open:rotate-180">expand_more</span>
 </summary>
-<div class="px-6 pb-6 text-on-surface-variant leading-relaxed">
-                        Exhaling for longer than you inhale directly stimulates the Vagus nerve, which is the primary component of your parasympathetic nervous system. This is one of the fastest ways to force the body out of 'fight or flight' mode.
-                    </div>
+<p class="mt-4 text-on-surface-variant leading-relaxed">
+                            The exhale is linked to the parasympathetic nervous system (the "rest and digest" mode). By making the exhale longer than the inhale, you prioritize relaxation over stimulation.
+                        </p>
 </details>
+</div>
 </div>
 </section>
 </main>
 <!-- Footer -->
-<footer class="bg-surface-container py-stack-lg mt-stack-lg">
-<div class="max-w-container-max mx-auto px-margin-mobile md:px-gutter flex flex-col md:flex-row justify-between items-start gap-stack-md">
-<div class="max-w-md">
-<div class="font-headline-sm text-headline-sm text-primary mb-4">CalmTool</div>
-<p class="font-body-md text-body-md text-on-surface-variant mb-6">
-                    CalmTool — Free wellness tools for everyday calm. If you are in crisis (US): call or text 988
-                </p>
-<div class="flex gap-6">
-<a class="text-on-surface-variant hover:text-primary transition-colors" href="#">Privacy</a>
-<a class="text-on-surface-variant hover:text-primary transition-colors" href="#">Terms</a>
-<a class="text-on-surface-variant hover:text-primary transition-colors" href="#">About</a>
-<a class="text-on-surface-variant hover:text-primary transition-colors" href="mailto:support@calmtool.io">support@calmtool.io</a>
+<footer class="bg-surface-container-high dark:bg-surface-container-lowest w-full py-stack-lg border-t border-outline-variant/20">
+<div class="max-w-[1140px] mx-auto px-margin-mobile md:px-gutter grid grid-cols-1 md:grid-cols-4 gap-stack-md">
+<div class="md:col-span-1">
+<div class="font-headline-sm text-headline-sm text-primary mb-4 font-bold">CalmTool</div>
+<p class="text-on-surface-variant text-sm pr-4">© 2024 CalmTool. Designed for restorative clarity.</p>
+</div>
+<div class="md:col-span-1">
+<h5 class="font-label font-bold text-tertiary dark:text-tertiary-fixed-dim mb-4">Resources</h5>
+<ul class="space-y-2 font-body-md text-body-md">
+<li><a class="text-on-surface-variant hover:text-secondary transition-colors opacity-80 hover:opacity-100" href="#">Breathe</a></li>
+<li><a class="text-on-surface-variant hover:text-secondary transition-colors opacity-80 hover:opacity-100" href="#">Burnout Test</a></li>
+<li><a class="text-on-surface-variant hover:text-secondary transition-colors opacity-80 hover:opacity-100" href="#">Digital Detox</a></li>
+</ul>
+</div>
+<div class="md:col-span-1">
+<h5 class="font-label font-bold text-tertiary dark:text-tertiary-fixed-dim mb-4">Support</h5>
+<ul class="space-y-2 font-body-md text-body-md">
+<li><a class="text-on-surface-variant hover:text-secondary transition-colors opacity-80 hover:opacity-100" href="#">Contact</a></li>
+<li><a class="text-on-surface-variant hover:text-secondary transition-colors opacity-80 hover:opacity-100" href="#">Privacy Policy</a></li>
+</ul>
+</div>
+<div class="md:col-span-1">
+<div class="p-4 rounded-xl bg-primary/10 border border-primary/20">
+<h5 class="font-label font-bold text-primary mb-2">Crisis Support</h5>
+<p class="text-xs text-on-surface-variant mb-4">If you are in immediate distress, please reach out.</p>
+<a class="flex items-center gap-2 text-primary font-bold text-lg" href="tel:988">
+<span class="material-symbols-outlined">call</span> 988
+                    </a>
 </div>
 </div>
-<div class="bg-surface-container-low p-6 rounded-2xl border border-primary/10">
-<h4 class="font-bold text-primary mb-2">Daily Mindfulness</h4>
-<p class="text-sm text-on-surface-variant mb-4">Get one simple tool every week.</p>
-<form class="flex gap-2">
-<input class="bg-white border-outline-variant/30 rounded-lg text-sm px-4 py-2 focus:ring-primary focus:border-primary" placeholder="Email address" type="email"/>
-<button class="bg-primary text-white px-4 py-2 rounded-lg text-sm font-bold hover:opacity-90 transition-opacity">Join</button>
-</form>
-</div>
-</div>
-<div class="max-w-container-max mx-auto px-margin-mobile md:px-gutter mt-12 pt-8 border-t border-outline-variant/20 text-xs text-on-surface-variant/60 flex justify-between">
-<span>© 2024 CalmTool.</span>
-<span>Artisanal Wellness Design.</span>
 </div>
 </footer>
 <script>
-        // Simple micro-interaction for breathing simulation text
-        const instructions = ["Inhale slowly...", "Hold gently...", "Exhale deeply...", "Pause..."];
-        const breathEl = document.getElementById('breath-instruction');
-        const timerEl = document.getElementById('timer-display');
-        let currentStep = 0;
-        let timer = 4;
+        const patterns = {
+            '478': [
+                { text: 'Inhale...', duration: 4, scale: 1.3 },
+                { text: 'Hold...', duration: 7, scale: 1.3 },
+                { text: 'Exhale...', duration: 8, scale: 1.0 }
+            ],
+            'box': [
+                { text: 'Inhale...', duration: 4, scale: 1.3 },
+                { text: 'Hold...', duration: 4, scale: 1.3 },
+                { text: 'Exhale...', duration: 4, scale: 1.0 },
+                { text: 'Hold...', duration: 4, scale: 1.0 }
+            ],
+            'simple': [
+                { text: 'Inhale...', duration: 5, scale: 1.3 },
+                { text: 'Exhale...', duration: 5, scale: 1.0 }
+            ],
+            'custom': [
+                { text: 'Inhale...', duration: 4, scale: 1.2 },
+                { text: 'Exhale...', duration: 4, scale: 1.0 }
+            ]
+        };
 
-        // Note: Actual logic would hook into the specific durations of the selected pattern
-        // This is a placeholder for visual demonstration
-        setInterval(() => {
-            if(timer > 1) {
-                timer--;
+        let currentPatternKey = '478';
+        let currentStepIndex = 0;
+        let timeLeft = 0;
+        let rounds = 0;
+        let isRunning = false;
+        let interval = null;
+
+        const circle = document.getElementById('circle');
+        const ripple = document.getElementById('ripple');
+        const instructionText = document.getElementById('instruction-text');
+        const timerDisplay = document.getElementById('timer-display');
+        const roundDisplay = document.getElementById('round-count');
+        const mainBtnText = document.getElementById('main-btn-text');
+        const pauseBtn = document.getElementById('pause-btn');
+
+        function setPattern(key) {
+            if (isRunning) resetExercise();
+            currentPatternKey = key;
+            
+            // Update UI
+            document.querySelectorAll('.pattern-btn').forEach(btn => {
+                btn.classList.remove('glass-card', 'border-l-4', 'border-primary', 'ring-1', 'ring-primary/5');
+                btn.classList.add('bg-surface-container-low');
+            });
+            const activeBtn = document.getElementById(`btn-${key}`);
+            activeBtn.classList.remove('bg-surface-container-low');
+            activeBtn.classList.add('glass-card', 'border-l-4', 'border-primary', 'ring-1', 'ring-primary/5');
+            
+            instructionText.innerText = 'Ready?';
+            timerDisplay.innerText = '00';
+        }
+
+        function toggleExercise() {
+            if (isRunning) {
+                pauseExercise();
             } else {
-                currentStep = (currentStep + 1) % instructions.length;
-                breathEl.innerText = instructions[currentStep];
-                // Reset timer simulation (simplified)
-                timer = currentStep % 2 === 0 ? 4 : 7; 
+                startExercise();
             }
-            timerEl.innerText = timer;
-        }, 1000);
+        }
+
+        function startExercise() {
+            isRunning = true;
+            mainBtnText.innerText = 'Stop';
+            pauseBtn.classList.remove('hidden');
+            ripple.classList.remove('hidden');
+            
+            if (timeLeft <= 0) {
+                currentStepIndex = 0;
+                startStep();
+            } else {
+                resumeTimer();
+            }
+        }
+
+        function startStep() {
+            const step = patterns[currentPatternKey][currentStepIndex];
+            instructionText.innerText = step.text;
+            timeLeft = step.duration;
+            timerDisplay.innerText = timeLeft.toString().padStart(2, '0');
+            
+            // Animate circle
+            circle.style.transform = `scale(${step.scale})`;
+            circle.style.transitionDuration = `${step.duration}s`;
+            
+            resumeTimer();
+        }
+
+        function resumeTimer() {
+            interval = setInterval(() => {
+                timeLeft--;
+                timerDisplay.innerText = timeLeft.toString().padStart(2, '0');
+                
+                if (timeLeft <= 0) {
+                    clearInterval(interval);
+                    nextStep();
+                }
+            }, 1000);
+        }
+
+        function nextStep() {
+            currentStepIndex++;
+            if (currentStepIndex >= patterns[currentPatternKey].length) {
+                currentStepIndex = 0;
+                rounds++;
+                roundDisplay.innerText = rounds;
+            }
+            startStep();
+        }
+
+        function pauseExercise() {
+            isRunning = false;
+            clearInterval(interval);
+            mainBtnText.innerText = 'Resume';
+            pauseBtn.classList.add('hidden');
+            ripple.classList.add('hidden');
+            
+            // Pause circle animation where it is
+            const computedStyle = window.getComputedStyle(circle);
+            const matrix = new WebKitCSSMatrix(computedStyle.transform);
+            circle.style.transitionDuration = '0s';
+            circle.style.transform = `scale(${matrix.a})`;
+        }
+
+        function resetExercise() {
+            isRunning = false;
+            clearInterval(interval);
+            currentStepIndex = 0;
+            timeLeft = 0;
+            rounds = 0;
+            roundDisplay.innerText = '0';
+            instructionText.innerText = 'Ready?';
+            timerDisplay.innerText = '00';
+            mainBtnText.innerText = 'Start Exercise';
+            pauseBtn.classList.add('hidden');
+            ripple.classList.add('hidden');
+            
+            circle.style.transitionDuration = '0.5s';
+            circle.style.transform = 'scale(1)';
+        }
+
+        // Initialize first pattern active state
+        setPattern('478');
     </script>
 
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-FZ1YQ9W9S3"></script>
@@ -351,5 +422,4 @@
 <script src="https://analytics.ahrefs.com/analytics.js" data-key="3DozwKgee5zQMCsEl99K4w" async></script>
 <script async src="https://plausible.shipsolo.io/js/pa-fKgXCF0plWSQJP3jm_Mc6.js"></script>
 <script>window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};plausible.init()</script>
-
 </body></html>

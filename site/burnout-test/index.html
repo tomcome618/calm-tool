@@ -102,15 +102,15 @@
 <!-- Assessment Progress & Question Card -->
 <section class="max-w-3xl mx-auto space-y-6">
 <div class="flex justify-between items-end mb-2">
-<span class="text-sm font-label font-bold text-primary tracking-wider uppercase">Question 13 of 15</span>
-<span class="text-xs text-on-surface-variant">85% Complete</span>
+<span class="text-sm font-label font-bold text-primary tracking-wider uppercase" id="q-counter">Question 1 of 15</span>
+<span class="text-xs text-on-surface-variant" id="q-percent">0% Complete</span>
 </div>
 <div class="w-full bg-surface-container h-2 rounded-full overflow-hidden">
-<div class="bg-primary h-full transition-all duration-700" style="width: 86.6%"></div>
+<div class="bg-primary h-full transition-all duration-700" id="q-progress" style="width:0%"></div>
 </div>
 <div class="glass-card p-10 rounded-xl shadow-xl space-y-12">
 <h2 class="text-3xl font-headline italic text-on-surface leading-snug">
-                    "I feel like I'm at the end of my rope by the end of the work day."
+                    <span id="q-text">I feel emotionally drained by my work.</span>
                 </h2>
 <div class="grid grid-cols-5 gap-2 md:gap-4">
 <button class="flex flex-col items-center gap-3 p-4 rounded-lg border border-outline-variant hover:border-primary hover:bg-primary-container group transition-all duration-200">
@@ -145,13 +145,11 @@
 </button>
 </div>
 <div class="flex justify-between pt-4">
-<button class="flex items-center gap-2 text-on-surface-variant font-label font-medium hover:text-primary transition-colors">
-<span class="material-symbols-outlined">arrow_back</span>
-                        Previous
-                    </button>
-<button class="bg-primary text-on-primary px-8 py-3 rounded-full font-label font-bold hover:opacity-90 shadow-lg shadow-primary/20 transition-all flex items-center gap-2">
-                        Next Question
-                        <span class="material-symbols-outlined">arrow_forward</span>
+<button class="flex items-center gap-2 text-on-surface-variant font-label font-medium hover:text-primary transition-colors" onclick="prevQuestion()" id="prev-btn" disabled>
+<span class="material-symbols-outlined">arrow_back</span> Previous</button>
+<button class="bg-primary text-on-primary px-8 py-3 rounded-full font-label font-bold hover:opacity-90 shadow-lg shadow-primary/20 transition-all flex items-center gap-2" onclick="nextQuestion()" id="next-btn" disabled>
+Next Question
+<span class="material-symbols-outlined">arrow_forward</span>
 </button>
 </div>
 </div>
@@ -264,8 +262,100 @@
 <a class="text-on-surface-variant hover:text-primary transition-colors font-body text-label-sm" href="#">Contact Us</a>
 </div>
 </footer>
+
 <script>
-        // Micro-interactions for the assessment buttons
+// Assessment Engine
+const questions = [
+    "I feel emotionally drained by my work.",
+    "I feel used up at the end of the workday.",
+    "I feel fatigued when I get up and have to face another day.",
+    "Working with people all day is a real strain for me.",
+    "I feel burned out from my work.",
+    "I have become less interested in my work since I started.",
+    "I have become less enthusiastic about my work.",
+    "I just want to do my job and not be bothered.",
+    "I have become more cynical about whether my work contributes anything.",
+    "I doubt the significance of my work.",
+    "I can effectively solve problems that arise in my work.",
+    "I feel I am making a positive contribution.",
+    "I feel energetic and engaged at work.",
+    "I have accomplished many worthwhile things in this job.",
+    "In my work, I deal with emotional problems very calmly."
+];
+let currentStep = 0;
+let scores = new Array(15).fill(0);
+let lastSelected = null;
+
+function answerQuestion(score, btn) {
+    scores[currentStep] = score;
+    // Update visual selection
+    document.querySelectorAll('#scale-buttons button').forEach(b => {
+        b.classList.remove('border-primary','bg-primary-container');
+        b.classList.add('border-outline-variant');
+        const dot = b.querySelector('.bg-primary');
+        if(dot) dot.classList.add('opacity-0');
+        const text = b.querySelector('span');
+        if(text) text.classList.remove('font-bold','text-on-primary-container');
+    });
+    btn.classList.add('border-primary','bg-primary-container');
+    btn.classList.remove('border-outline-variant');
+    const dot = btn.querySelector('.bg-primary');
+    if(dot) dot.classList.remove('opacity-0');
+    const text = btn.querySelector('span');
+    if(text) text.classList.add('font-bold','text-on-primary-container');
+    document.getElementById('next-btn').disabled = false;
+}
+
+function updateUI() {
+    document.getElementById('q-counter').textContent = 'Question ' + (currentStep+1) + ' of 15';
+    document.getElementById('q-percent').textContent = Math.round((currentStep/15)*100) + '% Complete';
+    document.getElementById('q-progress').style.width = ((currentStep/15)*100) + '%';
+    document.getElementById('q-text').textContent = questions[currentStep];
+    document.getElementById('prev-btn').disabled = currentStep === 0;
+    document.getElementById('next-btn').disabled = !scores[currentStep];
+    // Reset scale button visuals
+    document.querySelectorAll('#scale-buttons button').forEach(b => {
+        b.classList.remove('border-primary','bg-primary-container');
+        b.classList.add('border-outline-variant');
+    });
+}
+
+function nextQuestion() {
+    if (!scores[currentStep]) return;
+    if (currentStep < 14) { currentStep++; updateUI(); }
+    else showResults();
+}
+
+function prevQuestion() {
+    if (currentStep > 0) { currentStep--; updateUI(); }
+}
+
+function showResults() {
+    // Calculate section scores
+    let secA = scores.slice(0,5).reduce((a,b)=>a+b,0);
+    let secB = scores.slice(5,10).reduce((a,b)=>a+b,0);
+    let secC = scores.slice(10,15).reduce((a,b)=>a+b,0);
+    let aPct = (secA/25)*100, bPct = (secB/25)*100, cPct = (secC/25)*100;
+    let levelA = aPct > 60 ? 'High' : aPct > 35 ? 'Moderate' : 'Low';
+    let levelB = bPct > 60 ? 'High' : bPct > 35 ? 'Moderate' : 'Low';
+    let levelC = cPct < 40 ? 'Low' : cPct < 65 ? 'Moderate' : 'High';
+    
+    // Replace assessment area with results
+    document.querySelector('.max-w-3xl.mx-auto.space-y-6').innerHTML = '<div class="glass-card p-10 rounded-xl shadow-xl space-y-8"><h2 class="text-3xl font-headline text-on-surface">Your Burnout Profile</h2>' +
+        '<div class="space-y-4"><div><div class="flex justify-between mb-1"><span class="text-sm font-medium">Emotional Exhaustion</span><span class="text-sm font-bold">'+secA+'/25 — '+levelA+'</span></div><div class="w-full bg-surface-container h-3 rounded-full overflow-hidden"><div class="h-full rounded-full transition-all duration-1000" style="width:'+aPct+'%;background:'+(levelA===\'High\'?'#C4956A':levelA===\'Moderate\'?'#D8B48F':'#6B8B6C')+'"></div></div></div>' +
+        '<div><div class="flex justify-between mb-1"><span class="text-sm font-medium">Disconnection</span><span class="text-sm font-bold">'+secB+'/25 — '+levelB+'</span></div><div class="w-full bg-surface-container h-3 rounded-full overflow-hidden"><div class="h-full rounded-full transition-all duration-1000" style="width:'+bPct+'%;background:'+(levelB===\'High\'?'#C4956A':levelB===\'Moderate\'?'#D8B48F':'#6B8B6C')+'"></div></div></div>' +
+        '<div><div class="flex justify-between mb-1"><span class="text-sm font-medium">Personal Accomplishment</span><span class="text-sm font-bold">'+secC+'/25 — '+levelC+'</span></div><div class="w-full bg-surface-container h-3 rounded-full overflow-hidden"><div class="h-full rounded-full transition-all duration-1000" style="width:'+cPct+'%;background:#6B8B6C"></div></div></div></div>' +
+        '<p class="text-on-surface-variant leading-relaxed">' + (levelA===\'High\'&&levelB===\'High\'?'Your scores suggest significant emotional exhaustion and disconnection. Consider speaking with a therapist and prioritizing recovery.':'Your scores indicate areas that need attention. Regular self-care and boundary-setting can help.') + '</p>' +
+        '<div class="flex gap-4"><a href="/breathe/" class="bg-primary text-on-primary px-6 py-3 rounded-full font-medium hover:opacity-90">Try Breathing Exercises</a><button onclick="location.reload()" class="border border-outline-variant px-6 py-3 rounded-full font-medium hover:bg-surface">Retake Assessment</button></div>' +
+        '<p class="text-xs text-on-surface-variant mt-4 italic">This is not a clinical diagnosis. If you are in crisis, call or text <strong>988</strong>.</p></div>';
+    window.scrollTo({top:0,behavior:'smooth'});
+}
+
+updateUI();
+</script>
+
+<script>
+        // Micro-interactions for remaining buttons
         document.querySelectorAll('button.group').forEach(btn => {
             btn.addEventListener('click', function() {
                 // Remove active classes from siblings

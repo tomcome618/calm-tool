@@ -35,5 +35,5 @@
 - done：01-07, 09-11（08 skipped）
 - running：无
 - running：none（等待 1 周数据后 Stage 12）
-- waiting：12
+- waiting：12（1 周数据后）
 - blocked：calmtool.io DNS 待绑定

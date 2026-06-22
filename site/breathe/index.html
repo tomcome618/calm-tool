@@ -124,6 +124,16 @@
 <span class="material-symbols-outlined text-outline">settings</span>
 </button>
 </div>
+
+<div id="custom-controls" style="display:none" class="max-w-md mx-auto mt-4 p-5 bg-surface-container-low rounded-xl border border-outline-variant/20">
+<p class="font-label text-sm text-on-surface mb-3">Customize your rhythm (seconds)</p>
+<div class="flex gap-4">
+<div class="flex-1"><label class="text-xs text-on-surface-variant">Inhale</label><input type="number" id="custom-inhale" class="w-full mt-1 p-2 rounded-lg bg-surface text-on-surface border border-outline-variant/20 text-center font-bold" value="4" min="1" max="15"></div>
+<div class="flex-1"><label class="text-xs text-on-surface-variant">Hold</label><input type="number" id="custom-hold" class="w-full mt-1 p-2 rounded-lg bg-surface text-on-surface border border-outline-variant/20 text-center font-bold" value="0" min="0" max="15"></div>
+<div class="flex-1"><label class="text-xs text-on-surface-variant">Exhale</label><input type="number" id="custom-exhale" class="w-full mt-1 p-2 rounded-lg bg-surface text-on-surface border border-outline-variant/20 text-center font-bold" value="4" min="1" max="15"></div>
+</div>
+</div>
+
 <!-- Animation Area - Center -->
 <div class="lg:col-span-6 flex flex-col items-center justify-center min-h-[500px] relative">
 <!-- Background Decorative Glow -->
@@ -311,6 +321,7 @@
         const pauseBtn = document.getElementById('pause-btn');
 
         function setPattern(key) {
+            document.getElementById('custom-controls').style.display = (key === 'custom') ? 'block' : 'none';
             if (isRunning) resetExercise();
             currentPatternKey = key;
             
@@ -326,6 +337,24 @@
             instructionText.innerText = 'Ready?';
             timerDisplay.innerText = '00';
         }
+
+        // Update custom pattern when inputs change
+        ['custom-inhale','custom-hold','custom-exhale'].forEach(id => {
+            const el = document.getElementById(id);
+            if(el) el.addEventListener('input', () => {
+                const inhale = parseInt(document.getElementById('custom-inhale').value) || 4;
+                const hold = parseInt(document.getElementById('custom-hold').value) || 0;
+                const exhale = parseInt(document.getElementById('custom-exhale').value) || 4;
+                const steps = [{ text: 'Inhale...', duration: inhale, scale: 1.2 }];
+                if(hold > 0) steps.push({ text: 'Hold...', duration: hold, scale: 1.2 });
+                steps.push({ text: 'Exhale...', duration: exhale, scale: 1.0 });
+                patterns['custom'] = steps;
+                if(currentPatternKey === 'custom' && !isRunning) {
+                    instructionText.innerText = 'Ready?';
+                    timerDisplay.innerText = '00';
+                }
+            });
+        });
 
         function toggleExercise() {
             if (isRunning) {

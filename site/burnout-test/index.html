@@ -1,337 +1,384 @@
 <!DOCTYPE html>
 
-<html class="scroll-smooth" lang="en"><head>
+<html class="light" lang="en"><head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Burnout Self-Assessment | CalmTool</title>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&amp;family=Inter:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@400;500;600&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <script id="tailwind-config">
         tailwind.config = {
             darkMode: "class",
             theme: {
                 extend: {
                     "colors": {
-                        "on-primary": "#ffffff",
-                        "tertiary": "#5d5c58",
-                        "on-error-container": "#93000a",
-                        "surface-container-low": "#f5f3f3",
-                        "tertiary-fixed": "#e5e2dc",
-                        "on-background": "#1b1c1c",
-                        "background": "#fbf9f8",
-                        "surface-container": "#efeded",
+                        "surface-container-high": "#e8e8e4",
+                        "tertiary-container": "#986773",
+                        "secondary-container": "#ffca9b",
                         "inverse-primary": "#adcfad",
-                        "primary-container": "#5d7c5e",
+                        "on-tertiary": "#ffffff",
+                        "secondary": "#7d5630",
+                        "outline": "#737971",
+                        "secondary-fixed": "#ffdcbf",
+                        "on-secondary-fixed-variant": "#623f1b",
+                        "on-primary-container": "#f7fff2",
+                        "on-error-container": "#93000a",
+                        "on-background": "#1a1c1a",
+                        "error-container": "#ffdad6",
+                        "background": "#faf9f5",
+                        "tertiary": "#7d4f5a",
+                        "surface-bright": "#faf9f5",
+                        "on-tertiary-fixed": "#32101a",
+                        "inverse-surface": "#2f312e",
+                        "surface-dim": "#dadad6",
+                        "surface-variant": "#e3e3de",
+                        "outline-variant": "#c2c8bf",
+                        "surface-container-lowest": "#ffffff",
+                        "on-tertiary-container": "#fffbff",
+                        "on-secondary-container": "#7a532e",
+                        "on-surface-variant": "#424841",
+                        "surface": "#faf9f5",
+                        "surface-container": "#eeeeea",
+                        "surface-container-low": "#f4f4ef",
+                        "tertiary-fixed": "#ffd9e0",
+                        "primary-fixed": "#c9ecc7",
+                        "inverse-on-surface": "#f1f1ec",
+                        "primary-fixed-dim": "#adcfad",
+                        "on-tertiary-fixed-variant": "#653a45",
+                        "on-secondary-fixed": "#2d1600",
+                        "tertiary-fixed-dim": "#f2b7c4",
                         "on-secondary": "#ffffff",
                         "on-primary-fixed-variant": "#304d33",
-                        "on-primary-fixed": "#04210b",
-                        "on-secondary-container": "#7a532e",
-                        "on-tertiary-container": "#fcffe0",
-                        "outline-variant": "#c2c8bf",
-                        "inverse-surface": "#303030",
-                        "on-secondary-fixed-variant": "#623f1b",
-                        "on-tertiary": "#ffffff",
-                        "surface": "#fbf9f8",
-                        "surface-dim": "#dbd9d9",
-                        "surface-container-high": "#eae8e7",
-                        "surface-variant": "#e4e2e2",
-                        "outline": "#737971",
-                        "on-tertiary-fixed-variant": "#474743",
-                        "surface-bright": "#fbf9f8",
-                        "secondary-container": "#ffca9b",
-                        "primary-fixed-dim": "#adcfad",
-                        "primary-fixed": "#c9ecc7",
+                        "secondary-fixed-dim": "#f0bd8f",
+                        "surface-container-highest": "#e3e3de",
                         "error": "#ba1a1a",
                         "surface-tint": "#476649",
-                        "secondary-fixed-dim": "#f0bd8f",
-                        "on-surface-variant": "#424841",
-                        "secondary-fixed": "#ffdcbf",
+                        "primary-container": "#5d7c5e",
+                        "on-primary-fixed": "#04210b",
                         "primary": "#456347",
-                        "surface-container-highest": "#e4e2e2",
-                        "on-tertiary-fixed": "#1c1c18",
-                        "on-secondary-fixed": "#2d1600",
-                        "error-container": "#ffdad6",
-                        "on-surface": "#1b1c1c",
-                        "on-error": "#ffffff",
-                        "on-primary-container": "#f7fff2",
-                        "tertiary-fixed-dim": "#c9c6c1",
-                        "inverse-on-surface": "#f2f0f0",
-                        "surface-container-lowest": "#ffffff",
-                        "secondary": "#7d5630",
-                        "tertiary-container": "#767470"
+                        "on-primary": "#ffffff",
+                        "on-surface": "#1a1c1a",
+                        "on-error": "#ffffff"
                     },
                     "borderRadius": {
-                        "DEFAULT": "1rem",
-                        "lg": "2rem",
-                        "xl": "3rem",
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
                         "full": "9999px"
                     },
                     "spacing": {
-                        "xs": "4px",
-                        "xl": "80px",
-                        "base": "8px",
-                        "sm": "12px",
-                        "md": "24px",
+                        "stack-sm": "16px",
                         "margin-mobile": "20px",
-                        "gutter": "24px",
-                        "margin-desktop": "120px",
-                        "lg": "48px"
+                        "unit": "8px",
+                        "stack-lg": "64px",
+                        "container-max": "1140px",
+                        "stack-md": "32px",
+                        "gutter": "24px"
                     },
                     "fontFamily": {
-                        "display-lg": ["\"Source Serif 4\""],
-                        "headline-md": ["\"Source Serif 4\""],
                         "headline-sm": ["\"Source Serif 4\""],
-                        "body-md": ["Inter"],
+                        "display-lg-mobile": ["\"Source Serif 4\""],
+                        "headline-md": ["\"Source Serif 4\""],
+                        "display-lg": ["\"Source Serif 4\""],
+                        "label-sm": ["Inter"],
                         "body-lg": ["Inter"],
-                        "caption": ["Inter"],
-                        "label-md": ["Inter"]
+                        "body-md": ["Inter"]
                     },
                     "fontSize": {
-                        "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "600"}],
-                        "headline-md": ["32px", {"lineHeight": "40px", "fontWeight": "500"}],
-                        "headline-sm": ["24px", {"lineHeight": "32px", "fontWeight": "500"}],
-                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
-                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
-                        "caption": ["12px", {"lineHeight": "16px", "fontWeight": "400"}],
-                        "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600"}]
+                        "headline-sm": ["24px", {"lineHeight": "1.4", "fontWeight": "500"}],
+                        "display-lg-mobile": ["36px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                        "headline-md": ["32px", {"lineHeight": "1.3", "fontWeight": "500"}],
+                        "display-lg": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                        "label-sm": ["14px", {"lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}]
                     }
                 },
             },
         }
     </script>
 <style>
-        .zen-shadow {
-            box-shadow: 0 20px 40px -10px rgba(69, 99, 71, 0.08);
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            vertical-align: middle;
         }
-        .tea-gradient {
-            background: linear-gradient(180deg, #fbf9f8 0%, #f5f3f3 100%);
+        .paper-shadow {
+            box-shadow: 0 30px 60px -12px rgba(0, 0, 0, 0.02), 0 4px 12px -4px rgba(0, 0, 0, 0.04);
         }
-        #question-text {
-            transition: opacity 0.3s ease-in-out;
+        .paper-shadow-hover:hover {
+            box-shadow: 0 40px 80px -12px rgba(0, 0, 0, 0.04), 0 8px 16px -4px rgba(0, 0, 0, 0.06);
+            transform: translateY(-4px);
+            transition: all 0.3s ease;
+        }
+        .washi-blur {
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+        .clay-amber-btn {
+            background-color: #c59d71;
+            color: #faf9f5;
+            transition: all 0.2s ease;
+        }
+        .clay-amber-btn:hover {
+            background-color: #b38a5e;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px -5px rgba(197, 157, 113, 0.3);
         }
     </style>
 </head>
-<body class="bg-background text-on-background font-body-md selection:bg-primary-fixed selection:text-on-primary-fixed">
+<body class="bg-background text-on-surface selection:bg-primary-fixed selection:text-on-primary-fixed">
 <!-- Medical Disclaimer -->
-<div class="bg-secondary-fixed text-on-secondary-fixed px-margin-desktop py-base text-center">
-<p class="font-label-md text-label-md flex items-center justify-center gap-xs">
-<span class="material-symbols-outlined text-[18px]">info</span>
-            This tool is not a clinical diagnosis. If you are in crisis, please call or text 988.
-        </p>
+<aside class="w-full bg-surface-container-low/50 border-b border-secondary/20 py-3 px-margin-mobile md:px-gutter z-[100]">
+<div class="max-w-container-max mx-auto flex items-start gap-3">
+<span class="material-symbols-outlined text-secondary shrink-0 mt-0.5">info</span>
+<p class="font-body-md text-label-sm text-secondary leading-relaxed">
+<strong>Important:</strong> This assessment is for informational and educational purposes only. It is NOT a clinical diagnosis, medical advice, or a substitute for professional mental health care. If you are experiencing a crisis or having thoughts of self-harm, call or text <strong>988</strong> (US Suicide and Crisis Lifeline) or contact your local emergency services immediately.
+            </p>
 </div>
+</aside>
 <!-- TopNavBar -->
-<nav class="sticky top-0 w-full bg-background/80 backdrop-blur-md z-50">
-<div class="flex justify-between items-center px-margin-desktop py-md max-w-[1440px] mx-auto">
-<div class="font-headline-sm text-headline-sm text-primary tracking-tight">CalmTool</div>
-<div class="hidden md:flex gap-lg items-center">
-<a class="text-tertiary hover:text-primary transition-colors duration-300 font-body-md text-body-md" href="#">Breathe</a>
-<a class="text-primary font-bold border-b-2 border-primary pb-1 font-body-md text-body-md" href="#">Burnout Test</a>
-<a class="text-tertiary hover:text-primary transition-colors duration-300 font-body-md text-body-md" href="#">Digital Detox</a>
-</div>
-<button class="bg-primary text-on-primary px-md py-sm rounded-full font-label-md hover:bg-primary-container transition-all ease-in-out">
-                Get Started
-            </button>
-</div>
+<header class="sticky top-0 z-50 bg-surface/70 backdrop-blur-md dark:bg-surface-dim/70 border-b border-primary/10 h-16">
+<div class="flex justify-between items-center w-full px-margin-mobile md:px-gutter max-w-container-max mx-auto h-full">
+<div class="font-headline-sm text-headline-sm font-semibold text-primary dark:text-primary-fixed-dim">
+                CalmTool
+            </div>
+<nav class="hidden md:flex items-center gap-stack-md">
+<a class="font-label-sm text-label-sm text-on-surface-variant hover:text-primary transition-colors" href="#">Breathe</a>
+<a class="font-label-sm text-label-sm text-primary font-bold border-b-2 border-primary pb-1" href="#">Burnout Test</a>
+<a class="font-label-sm text-label-sm text-on-surface-variant hover:text-primary transition-colors" href="#">Digital Detox</a>
 </nav>
-<main class="max-w-[1440px] mx-auto px-margin-desktop py-xl">
-<!-- Header Section -->
-<section class="text-center mb-xl" id="header-section">
-<h1 class="font-display-lg text-display-lg text-primary mb-md">Free Burnout Self-Assessment</h1>
-<p class="font-body-lg text-body-lg text-tertiary">15 questions. 3 minutes. Instant, private results.</p>
-</section>
-<!-- Assessment Container -->
-<div class="max-w-[800px] mx-auto bg-surface-container-lowest rounded-lg p-lg zen-shadow relative overflow-hidden" id="assessment-container">
-<!-- Progress Area -->
-<div class="mb-lg" id="progress-container">
-<div class="flex justify-between items-end mb-xs">
-<span class="font-label-md text-label-md text-tertiary uppercase tracking-widest">Progress</span>
-<span class="font-headline-sm text-headline-sm text-primary" id="progress-text">1/15</span>
-</div>
-<div class="w-full h-1.5 bg-surface-container rounded-full overflow-hidden">
-<div class="h-full bg-primary transition-all duration-700 ease-out w-[6.66%]" id="progress-bar"></div>
+<div class="flex items-center gap-4">
+<button class="material-symbols-outlined text-primary p-2 hover:bg-primary/5 rounded-full transition-colors">menu</button>
 </div>
 </div>
-<!-- Question Flow -->
-<div class="min-h-[320px] flex flex-col justify-center" id="question-area">
-<h2 class="font-headline-md text-headline-md mb-lg leading-snug" id="question-text">How often do you feel emotionally drained from your work or daily responsibilities?</h2>
-<div class="space-y-sm" id="answer-options">
-<button class="w-full text-left p-md rounded-lg bg-surface hover:bg-primary-fixed transition-all duration-300 border border-transparent hover:border-primary/20 group flex justify-between items-center" onclick="handleAnswer(1)">
-<span class="font-body-lg text-body-lg group-hover:text-primary transition-colors">Never</span>
-<span class="material-symbols-outlined text-outline group-hover:text-primary opacity-0 group-hover:opacity-100 transition-all">circle</span>
-</button>
-<button class="w-full text-left p-md rounded-lg bg-surface hover:bg-primary-fixed transition-all duration-300 border border-transparent hover:border-primary/20 group flex justify-between items-center" onclick="handleAnswer(2)">
-<span class="font-body-lg text-body-lg group-hover:text-primary transition-colors">Rarely</span>
-<span class="material-symbols-outlined text-outline group-hover:text-primary opacity-0 group-hover:opacity-100 transition-all">circle</span>
-</button>
-<button class="w-full text-left p-md rounded-lg bg-surface hover:bg-primary-fixed transition-all duration-300 border border-transparent hover:border-primary/20 group flex justify-between items-center" onclick="handleAnswer(3)">
-<span class="font-body-lg text-body-lg group-hover:text-primary transition-colors">Sometimes</span>
-<span class="material-symbols-outlined text-outline group-hover:text-primary opacity-0 group-hover:opacity-100 transition-all">circle</span>
-</button>
-<button class="w-full text-left p-md rounded-lg bg-surface hover:bg-primary-fixed transition-all duration-300 border border-transparent hover:border-primary/20 group flex justify-between items-center" onclick="handleAnswer(4)">
-<span class="font-body-lg text-body-lg group-hover:text-primary transition-colors">Often</span>
-<span class="material-symbols-outlined text-outline group-hover:text-primary opacity-0 group-hover:opacity-100 transition-all">circle</span>
-</button>
-<button class="w-full text-left p-md rounded-lg bg-surface hover:bg-primary-fixed transition-all duration-300 border border-transparent hover:border-primary/20 group flex justify-between items-center" onclick="handleAnswer(5)">
-<span class="font-body-lg text-body-lg group-hover:text-primary transition-colors">Every day</span>
-<span class="material-symbols-outlined text-outline group-hover:text-primary opacity-0 group-hover:opacity-100 transition-all">circle</span>
-</button>
-</div>
-</div>
-<!-- Results Section (Initially Hidden) -->
-<div class="hidden" id="results-area">
-<div class="text-center mb-xl">
-<span class="material-symbols-outlined text-primary text-[48px] mb-sm">spa</span>
-<h2 class="font-display-lg text-display-lg text-on-background">Your Wellness Profile</h2>
-<p class="font-body-lg text-body-lg text-tertiary">A reflection of your current internal landscape.</p>
-</div>
-<div class="space-y-lg mb-xl">
-<!-- Emotional Exhaustion -->
-<div class="space-y-xs">
-<div class="flex justify-between items-end">
-<label class="font-label-md text-label-md text-tertiary uppercase tracking-widest">Emotional Exhaustion</label>
-<span class="font-headline-sm text-headline-sm text-primary" id="exhaustion-score">Medium</span>
-</div>
-<div class="w-full h-3 bg-surface-container rounded-full overflow-hidden">
-<div class="h-full bg-primary transition-all duration-1000 w-0" id="exhaustion-bar"></div>
-</div>
-</div>
-<!-- Disconnection -->
-<div class="space-y-xs">
-<div class="flex justify-between items-end">
-<label class="font-label-md text-label-md text-tertiary uppercase tracking-widest">Disconnection</label>
-<span class="font-headline-sm text-headline-sm text-primary" id="disconnection-score">Low</span>
-</div>
-<div class="w-full h-3 bg-surface-container rounded-full overflow-hidden">
-<div class="h-full bg-primary transition-all duration-1000 w-0" id="disconnection-bar"></div>
-</div>
-</div>
-<!-- Personal Accomplishment -->
-<div class="space-y-xs">
-<div class="flex justify-between items-end">
-<label class="font-label-md text-label-md text-tertiary uppercase tracking-widest">Personal Accomplishment</label>
-<span class="font-headline-sm text-headline-sm text-primary" id="accomplishment-score">High</span>
-</div>
-<div class="w-full h-3 bg-surface-container rounded-full overflow-hidden">
-<div class="h-full bg-primary transition-all duration-1000 w-0" id="accomplishment-bar"></div>
-</div>
-</div>
-</div>
-<!-- Recommendation Block -->
-<div class="bg-primary-container/10 border border-primary/10 rounded-lg p-lg text-center tea-gradient">
-<h3 class="font-headline-md text-headline-md text-primary mb-sm">A path toward calm.</h3>
-<p class="font-body-lg text-body-lg text-on-surface-variant mb-lg">Your results suggest that while you maintain a sense of purpose, your energy reserves are dipping. Intentionally carving out space for stillness is your next step.</p>
-<button class="inline-flex items-center gap-xs bg-primary text-on-primary px-lg py-md rounded-full font-label-md hover:scale-105 transition-transform duration-300">
-<span class="material-symbols-outlined">air</span>
-                        Try a Breathing Exercise
+</header>
+<main class="min-h-screen">
+<!-- Hero Section -->
+<section class="py-stack-lg px-margin-mobile md:px-gutter max-w-container-max mx-auto text-center">
+<div class="max-w-3xl mx-auto space-y-stack-sm">
+<h1 class="font-display-lg text-display-lg text-on-surface">Free Burnout Self-Assessment — Check Your Stress Level</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant leading-relaxed">
+                    15 questions. About 3 minutes. Instant, private results. This assessment looks at three dimensions of burnout: emotional exhaustion, disconnection from your work, and sense of accomplishment. No data is stored or sent anywhere — your answers stay in your browser.
+                </p>
+<div class="pt-stack-md">
+<button class="clay-amber-btn px-10 py-4 rounded-full font-label-sm text-label-sm font-bold uppercase tracking-wider">
+                        Start Assessment
                     </button>
 </div>
 </div>
+</section>
+<!-- Assessment Canvas -->
+<section class="pb-stack-lg px-margin-mobile md:px-gutter">
+<div class="max-w-[700px] mx-auto bg-surface-container-lowest paper-shadow rounded-xl p-8 md:p-12 relative overflow-hidden">
+<!-- Progress Bar -->
+<div class="absolute top-0 left-0 w-full h-1.5 bg-surface-container">
+<div class="h-full bg-primary transition-all duration-500" style="width: 85%;"></div>
 </div>
-<!-- Atmospheric Elements -->
-<div class="mt-xl text-center">
-<div class="inline-block p-lg rounded-xl tea-gradient zen-shadow max-w-[600px]">
-<p class="italic text-tertiary font-body-lg">"Rest is not idleness, and to lie sometimes on the grass under trees on a summer's day, listening to the murmur of the water, or watching the clouds float across the sky, is by no means a waste of time."</p>
+<!-- Current Question -->
+<div class="space-y-stack-md" id="question-view">
+<div class="flex justify-between items-end mb-stack-sm">
+<span class="font-label-sm text-label-sm text-primary font-bold">Question 13 of 15</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">85% Complete</span>
+</div>
+<h2 class="font-headline-md text-headline-md text-on-surface">"I feel like I'm at the end of my rope by the end of the work day."</h2>
+<div class="grid grid-cols-1 gap-3 pt-stack-sm">
+<button class="w-full text-left p-5 rounded-lg border border-outline-variant hover:border-primary hover:bg-primary/5 transition-all flex justify-between items-center group">
+<span class="font-body-md text-body-md">Never</span>
+<span class="material-symbols-outlined opacity-0 group-hover:opacity-100 text-primary transition-opacity">radio_button_unchecked</span>
+</button>
+<button class="w-full text-left p-5 rounded-lg border border-outline-variant hover:border-primary hover:bg-primary/5 transition-all flex justify-between items-center group">
+<span class="font-body-md text-body-md">Rarely</span>
+<span class="material-symbols-outlined opacity-0 group-hover:opacity-100 text-primary transition-opacity">radio_button_unchecked</span>
+</button>
+<button class="w-full text-left p-5 rounded-lg border-2 border-primary bg-primary/5 flex justify-between items-center group">
+<span class="font-body-md text-body-md font-semibold text-primary">Sometimes</span>
+<span class="material-symbols-outlined text-primary" data-weight="fill">check_circle</span>
+</button>
+<button class="w-full text-left p-5 rounded-lg border border-outline-variant hover:border-primary hover:bg-primary/5 transition-all flex justify-between items-center group">
+<span class="font-body-md text-body-md">Often</span>
+<span class="material-symbols-outlined opacity-0 group-hover:opacity-100 text-primary transition-opacity">radio_button_unchecked</span>
+</button>
+<button class="w-full text-left p-5 rounded-lg border border-outline-variant hover:border-primary hover:bg-primary/5 transition-all flex justify-between items-center group">
+<span class="font-body-md text-body-md">Every day</span>
+<span class="material-symbols-outlined opacity-0 group-hover:opacity-100 text-primary transition-opacity">radio_button_unchecked</span>
+</button>
+</div>
+<div class="flex justify-between items-center pt-stack-md border-t border-outline-variant/30">
+<button class="flex items-center gap-2 text-on-surface-variant hover:text-primary transition-colors font-label-sm text-label-sm">
+<span class="material-symbols-outlined">arrow_back</span>
+                            Previous
+                        </button>
+<button class="clay-amber-btn px-8 py-3 rounded-full font-label-sm text-label-sm font-bold flex items-center gap-2">
+                            Next Question
+                            <span class="material-symbols-outlined">arrow_forward</span>
+</button>
 </div>
 </div>
+</div>
+</section>
+<!-- Results Section (Visible as a mock completion) -->
+<section class="py-stack-lg px-margin-mobile md:px-gutter bg-surface-container-low">
+<div class="max-w-[800px] mx-auto space-y-stack-md">
+<div class="text-center mb-stack-lg">
+<h2 class="font-display-lg text-display-lg text-on-surface mb-stack-sm">Your Assessment Results</h2>
+<div class="h-1 w-20 bg-primary mx-auto rounded-full"></div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<!-- Emotional Exhaustion Card -->
+<div class="bg-surface-container-lowest p-6 rounded-xl paper-shadow border-t-4 border-error">
+<div class="flex justify-between items-start mb-4">
+<h3 class="font-label-sm text-label-sm font-bold uppercase text-on-surface-variant">Emotional Exhaustion</h3>
+<span class="text-error font-bold text-label-sm">High</span>
+</div>
+<div class="text-3xl font-display-lg text-on-surface mb-4">19<span class="text-body-md text-on-surface-variant">/25</span></div>
+<div class="w-full h-2 bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-error" style="width: 76%;"></div>
+</div>
+<p class="mt-4 font-body-md text-label-sm text-on-surface-variant leading-relaxed">Feeling overextended and depleted of your emotional resources.</p>
+</div>
+<!-- Disconnection Card -->
+<div class="bg-surface-container-lowest p-6 rounded-xl paper-shadow border-t-4 border-secondary">
+<div class="flex justify-between items-start mb-4">
+<h3 class="font-label-sm text-label-sm font-bold uppercase text-on-surface-variant">Disconnection</h3>
+<span class="text-secondary font-bold text-label-sm">Moderate</span>
+</div>
+<div class="text-3xl font-display-lg text-on-surface mb-4">12<span class="text-body-md text-on-surface-variant">/25</span></div>
+<div class="w-full h-2 bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-secondary" style="width: 48%;"></div>
+</div>
+<p class="mt-4 font-body-md text-label-sm text-on-surface-variant leading-relaxed">Developing an impersonal or cynical response to people and work.</p>
+</div>
+<!-- Personal Accomplishment Card -->
+<div class="bg-surface-container-lowest p-6 rounded-xl paper-shadow border-t-4 border-primary">
+<div class="flex justify-between items-start mb-4">
+<h3 class="font-label-sm text-label-sm font-bold uppercase text-on-surface-variant">Accomplishment</h3>
+<span class="text-primary font-bold text-label-sm">Moderate</span>
+</div>
+<div class="text-3xl font-display-lg text-on-surface mb-4">15<span class="text-body-md text-on-surface-variant">/25</span></div>
+<div class="w-full h-2 bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-primary" style="width: 60%;"></div>
+</div>
+<p class="mt-4 font-body-md text-label-sm text-on-surface-variant leading-relaxed">Feelings of competence and successful achievement in your work.</p>
+</div>
+</div>
+<!-- Interpretation & Next Steps -->
+<div class="bg-surface-container-lowest paper-shadow rounded-xl p-8 md:p-12 space-y-stack-md">
+<div class="space-y-4">
+<h3 class="font-headline-sm text-headline-sm text-on-surface">What your scores mean</h3>
+<p class="font-body-lg text-body-lg text-on-surface-variant leading-relaxed">
+                            Your scores suggest a high level of emotional exhaustion combined with moderate disconnection. This is a common pattern for "early-stage burnout." While you still feel a sense of accomplishment in your work, the energy required to maintain that performance is becoming unsustainable.
+                        </p>
+</div>
+<div class="p-6 bg-error-container/10 border border-error/20 rounded-lg flex gap-4">
+<span class="material-symbols-outlined text-error" style="font-variation-settings: 'FILL' 1;">warning</span>
+<div>
+<h4 class="font-label-sm text-label-sm font-bold text-on-error-container">Critical Indicator Alert</h4>
+<p class="font-body-md text-label-sm text-on-error-container leading-relaxed">Your emotional exhaustion score is in the top 15th percentile. We strongly recommend speaking with a healthcare professional or a trusted counselor to discuss sustainable boundaries.</p>
+</div>
+</div>
+<div class="pt-stack-sm space-y-6">
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Recommended Next Steps</h3>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<div class="p-5 bg-surface rounded-lg border border-outline-variant flex items-start gap-4">
+<div class="bg-primary/10 p-3 rounded-full text-primary">
+<span class="material-symbols-outlined">air</span>
+</div>
+<div>
+<h4 class="font-label-sm text-label-sm font-bold text-on-surface mb-1">Physiological Reset</h4>
+<p class="font-body-md text-label-sm text-on-surface-variant">Engage the parasympathetic nervous system with controlled breathing.</p>
+</div>
+</div>
+<div class="p-5 bg-surface rounded-lg border border-outline-variant flex items-start gap-4">
+<div class="bg-secondary/10 p-3 rounded-full text-secondary">
+<span class="material-symbols-outlined">schedule</span>
+</div>
+<div>
+<h4 class="font-label-sm text-label-sm font-bold text-on-surface mb-1">Strategic Rest</h4>
+<p class="font-body-md text-label-sm text-on-surface-variant">Schedule a 24-hour "digital-free" window this weekend.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="border-t border-outline-variant/30 pt-stack-md text-center">
+<p class="font-body-md text-on-surface-variant mb-stack-sm italic">"This is not a clinical diagnosis. It is a reflection of your current state based on your responses."</p>
+<a class="inline-flex items-center gap-2 font-label-sm text-label-sm font-bold text-primary group hover:gap-4 transition-all" href="/breathe/">
+                            Want immediate relief? Try our guided breathing exercises
+                            <span class="material-symbols-outlined transition-transform">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+</section>
+<!-- Aesthetic Cross-link Banner -->
+<section class="max-w-container-max mx-auto px-margin-mobile md:px-gutter py-stack-lg">
+<div class="relative rounded-2xl overflow-hidden h-[300px] flex items-center justify-center text-center px-8">
+<div class="absolute inset-0 z-0">
+<img class="w-full h-full object-cover brightness-[0.9]" data-alt="A serene, minimalist flat lay of matcha tea powder spiraling softly on a textured washi paper surface. The lighting is diffused and natural, highlighting organic textures and soft green and cream tones. The mood is calm, artisanal, and perfectly balanced, embodying a quiet morning ritual." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA-ZxwiKAPbegoEx_00LnDUoVcEdfs2MYYQvV3GFcBhAsE0KILXMLbn2ptPVidKxbBQCU3b3xb41X9C6Y_SvGF9T1fHEL4ETiw1BUYg_TUFrnrjeUrBL2AmhC8L9zJgVv1dd40vjkBX0_MOFYhZ448dkp_PFbigQhLSffNDrL41RjnAJXjlhsNMOtBdZA7pVdnGcO4H6P6Xss5Ex6EjAsq4o1KKJOKYS672XJ9INQRkn6_LWEP5hugMBC8tHaah0Rvv3VwLVIzVpQ"/>
+</div>
+<div class="relative z-10 space-y-4">
+<h2 class="font-display-lg text-display-lg text-white drop-shadow-md">A moment for your mind.</h2>
+<p class="text-white font-body-lg text-body-lg max-w-xl mx-auto drop-shadow-sm">Lower your cortisol levels in just 60 seconds with our interactive breathing tool.</p>
+<a class="inline-block bg-white text-primary px-8 py-3 rounded-full font-label-sm text-label-sm font-bold hover:scale-105 transition-transform" href="#">Start Breathing</a>
+</div>
+</div>
+</section>
 </main>
 <!-- Footer -->
-<footer class="bg-surface-container mt-xl">
-<div class="flex flex-col md:flex-row justify-between items-center px-margin-desktop py-lg gap-md max-w-[1440px] mx-auto">
-<div class="flex flex-col gap-xs">
-<div class="font-headline-sm text-headline-sm text-primary">CalmTool</div>
-<p class="font-caption text-caption text-tertiary">© 2026 CalmTool. In crisis? Call or text 988.</p>
+<footer class="bg-surface-container dark:bg-surface-container-highest w-full py-stack-lg">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-gutter flex flex-col md:flex-row justify-between items-start gap-stack-md">
+<div class="space-y-4 max-w-md">
+<div class="font-headline-sm text-headline-sm text-primary dark:text-primary-fixed">CalmTool</div>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+                    CalmTool — Free wellness tools for everyday calm. If you are in crisis (US): call or text 988
+                </p>
+<div class="flex gap-4 pt-2">
+<a class="text-on-surface-variant hover:text-primary transition-colors" href="#"><span class="material-symbols-outlined">mail</span></a>
+<a class="text-on-surface-variant hover:text-primary transition-colors" href="#"><span class="material-symbols-outlined">share</span></a>
 </div>
-<div class="flex gap-lg">
-<a class="font-caption text-caption text-tertiary hover:text-primary transition-opacity cursor-pointer" href="/privacy/">Privacy</a>
-<a class="font-caption text-caption text-tertiary hover:text-primary transition-opacity cursor-pointer" href="/terms/">Terms</a>
-<a class="font-caption text-caption text-tertiary hover:text-primary transition-opacity cursor-pointer" href="/about/">About</a>
 </div>
+<div class="grid grid-cols-2 gap-x-stack-lg gap-y-stack-sm">
+<div class="space-y-2 flex flex-col">
+<span class="font-label-sm text-label-sm font-bold text-on-surface mb-2">Tools</span>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Breathe</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Burnout Test</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Digital Detox</a>
+</div>
+<div class="space-y-2 flex flex-col">
+<span class="font-label-sm text-label-sm font-bold text-on-surface mb-2">Company</span>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Privacy</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Terms</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">About</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Support</a>
+</div>
+</div>
+</div>
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-gutter mt-stack-lg pt-stack-sm border-t border-outline-variant/30 text-center">
+<p class="font-label-sm text-label-sm text-on-surface-variant/60">© 2024 CalmTool. Built with intentionality.</p>
 </div>
 </footer>
 <script>
-        const questions = [
-            "How often do you feel emotionally drained from your work or daily responsibilities?",
-            "How often do you feel used up at the end of the day?",
-            "How often do you feel fatigued when you get up in the morning and have to face another day on the job?",
-            "How often do you feel that you are working too hard on your job?",
-            "How often do you feel frustrated by your current tasks?",
-            "How often do you feel that you are negatively influencing other people’s lives through your work?",
-            "How often do you feel callous toward people as if they were objects?",
-            "How often do you worry that this job is hardening you emotionally?",
-            "How often do you feel like you don't really care what happens to some people?",
-            "How often do you feel that people blame you for some of their problems?",
-            "How often do you feel that you can effectively solve the problems that arise in your work?",
-            "How often do you feel that you are making a positive contribution to your community or work?",
-            "How often do you feel exhilarated after working closely with your peers or clients?",
-            "How often do you feel that you are achieving many worthwhile things in this job?",
-            "How often do you feel that in your work you are very calm and handle emotional problems very well?"
-        ];
-
-        let currentStep = 0;
-        const totalSteps = questions.length;
-        let scores = [];
-
-        function handleAnswer(score) {
-            scores.push(score);
-            if (currentStep < totalSteps - 1) {
-                currentStep++;
-                updateUI();
-            } else {
-                showResults();
-            }
-        }
-
-        function updateUI() {
-            const questionText = document.getElementById('question-text');
-            const progressText = document.getElementById('progress-text');
-            const progressBar = document.getElementById('progress-bar');
-            
-            questionText.style.opacity = 0;
-            
-            setTimeout(() => {
-                questionText.innerText = questions[currentStep];
-                progressText.innerText = `${currentStep + 1}/${totalSteps}`;
-                progressBar.style.width = `${((currentStep + 1) / totalSteps) * 100}%`;
-                questionText.style.opacity = 1;
-            }, 300);
-        }
-
-        function showResults() {
-            // Hide assessment content
-            document.getElementById('header-section').classList.add('hidden');
-            document.getElementById('progress-container').classList.add('hidden');
-            document.getElementById('question-area').classList.add('hidden');
-            
-            // Show results
-            const resultsArea = document.getElementById('results-area');
-            resultsArea.classList.remove('hidden');
-            resultsArea.classList.add('animate-in', 'fade-in', 'duration-700');
-
-            // Simulate realistic scores based on the 15 questions (MBI categories)
-            // Simplified calculation for demo purposes
-            // Calculate real scores from answers
-            const exScores = scores.slice(0,5).reduce((a,b)=>a+b,0);
-            const dcScores = scores.slice(5,10).reduce((a,b)=>a+b,0);
-            const acScores = scores.slice(10,15).reduce((a,b)=>a+b,0);
-            const exPct = Math.round((exScores/25)*100);
-            const dcPct = Math.round((dcScores/25)*100);
-            const acPct = Math.round((acScores/25)*100);
-            
-            document.getElementById('exhaustion-bar').style.width = exPct + '%';
-            document.getElementById('disconnection-bar').style.width = dcPct + '%';
-            document.getElementById('accomplishment-bar').style.width = acPct + '%';
-                
-                window.scrollTo({ top: resultsArea.offsetTop - 100, behavior: 'smooth' });
-            }, 100);
-        }
+        // Micro-interaction for buttons
+        document.querySelectorAll('button, a').forEach(el => {
+            el.addEventListener('mousedown', () => {
+                el.classList.add('scale-95');
+            });
+            el.addEventListener('mouseup', () => {
+                el.classList.remove('scale-95');
+            });
+            el.addEventListener('mouseleave', () => {
+                el.classList.remove('scale-95');
+            });
+        });
     </script>
 
-<!-- Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-FZ1YQ9W9S3"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date());gtag("config","G-FZ1YQ9W9S3")</script>
 <script>(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y)})(window,document,"clarity","script","x7fp5a4niz")</script>
 <script src="https://analytics.ahrefs.com/analytics.js" data-key="3DozwKgee5zQMCsEl99K4w" async></script>
 <script async src="https://plausible.shipsolo.io/js/pa-fKgXCF0plWSQJP3jm_Mc6.js"></script>
 <script>window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};plausible.init()</script>
+
 </body></html>

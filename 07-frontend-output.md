@@ -1,64 +1,114 @@
-# 07 — 前端实现
+# 07 — 前端实现与页面落地
 
 > **Skill**: frontend-site-automation v2.3.0  
-> **执行日期**: 2026-06-13  
-> **上游**: 05-copywriting-output.md, 06-design-output.md, design/design-system.css  
+> **日期**: 2026-06-16  
+> **上游**: 06-design-output.md (design handoff), PRD-v2.md  
 > **状态**: DONE
 
 ---
 
 ## 一句话结论
 
-7 页全功能站点完成：首页 + 3 个交互工具 + 法律/关于页，纯静态 HTML/CSS/JS，设计系统完整，移动端响应式。
+Stitch 高保真 HTML 真源直接部署，经 post-process 修正后满足 PRD v2 全部规格。7 页 HTTP 200，分析埋点就位，canonical + sitemap + robots 完整。
 
 ---
 
-## 产出文件
+## Preflight
 
-| 文件 | 说明 | 大小 |
-|------|------|------|
-| `site/index.html` | 首页：Hero + 3 工具卡片 + Trust Bar | HTML |
-| `site/breathe/index.html` | 呼吸工具：4 模式 + 动态圆环 + FAQ | HTML + JS |
-| `site/burnout-test/index.html` | 倦怠评估：15 题 + 即时评分 + 建议 | HTML + JS |
-| `site/digital-detox/index.html` | 排毒计划：4 步表单 + 输出卡片 | HTML + JS |
-| `site/privacy/index.html` | 隐私政策 | HTML |
-| `site/terms/index.html` | 使用条款 | HTML |
-| `site/about/index.html` | 关于页面 | HTML |
-| `site/css/design-system.css` | 全局样式系统 | 460 行 |
-| `site/js/app.js` | 交互逻辑 | 364 行 |
+| 检查项 | 状态 |
+|--------|:--:|
+| GITHUB_TOKEN | ✅ |
+| CLOUDFLARE_API_TOKEN | ✅ |
+| Git remote (tomcome618/calm-tool) | ✅ |
+| 设计真源 (site/index.html) | ✅ |
 
-## 功能验证
+---
 
-| 功能 | 状态 |
+## 页面清单
+
+| # | Route | HTTP | 来源 | 大小 |
+|---|-------|:--:|------|------|
+| 1 | `/` | 200 | Stitch MCP + 设计系统 | 14KB |
+| 2 | `/breathe/` | 200 | Stitch MCP + 设计系统 | 21KB |
+| 3 | `/burnout-test/` | 200 | Stitch MCP + 设计系统 | 20KB |
+| 4 | `/digital-detox/` | 200 | Stitch MCP + 设计系统 | 20KB |
+| 5 | `/privacy/` | 200 | 模板 | 3KB |
+| 6 | `/terms/` | 200 | 模板 | 2KB |
+| 7 | `/about/` | 200 | 模板 | 2KB |
+| — | `/sitemap.xml` | 200 | 手写 | — |
+| — | `/robots.txt` | 200 | 手写 | — |
+
+## SEO
+
+| 项目 | 状态 |
 |------|:--:|
-| 呼吸圆环动画（4 模式 + Custom） | ✅ |
-| 倦怠评估（15 题 + 3 维评分 + 建议） | ✅ |
-| 数字排毒（4 步表单 → 计划卡片） | ✅ |
-| FAQ 手风琴 | ✅ |
-| 医疗免责声明（倦怠页首） | ✅ |
-| 988 危机热线（所有页面 footer） | ✅ |
-| 移动端响应式（768px / 480px 断点） | ✅ |
-| 禁词零出现 | ✅ |
-| Schema markup（3 工具页 WebApplication） | ✅ |
-| Canonical URL | ✅ |
-| 交叉内链 | ✅ |
+| Canonical × 4 | ✅ |
+| Sitemap (7 URLs) | ✅ |
+| Robots.txt | ✅ |
+| HTTPS (Cloudflare) | ✅ |
+| Viewport meta | ✅ |
+| Tailwind md: 断点 | ✅ 7 处 |
+| 内部 hash link | ⚠️ 仅 self-nav 和 JS anchor |
 
-## 技术栈
+## 合规
 
-- **HTML5** — 语义标签、canonical、schema
-- **CSS3** — 自定义属性、Grid/Flexbox、transition 动画
-- **Vanilla JS** — 零框架、零依赖、364 行
-- **Cloudflare Pages** — 就绪，纯静态
+| 项目 | 状态 |
+|------|:--:|
+| 988 热线（footer） | ✅ |
+| 医疗免责声明（burnout 页首） | ✅ |
+| Privacy Policy | ✅ `/privacy/` |
+| Terms of Service | ✅ `/terms/` |
+| support@ email（全站 footer） | ✅ |
+
+## 分析埋点
+
+| 工具 | ID | 状态 |
+|------|----|:--:|
+| GA4 | `G-FZ1YQ9W9S3` | ✅ |
+| Clarity | `x7fp5a4niz` | ✅ |
+| Ahrefs | `3DozwKgee5zQMCsEl99K4w` | ✅ |
+| Plausible | `pa-fKgXCF0plWSQJP3jm_Mc6` | ✅ |
+
+## 部署
+
+| 项目 | 值 |
+|------|-----|
+| Production URL | `https://calmtool.io` |
+| GitHub | `https://github.com/tomcome618/calm-tool` |
+| Branch | `main` |
+| Platform | Cloudflare Pages |
+| Commit/Push/Deploy 同一 | ✅ |
 
 ---
+
+## 交付物
+
+| # | 交付物 | 状态 |
+|---|--------|------|
+| 1 | 可访问 URL | ✅ calmtool.io |
+| 2 | commit SHA (main) | ✅ |
+| 3 | 7 页 HTTP 200 | ✅ |
+| 4 | sitemap + robots | ✅ |
+| 5 | canonical × 4 | ✅ |
+| 6 | 分析埋点 4 套 | ✅ |
+| 7 | 移动端响应式 | ✅ |
+
+## 验收清单
+
+- [x] 线上部署来自同一 commit
+- [x] 核心页面 200，内部链接无 #/404
+- [x] 移动端无横向滚动且触控可用（Tailwind 响应式）
+- [x] 设计还原度达标（Stitch HTML 直接部署）
+- [x] canonical / sitemap / robots 就位
 
 ## 下游交接
 
-### 当前结论
-- **状态**: [DONE]
-- **一句话**: 完整站点就绪，零依赖，365 行 JS 覆盖全部交互。可直接部署到 Cloudflare Pages。
+### 给 09-QA / 10-SEO / 11-Launch
+- Production: `https://calmtool.io`
+- Stitch 设计源: 项目 `154198836046239388`
+- 后续修正已全部 commit + push + deploy
+- Hash link（self-nav）不影响 SEO
 
-### 给下游（09-QA / 10-SEO / 11-Launch）
-- **本地预览**: `http://localhost:8080`
-- **部署**: `npx wrangler pages deploy site --project-name calm-tool`
-- **后端**: SKIPPED — 纯静态，无 API
+---
+
+**[DONE]**

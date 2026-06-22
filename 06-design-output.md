@@ -1,71 +1,85 @@
-# 06 — 视觉设计与页面生成
+# 06 — 视觉设计 Handoff
 
 > **Skill**: site-design-student v2.3.0  
-> **执行日期**: 2026-06-13  
-> **上游**: 02-product-prd.md, 05-copywriting-output.md  
-> **工具**: Stitch (MCP via `stitch-mcp init` → API Key auth)  
-> **状态**: DONE
+> **日期**: 2026-06-16  
+> **上游**: 02-product-prd.md, 05-copywriting-output.md, PRD-v2.md  
+> **状态**: DONE → 交付下游 07-frontend
 
 ---
 
 ## 一句话结论
 
-基于 Stitch MCP 生成 4 个核心页面高保真设计 + 完整的 CSS 设计系统（460 行），覆盖全站 7 页。设计真源为 `design/design-system.css`，前端可直接引用实现。
+基于 Stitch MCP + `create_design_system` 生成 4 个高保真桌面端页面，已下载 HTML 真源并完成 post-process（导航链接、logo、favicon、analytics）。全部 7 页（4 Stitch + 3 法律页）已部署到 `https://calmtool.io`。
 
 ---
 
-## 设计方向
+## 设计系统
 
-**视觉概念:** "Tranquil Wellness" — Tea-house tranquility。科学精确 + 有机温暖。
-
-**反 AI 味检查:** 系统字体(非 Inter 强制)、柔和绿色(非蓝紫)、大面积留白(非紧凑)、暖白底色(非纯白)、琥珀 CTA(非蓝色)。
-
----
-
-## 产出文件
-
-| 文件 | 内容 | 行数 |
-|------|------|:--:|
-| `design/design-system.css` | 完整 CSS 变量 + 组件样式 + 响应式 | 460 |
-| `design/HANDOFF.md` | 前端 handoff：色板、组件映射、实现顺序 | — |
-| Stitch Project | `18152209088133777835` (4 screens) | — |
-
-### Stitch Screen Map
-
-| # | 页面 | Route | screenId |
-|---|------|-------|----------|
-| 1 | Home | `/` | `818b4231f6454db8921c61281b7f4a77` |
-| 2 | Breathe | `/breathe/` | `c2bd46076cc04cd6a74163bc17999a83` |
-| 3 | Burnout Test | `/burnout-test/` | `d6b9c40ee66f4be386ea41e6d06081ac` |
-| 4 | Digital Detox | `/digital-detox/` | `e1ec42e0b3ee49fe98074b42dbc78329` |
+| 参数 | 值 |
+|------|-----|
+| **Stitch 项目** | `154198836046239388` |
+| **设计系统 ID** | `4877226475778458951` |
+| **主色 (customColor)** | `#6B8B6C` matcha green |
+| **辅色 (overrideSecondary)** | `#C4956A` clay amber |
+| **三级色 (overrideTertiary)** | `#8B7355` wood |
+| **中性色 (overrideNeutral)** | `#F9F6F0` washi white |
+| **headlineFont** | `SOURCE_SERIF_4` |
+| **bodyFont** | `INTER` |
+| **colorMode** | `LIGHT` |
+| **colorVariant** | `TONAL_SPOT` |
+| **roundness** | `ROUND_TWELVE` |
 
 ---
 
-## 设计系统 Token 摘要
+## Stitch Screen Map（桌面端）
 
-```
-Primary:   #6B8B6C (matcha green)
-Dark:      #3A7D65 (logo, headings)
-Accent:    #C4956A (clay CTA)
-BG:        #F9F6F0 (washi white)
-Surface:   #FFFFFF (cards)
-Text:      #2D2A26 / #6B6560 / #9B9590
-Font:      system-ui, Inter, sans-serif
-Radius:    6px-24px (pill CTA: 9999px)
-Shadow:    green-tinted ambient (never pure black)
-```
+| # | 页面 | Route | screenId | 大小 |
+|---|------|-------|----------|------|
+| 1 | Home | `/` | `03c367f065bd453d83d6a0a4b94fcb05` | 14KB |
+| 2 | Breathe | `/breathe/` | `435621d67c874f86961af4fdf59d6746` | 21KB |
+| 3 | Burnout | `/burnout-test/` | `04aa87f7bfa5420597ab7ab729694d94` | 20KB |
+| 4 | Detox | `/digital-detox/` | `bd4529547b644d468e2faf50726136bd` | 20KB |
 
-## 关键交互状态
+---
 
-| 组件 | 状态 | 实现方式 |
-|------|------|---------|
-| Breathing circle | inhale / hold / exhale | CSS `transform: scale()` + `transition` |
-| Pattern buttons | default / hover / active | `.pattern-btn` + `.active` class |
-| Scale buttons | default / hover / selected | `.scale-btn` + `.selected` class |
-| FAQ accordion | closed / open | `.faq-answer` + `.open` class (JS toggle) |
-| Progress bar | 0-100% | `.progress-fill` width transition |
-| Plan form | step 1→4 | JS step counter, show/hide sections |
-| Plan card | hidden / visible | Display after form completion |
+## 页面清单（7 页）
+
+| # | Route | 来源 | 内容 |
+|---|-------|------|------|
+| 1 | `/` | Stitch | Hero + 3 工具卡片 + Trust Bar |
+| 2 | `/breathe/` | Stitch | 4 呼吸模式 + 圆环 + FAQ |
+| 3 | `/burnout-test/` | Stitch | 15 题量表 + 评分 + 建议 |
+| 4 | `/digital-detox/` | Stitch | 4 步表单 + 计划卡片 |
+| 5 | `/privacy/` | 模板 | Privacy Policy |
+| 6 | `/terms/` | 模板 | Terms of Use |
+| 7 | `/about/` | 模板 | About 页 |
+
+---
+
+## 全局资产
+
+| 文件 | 路径 | 说明 |
+|------|------|------|
+| Logo | `/img/logo.svg` | 琥珀色圆圈 + 白色叶片 + "CalmTool" 字标 |
+| Favicon | `/favicon.svg?v=2` | 简化版叶片圆圈 |
+| Sitemap | `/sitemap.xml` | 7 URLs |
+| Robots | `/robots.txt` | Allow all + Sitemap 地址 |
+| Analytics | 内嵌 `</body>` 前 | GA4 + Clarity + Ahrefs + Plausible |
+
+---
+
+## Post-Process 修正清单（已执行）
+
+| 修正 | 说明 |
+|------|------|
+| `href="#"` → 真实路由 | 导航链接、footer 链接全部改为 `/breathe/` 等 |
+| Logo 注入 | `<img src="/img/logo.svg?v=2">` 替换纯文本 "CalmTool" |
+| Favicon | `<link rel="icon" href="/favicon.svg?v=2">` |
+| Email footer | `support@calmtool.io` 补全到所有页面 |
+| Terms footer | 补全到首页和呼吸页 |
+| Nav 字体统一 | 去除 `uppercase`、`dark:` 变体、`translate-y` |
+| Nav 文案统一 | "Breathe | Burnout Test | Digital Detox" 三页一致 |
+| Sometimes 按钮 | 补 `group` class 修复点击 |
 
 ---
 
@@ -73,31 +87,38 @@ Shadow:    green-tinted ambient (never pure black)
 
 | # | 交付物 | 状态 |
 |---|--------|------|
-| 1 | 设计系统 CSS | ✅ 460 行 |
-| 2 | Stitch 屏幕 × 4 | ✅ |
-| 3 | 色板 & 字体 Token | ✅ |
-| 4 | 组件映射表 | ✅ |
-| 5 | 交互状态清单 | ✅ |
-| 6 | 前端 Handoff | ✅ |
+| 1 | Stitch 高保真 HTML × 4 | ✅ |
+| 2 | 设计系统定义 (Stitch DS ID) | ✅ |
+| 3 | Logo + Favicon SVG | ✅ |
+| 4 | Post-process 修正清单 | ✅ |
+| 5 | 部署 URL | ✅ `calmtool.io` |
+| 6 | 下游 Handoff（本文） | ✅ |
 
 ## 验收清单
 
-- [x] 设计是真源，不是单张概念图（460 行 CSS + 组件系统）
-- [x] 前端可提取字体/颜色/间距（`:root` CSS 变量完整）
-- [x] 关键交互状态齐全（呼吸/量表/FAQ/表单/进度）
-- [x] 视觉不撞脸（茶室温暖感，非通用 SaaS 模板）
-- [x] 移动端响应式（768px / 480px 断点）
+- [x] 设计是真源（Stitch HTML 直接部署）
+- [x] 色板/字体严格按 PRD v2
+- [x] 4 页 nav 字体统一
+- [x] 全部 7 页 footer 含 Privacy + Terms + 988 + Email
+- [x] Logo + Favicon 就位
 
 ---
 
-## 下游交接摘要
+## 下游交接 — 给 07-frontend
 
-### 当前结论
-- **状态**: [DONE]
-- **一句话**: 基于 Stitch 设计真源产出完整 CSS 设计系统 + 4 屏设计 + 组件映射 + 交互状态说明。前端可直接开工。
+### 必须读取
+- 本文（06-design-output.md）
+- `PRD-v2.md` — Route Contract、Data Contract
+- `site/` 目录下全部 HTML 文件
 
-### 给下游（07-frontend）
-- **必须读取**: `design/design-system.css` + `design/HANDOFF.md` + `05-copywriting-output.md`
-- **CSS 变量直接引用**: `<link rel="stylesheet" href="/css/design-system.css">`
-- **7 页实现顺序**: index → breathe → burnout-test → digital-detox → privacy → terms → about
-- **后端**: 纯静态，Stage 08 跳过。无数据库/无 API/无 auth
+### 不能假设
+- 不需要重新生成 Stitch 页面（HTML 已就绪）
+- 不需要写 CSS/JS（Stitch 自带 Tailwind + 内嵌交互）
+
+### 07 阶段需要做
+- Preflight 检查（GitHub、Cloudflare 权限）
+- 确认 7 页 HTTP 200
+- 确认移动端响应式正常
+- 确认分析埋点上报
+- deploy + smoke test
+- 输出 07-frontend-output.md

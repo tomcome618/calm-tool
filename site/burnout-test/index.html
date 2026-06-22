@@ -303,6 +303,7 @@ function answerQuestion(score, btn) {
     if(dot) dot.classList.remove('opacity-0');
     const text = btn.querySelector('span');
     if(text) text.classList.add('font-bold','text-on-primary-container');
+    scores[currentStep] = score;
     document.getElementById('next-btn').disabled = false;
 }
 
@@ -351,7 +352,7 @@ function showResults() {
     window.scrollTo({top:0,behavior:'smooth'});
 }
 
-updateUI();
+if (document.readyState === 'loading') { document.addEventListener('DOMContentLoaded', updateUI); } else { updateUI(); }
 </script>
 
 <script>

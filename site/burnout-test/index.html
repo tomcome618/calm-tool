@@ -304,7 +304,9 @@ function answerQuestion(score, btn) {
     const text = btn.querySelector('span');
     if(text) text.classList.add('font-bold','text-on-primary-container');
     scores[currentStep] = score;
-    document.getElementById('next-btn').disabled = false;
+    document.getElementById('next-btn').removeAttribute('disabled');
+    document.getElementById('next-btn').style.opacity = '1';
+    document.getElementById('next-btn').style.cursor = 'pointer';
 }
 
 function updateUI() {
@@ -313,7 +315,11 @@ function updateUI() {
     document.getElementById('q-progress').style.width = ((currentStep/15)*100) + '%';
     document.getElementById('q-text').textContent = questions[currentStep];
     document.getElementById('prev-btn').disabled = currentStep === 0;
-    document.getElementById('next-btn').disabled = !scores[currentStep];
+    let nd = !scores[currentStep];
+    if(nd) document.getElementById('next-btn').setAttribute('disabled','');
+    else document.getElementById('next-btn').removeAttribute('disabled');
+    document.getElementById('next-btn').style.opacity = nd ? '0.4' : '1';
+    document.getElementById('next-btn').style.cursor = nd ? 'not-allowed' : 'pointer';
     // Reset scale button visuals
     document.querySelectorAll('#scale-buttons button').forEach(b => {
         b.classList.remove('border-primary','bg-primary-container');

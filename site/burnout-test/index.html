@@ -286,7 +286,7 @@ let currentStep = 0;
 let scores = new Array(15).fill(0);
 let lastSelected = null;
 
-function answerQuestion(score, btn) {
+function answerQuestion(score, btn) { alert("clicked score: "+score);
     scores[currentStep] = score;
     // Update visual selection
     document.querySelectorAll('#scale-buttons button').forEach(b => {

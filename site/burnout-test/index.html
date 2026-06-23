@@ -100,7 +100,7 @@
             </p>
 </section>
 <!-- Assessment Progress & Question Card -->
-<section class="max-w-3xl mx-auto space-y-6">
+<section id="static-recommendations" style="display:none" class="bg-surface-container-low rounded-3xl p-12 space-y-6">
 <div class="flex justify-between items-end mb-2">
 <span class="text-sm font-label font-bold text-primary tracking-wider uppercase" id="q-counter">Question 1 of 15</span>
 <span class="text-xs text-on-surface-variant" id="q-percent">0% Complete</span>
@@ -155,7 +155,7 @@ Next Question
 </div>
 </section>
 <!-- Results Section (Bento Grid Style) -->
-<section class="bg-surface-container-low rounded-3xl p-12 space-y-10">
+<section id="static-results" style="display:none" class="bg-surface-container-low rounded-3xl p-12 space-y-10">
 <div class="text-center space-y-2">
 <h2 class="text-4xl font-headline font-bold">Your Assessment Results</h2>
 <p class="text-on-surface-variant">Data based on the Maslach Burnout Inventory indicators.</p>
@@ -332,25 +332,34 @@ function prevQuestion() {
     if (currentStep > 0) { currentStep--; updateUI(); }
 }
 
-function showResults() {
-    // Calculate section scores
-    let secA = scores.slice(0,5).reduce((a,b)=>a+b,0);
-    let secB = scores.slice(5,10).reduce((a,b)=>a+b,0);
-    let secC = scores.slice(10,15).reduce((a,b)=>a+b,0);
-    let aPct = (secA/25)*100, bPct = (secB/25)*100, cPct = (secC/25)*100;
-    let levelA = aPct > 60 ? 'High' : aPct > 35 ? 'Moderate' : 'Low';
-    let levelB = bPct > 60 ? 'High' : bPct > 35 ? 'Moderate' : 'Low';
-    let levelC = cPct < 40 ? 'Low' : cPct < 65 ? 'Moderate' : 'High';
-    
-    // Replace assessment area with results
-    document.querySelector('.max-w-3xl.mx-auto.space-y-6').innerHTML = '<div class="glass-card p-10 rounded-xl shadow-xl space-y-8"><h2 class="text-3xl font-headline text-on-surface">Your Burnout Profile</h2>' +
-        '<div class="space-y-4"><div><div class="flex justify-between mb-1"><span class="text-sm font-medium">Emotional Exhaustion</span><span class="text-sm font-bold">'+secA+'/25 — '+levelA+'</span></div><div class="w-full bg-surface-container h-3 rounded-full overflow-hidden"><div class="h-full rounded-full transition-all duration-1000" style="width:'+aPct+'%;background:'+(levelA===\'High\'?'#C4956A':levelA===\'Moderate\'?'#D8B48F':'#6B8B6C')+'"></div></div></div>' +
-        '<div><div class="flex justify-between mb-1"><span class="text-sm font-medium">Disconnection</span><span class="text-sm font-bold">'+secB+'/25 — '+levelB+'</span></div><div class="w-full bg-surface-container h-3 rounded-full overflow-hidden"><div class="h-full rounded-full transition-all duration-1000" style="width:'+bPct+'%;background:'+(levelB===\'High\'?'#C4956A':levelB===\'Moderate\'?'#D8B48F':'#6B8B6C')+'"></div></div></div>' +
-        '<div><div class="flex justify-between mb-1"><span class="text-sm font-medium">Personal Accomplishment</span><span class="text-sm font-bold">'+secC+'/25 — '+levelC+'</span></div><div class="w-full bg-surface-container h-3 rounded-full overflow-hidden"><div class="h-full rounded-full transition-all duration-1000" style="width:'+cPct+'%;background:#6B8B6C"></div></div></div></div>' +
-        '<p class="text-on-surface-variant leading-relaxed">' + (levelA===\'High\'&&levelB===\'High\'?'Your scores suggest significant emotional exhaustion and disconnection. Consider speaking with a therapist and prioritizing recovery.':'Your scores indicate areas that need attention. Regular self-care and boundary-setting can help.') + '</p>' +
-        '<div class="flex gap-4"><a href="/breathe/" class="bg-primary text-on-primary px-6 py-3 rounded-full font-medium hover:opacity-90">Try Breathing Exercises</a><button onclick="location.reload()" class="border border-outline-variant px-6 py-3 rounded-full font-medium hover:bg-surface">Retake Assessment</button></div>' +
-        '<p class="text-xs text-on-surface-variant mt-4 italic">This is not a clinical diagnosis. If you are in crisis, call or text <strong>988</strong>.</p></div>';
-    window.scrollTo({top:0,behavior:'smooth'});
+function showResults(){
+    var a=scores.slice(0,5).reduce(function(x,y){return x+y},0);
+    var b=scores.slice(5,10).reduce(function(x,y){return x+y},0);
+    var c=scores.slice(10,15).reduce(function(x,y){return x+y},0);
+    var ap=Math.round(a/25*100),bp=Math.round(b/25*100),cp=Math.round(c/25*100);
+    var la=ap>60?"High":ap>35?"Moderate":"Low";
+    var lb=bp>60?"High":bp>35?"Moderate":"Low";
+    var lc=cp<40?"Low":cp<65?"Moderate":"High";
+    var bc=function(l){if(l==="High")return"#C4956A";if(l==="Moderate")return"#D8B48F";return"#6B8B6C"};
+    var msg="Your scores indicate areas that need attention. Regular self-care and boundary-setting can help.";
+    if(la==="High"&&lb==="High")msg="Your scores suggest significant emotional exhaustion and disconnection. Consider speaking with a therapist and prioritizing recovery.";
+    var h="";
+    h+="<h2>Your Burnout Profile</h2>";
+    h+="<p>Emotional Exhaustion: "+a+"/25 - "+la+"</p>";
+    h+="<div style=background:#eee;height:10px;border-radius:5px;margin:4px 0 16px><div style=width:"+ap+"%;height:10px;border-radius:5px;background:"+bc(la)+"></div></div>";
+    h+="<p>Disconnection: "+b+"/25 - "+lb+"</p>";
+    h+="<div style=background:#eee;height:10px;border-radius:5px;margin:4px 0 16px><div style=width:"+bp+"%;height:10px;border-radius:5px;background:"+bc(lb)+"></div></div>";
+    h+="<p>Personal Accomplishment: "+c+"/25 - "+lc+"</p>";
+    h+="<div style=background:#eee;height:10px;border-radius:5px;margin:4px 0 24px><div style=width:"+cp+"%;height:10px;border-radius:5px;background:#6B8B6C"></div></div>";
+    h+="<p style=color:#666;margin-bottom:16px>"+msg+"</p>";
+    h+="<p><a href=/breathe/ style=color:#6B8B6C;font-weight:bold>Try Breathing Exercises</a></p>";
+    h+="<p><button onclick=location.reload() style=border:1px solid #ccc;padding:8px 20px;border-radius:20px;background:#fff;margin-top:8px;cursor:pointer>Retake Assessment</button></p>";
+    h+="<p style=font-size:12px;color:#999;margin-top:16px><em>Not a clinical diagnosis. In crisis? Call or text <b>988</b>.</em></p>";
+    document.querySelector(".max-w-3xl.mx-auto.space-y-6").innerHTML=h;
+    window.scrollTo({top:0,behavior:"smooth"});
+}
+
+}
 }
 
 if (document.readyState === 'loading') { document.addEventListener('DOMContentLoaded', init); } else { init(); }

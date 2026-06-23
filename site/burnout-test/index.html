@@ -145,9 +145,9 @@
 </button>
 </div>
 <div class="flex justify-between pt-4">
-<button class="flex items-center gap-2 text-on-surface-variant font-label font-medium hover:text-primary transition-colors" id="prev-btn" disabled onclick="if(currentStep>0){currentStep--;updateUI()}">
+<button class="flex items-center gap-2 text-on-surface-variant font-label font-medium hover:text-primary transition-colors" id="prev-btn" style="cursor:pointer" onclick="if(currentStep>0){currentStep--;updateUI()}">
 <span class="material-symbols-outlined">arrow_back</span> Previous</button>
-<button class="bg-primary text-on-primary px-8 py-3 rounded-full font-label font-bold hover:opacity-90 shadow-lg shadow-primary/20 transition-all flex items-center gap-2" id="next-btn" disabled style="pointer-events:auto" onclick="if(!scores||!scores[currentStep])return;if(currentStep<14){currentStep++;updateUI()}else{showResults()}">
+<button class="bg-primary text-on-primary px-8 py-3 rounded-full font-label font-bold hover:opacity-90 shadow-lg shadow-primary/20 transition-all flex items-center gap-2" id="next-btn" style="cursor:pointer" onclick="if(!scores||!scores[currentStep])return;if(currentStep<14){currentStep++;updateUI()}else{showResults()}">
 Next Question
 <span class="material-symbols-outlined">arrow_forward</span>
 </button>
@@ -304,9 +304,7 @@ function answerQuestion(score, btn) {
     const text = btn.querySelector('span');
     if(text) text.classList.add('font-bold','text-on-primary-container');
     scores[currentStep] = score;
-    document.getElementById('next-btn').removeAttribute('disabled');
     document.getElementById('next-btn').style.opacity = '1';
-    document.getElementById('next-btn').style.cursor = 'pointer';
 }
 
 function updateUI() {
@@ -316,10 +314,7 @@ function updateUI() {
     document.getElementById('q-text').textContent = questions[currentStep];
     document.getElementById('prev-btn').disabled = currentStep === 0;
     let nd = !scores[currentStep];
-    if(nd) document.getElementById('next-btn').setAttribute('disabled','');
-    else document.getElementById('next-btn').removeAttribute('disabled');
     document.getElementById('next-btn').style.opacity = nd ? '0.4' : '1';
-    document.getElementById('next-btn').style.cursor = nd ? 'not-allowed' : 'pointer';
     // Reset scale button visuals
     document.querySelectorAll('#scale-buttons button').forEach(b => {
         b.classList.remove('border-primary','bg-primary-container');

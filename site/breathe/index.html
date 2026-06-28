@@ -432,12 +432,8 @@
             mainBtnText.innerText = 'Resume';
             pauseBtn.classList.add('hidden');
             ripple.classList.add('hidden');
-            
-            // Pause circle animation where it is
-            const computedStyle = window.getComputedStyle(circle);
-            const matrix = new WebKitCSSMatrix(computedStyle.transform);
             circle.style.transitionDuration = '0s';
-            circle.style.transform = `scale(${matrix.a})`;
+            circle.style.transform = 'scale(1.0)';
         }
 
         function resetExercise() {

@@ -426,7 +426,7 @@
             startStep();
         }
 
-        function pauseExercise() {
+        function pauseExercise() { console.log("PAUSE CLICKED");
             isRunning = false;
             clearInterval(interval);
             mainBtnText.innerText = 'Resume';

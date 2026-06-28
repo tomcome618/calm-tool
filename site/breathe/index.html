@@ -169,9 +169,7 @@
 <button class="group relative px-10 py-5 bg-primary text-on-primary rounded-[2rem] font-bold text-lg shadow-lg shadow-primary/20 hover:shadow-xl hover:-translate-y-1 transition-all" id="main-action-btn" onclick="toggleExercise()">
 <span id="main-btn-text">Start Exercise</span>
 </button>
-<button class="p-4 rounded-full bg-surface-container-high text-on-surface-variant hover:bg-outline-variant transition-all hidden" id="pause-btn" onclick="pauseExercise()">
-<span class="material-symbols-outlined">pause</span>
-</button>
+<!-- Pause button removed: main button handles pause/resume -->
 </div>
 </div>
 <!-- Contextual Card - Sidebar right -->
@@ -331,7 +329,7 @@
         const timerDisplay = document.getElementById('timer-display');
         const roundDisplay = document.getElementById('round-count');
         const mainBtnText = document.getElementById('main-btn-text');
-        const pauseBtn = document.getElementById('pause-btn');
+        // const pauseBtn removed
 
         function setPattern(key) {
             document.getElementById('custom-controls').style.display = (key === 'custom') ? 'block' : 'none';
@@ -380,7 +378,7 @@
         function startExercise() {
             isRunning = true;
             mainBtnText.innerText = 'Stop';
-            pauseBtn.classList.remove('hidden');
+            // pauseBtn removed
             ripple.classList.remove('hidden');
             
             if (timeLeft <= 0) {
@@ -430,7 +428,7 @@
             isRunning = false;
             clearInterval(interval);
             mainBtnText.innerText = 'Resume';
-            pauseBtn.classList.add('hidden');
+            // pauseBtn removed
             ripple.classList.add('hidden');
             circle.style.transitionDuration = '0s';
             circle.style.transform = 'scale(1.0)';
@@ -446,7 +444,7 @@
             instructionText.innerText = 'Ready?';
             timerDisplay.innerText = '00';
             mainBtnText.innerText = 'Start Exercise';
-            pauseBtn.classList.add('hidden');
+            // pauseBtn removed
             ripple.classList.add('hidden');
             
             circle.style.transitionDuration = '0.5s';
